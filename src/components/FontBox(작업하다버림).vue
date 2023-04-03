@@ -1,9 +1,9 @@
 <template>
-  <div class="fixed left-0 top-2/4 -translate-y-2/4 z-50">
-    <div :class="isOpen && 'left-36'" class="bg-whte darkMode p-4 text-center absolute cursor-pointer mt-7 transition-all duration-500 left-0">
+  <div class="relative left-0 -translate-y-2/4 z-50">
+    <!-- <div class="bg-whte darkMode text-center absolute cursor-pointer transition-all duration-500 left-0">
       <font-awesome-icon @click="!isOpen ? isOpen = true : isOpen = false" icon="pencil" class="text-2xl"/>
-    </div>
-    <ul class="absolute w-36 -left-36 bg-white darkMode trasition-all duration-500" :class="isOpen && '!left-0'">
+    </div> -->
+    <ul class="absolute top-0 w-36 darkMode trasition-all duration-500">
       <li @click="FontSelect(index)" @mouseleave="FontRemove(index)" @mouseover="FontView(index)" v-for="(e, index) in FontList" :key="e" class="cursor-pointer text-center py-2" :class="e.font">{{ e.title }}</li>
     </ul>
   </div>
@@ -14,7 +14,7 @@
     name: "FontBox",
     data() {
       return {
-        isOpen: false,
+        // isOpen: false,
         FontList: [
           {
             title: "더잠실체",
@@ -34,6 +34,9 @@
           },
         ]
       }
+    },
+    props: {
+      isOpen: Boolean
     },
     methods: {
       FontSelect(index){

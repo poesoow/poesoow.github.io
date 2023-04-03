@@ -15,15 +15,22 @@
       </div>
 
       <!-- 태블릿 이상 상단 우측 유틸영역 -->
-      <div class="basis-1/6 md:basis-1/12 hidden md:block">
+      <div class="basis-1/6 hidden md:block">
         <ul class="flex justify-between">
-          <li class="basis-1/2 text-center cursor-pointer">
+          <li class="basis-1/3 text-center cursor-pointer">
             <font-awesome-icon :icon="isDark ? 'moon' : 'sun'" class="text-2xl" @click="$emit('dark')" />
           </li>
-          <li class="basis-1/2 text-center cursor-pointer">
+          <li class="basis-1/3 text-center cursor-pointer">
             <font-awesome-icon icon="globe" class="text-2xl" />
           </li>
+          <li class="basis-1/3 text-center cursor-pointer">
+            <font-awesome-icon @click="!isOpen ? isOpen = true : isOpen = false" icon="pencil" class="text-2xl"/>
+          </li>
         </ul>
+        <!-- {{ isOpen }} -->
+        <!-- :class="!isOpen ? '-top-50': 'top-0'" -->
+         <!-- :isOpen="isOpen" -->
+        <FontBox class=" top-250 bg-white"/>
       </div>
 
       <!-- 모바일 메뉴 바 -->
@@ -53,16 +60,19 @@
           </li>
         </ul>
       </div>
-      
+
     </div>
   </div>
 </template>
 
 <script>
-  
+  // import FontBox from '@/components/FontBox.vue'
 
   export default {
     name: "NavPage",
+    components: {
+      // FontBox
+    },
     data() {
       return {
         // 왼쪽 메뉴바 

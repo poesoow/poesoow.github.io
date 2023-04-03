@@ -4,8 +4,6 @@
       <router-link to="/">
         <img src="http://via.placeholder.com/120x50" alt="logo">
       </router-link>
-
-      <!-- 태블릿 이상 상단 네비영역 -->
       <div class="basis-3/4 hidden md:block">
         <ul class="flex justify-around">
           <li v-for="(e, index) in NavList[0]" :key="e" class="relative">
@@ -13,8 +11,6 @@
           </li>
         </ul>
       </div>
-
-      <!-- 태블릿 이상 상단 우측 유틸영역 -->
       <div class="basis-1/6 md:basis-1/12 hidden md:block">
         <ul class="flex justify-between">
           <li class="basis-1/2 text-center cursor-pointer">
@@ -25,13 +21,9 @@
           </li>
         </ul>
       </div>
-
-      <!-- 모바일 메뉴 바 -->
       <div>
         <font-awesome-icon @click="isOpen = true" icon="bars" class="text-3xl cursor-pointer md:hidden" />
       </div>
-
-      <!-- 모바일 우측 영역 네비영역 -->
       <div :class="isOpen && '!right-0'" class="w-72 h-full fixed darkMode bg-gray-100 z-50 p-12 box-border transition-all duration-500 top-0 -right-80 md:hidden">
         <font-awesome-icon  @click="isOpen = false" icon="times" class="absolute top-5 right-5 text-3xl cursor-pointer md:hidden" />
         <div class="text-center mt-6">
@@ -44,16 +36,7 @@
             <router-link :to="NavList[1][index]">{{ e }}</router-link>
           </li>
         </ul>
-        <ul class="mt-2 flex gap-2">
-          <li class="text-center cursor-pointer">
-            <font-awesome-icon :icon="isDark ? 'moon' : 'sun'" class="text-2xl" @click="$emit('dark')" />
-          </li>
-          <li class="text-center cursor-pointer">
-            <font-awesome-icon icon="globe" class="text-2xl" />
-          </li>
-        </ul>
       </div>
-      
     </div>
   </div>
 </template>

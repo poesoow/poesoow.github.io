@@ -1,14 +1,12 @@
 <template lang="ko">
-  <FontBox />
   <NavMenu :isDark="isDark" @dark="toggleDark()" />
   <router-view />
   <Footer />
 </template>
 
 <script>
-  import NavMenu from '@/components/nav.vue'
+  import NavMenu from '@/components/nav(작업하다버림).vue'
   import Footer from '@/components/Footer.vue'
-  import FontBox from '@/components/FontBox.vue'
   import { useDark, useToggle } from '@vueuse/core';
   export default {
     name: 'App',
@@ -22,7 +20,6 @@
     components: {
       NavMenu,
       Footer,
-      FontBox
     },
     methods:{
       DarkMode(){
