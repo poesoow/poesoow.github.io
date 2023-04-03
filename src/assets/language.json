@@ -1,0 +1,34 @@
+[
+  {
+    "Nav": [
+      "프로필",
+      "스킬",
+      "포트폴리오"
+    ],
+    "MainTxt": [
+      "안녕하세요...<br>프론트엔드 개발자<br>홍길동 입니다."
+    ],
+    "FontTxt": [
+      "더잠실체",
+      "코레일 둥근고딕",
+      "제주돌담체",
+      "카페24 써라운드"
+    ]
+  },
+  {
+    "Nav": [
+      "Profile",
+      "Skill",
+      "Portfolio"
+    ],
+    "MainTxt": [
+      "Hello...<br>I am Hong Gil-dong<br>Front-End Developer."
+    ],
+    "FontTxt": [
+      "TheJamsil5Bold",
+      "KorailRoundGothicBold",
+      "EF_jejudoldam",
+      "Cafe24Ssurround"
+    ]
+  }
+]
