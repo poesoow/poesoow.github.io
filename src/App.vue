@@ -2,6 +2,7 @@
   <!-- {{themecolor["default"]}} -->
   <!-- :theme 은 부모컴포넌트인 App.vue 에서 사용 하는 것이 아닌 자식 컴포넌트인 nav.vue 에서 입력해야 볼 수 있음
   {{theme}} -->
+  <scrollNav @menuindex="SectionMove($event)" :langList="langList[lang]" />
 
   
   <NavMenu :isDark="isDark" @dark="toggleDark()" 
@@ -34,6 +35,7 @@
 
 <script>
 
+import scrollNav from './components/scrollNav.vue'
 
 // 0327 원페이지
 // 원페이지로 만들기 위해(component폴더 있는걸로 나중에 바꾸도록 하기)
@@ -70,6 +72,7 @@ export default {
     }
   },
   components: {
+    scrollNav,
     NavMenu,
     Footer,
     Home,
