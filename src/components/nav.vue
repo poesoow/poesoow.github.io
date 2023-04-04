@@ -38,9 +38,9 @@
           <li  class="basis-1/4 text-center cursor-pointer relative group">
             <font-awesome-icon icon="fa-palette" class="text-2xl" />
             <div class="absolute right-0 top-10 bg-white w-20 group-hover:border rounded-md h-0 group-hover:h-20 transition-all duration-500 overflow-hidden">
-              <button class="mx-1 md:mx-2 xl:mx-3" @click="$emit('changeTheme', 'default')">기본</button>
-              <button class="mx-1 md:mx-2 xl:mx-3 text-blue-700" @click="$emit('changeTheme', 'blue')">블루</button>
-              <button class="mx-1 md:mx-2 xl:mx-3 text-green-700" @click="$emit('changeTheme', 'green')">그린</button>
+              <button class="mx-1 md:mx-2 xl:mx-3" @click="$emit('changeTheme', 'default'); SelectColorTheme('default')">기본</button>
+              <button class="mx-1 md:mx-2 xl:mx-3 text-blue-700" @click="$emit('changeTheme', 'blue'); SelectColorTheme('blue')">블루</button>
+              <button class="mx-1 md:mx-2 xl:mx-3 text-green-700" @click="$emit('changeTheme', 'green'); SelectColorTheme('green')">그린</button>
             </div>
           </li>
         </ul>
@@ -87,9 +87,9 @@
           <li  class="text-center cursor-pointer relative group">
             <font-awesome-icon icon="fa-palette" class="text-2xl" />
             <div class="absolute left-0 top-10 bg-white w-16 group-hover:border rounded-md h-0 group-hover:h-20 transition-all duration-500 overflow-hidden">
-              <button class="mx-1 md:mx-2 xl:mx-3" @click="$emit('changeTheme', 'default')">기본</button>
-              <button class="mx-1 md:mx-2 xl:mx-3 text-blue-700" @click="$emit('changeTheme', 'blue')">블루</button>
-              <button class="mx-1 md:mx-2 xl:mx-3 text-green-700" @click="$emit('changeTheme', 'green')">그린</button>
+              <button class="mx-1 md:mx-2 xl:mx-3" @click="$emit('changeTheme', 'default'); SelectColorTheme('default')">기본</button>
+              <button class="mx-1 md:mx-2 xl:mx-3 text-blue-700" @click="$emit('changeTheme', 'blue'); SelectColorTheme('blue')">블루</button>
+              <button class="mx-1 md:mx-2 xl:mx-3 text-green-700" @click="$emit('changeTheme', 'green'); SelectColorTheme('green')">그린</button>
             </div>
           </li>
         </ul>
@@ -127,6 +127,9 @@ export default {
     // 새로고침해도 언어설정 그대로 이도록
     Selectlang(index) {
       localStorage.setItem("language", index)
+    },
+    SelectColorTheme(color) {
+      localStorage.setItem("theme", color)
     }
   },
 }

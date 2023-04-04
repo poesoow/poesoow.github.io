@@ -57,6 +57,7 @@
       document.querySelector("body").classList.add(this.FontStyle)
       // 화면 로딩 되면, lang 값을 스토리지 language 값으로 넣음
       this.lang = localStorage.getItem("language")
+      this.appTheme = localStorage.getItem('theme')
     },
 
   }
