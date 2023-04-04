@@ -7,14 +7,13 @@
       <router-link to="/">
         <img src="http://via.placeholder.com/120x50" alt="logo">
       </router-link>
-      <!-- <button @click="$emit('menuindex', 'section-0')"><img src="http://via.placeholder.com/120x50" alt="logo" /></button> -->
+      
 
       <!-- 태블릿 이상 상단 네비영역 -->
       <div class="basis-3/4 hidden md:block">
         <ul class="flex justify-around">
           <li :class="colorTheme[theme] && colorTheme[theme].hover" v-for="(e, index) in NavList[0]" :key="e" class="relative">
             <router-link :to="NavList[1][index]">{{  langList.Nav[index]  }}</router-link>
-            <!-- <button @click="$emit('menuindex', `section-${(index + 1)}`)">{{ e }}</button> -->
           </li>
         </ul>
       </div>
