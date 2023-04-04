@@ -1,23 +1,25 @@
 <template lang="ko">
-  <NavMenu 
-    :isDark="isDark" 
-    @dark="toggleDark()"
-    :theme="appTheme"
-    :colorTheme="colorTheme"
-    @changeTheme="chageTheme($event)"
-    :langList="langList[lang]" 
-    @lang="lang = $event"
-    :loc="loc"
-    @updateLoc="updateLoc()" />
-  <router-view 
-    :langList="langList[lang]"  
-    :theme="appTheme"
-    :colorTheme="colorTheme"
-    :loc="loc" />
-  <Footer />
+    <NavMenu 
+      :isDark="isDark" 
+      @dark="toggleDark()"
+      :theme="appTheme"
+      :colorTheme="colorTheme"
+      @changeTheme="chageTheme($event)"
+      :langList="langList[lang]" 
+      @lang="lang = $event"
+      :loc="loc"
+      @updateLoc="updateLoc()" />
 
-  <!-- app.vue 에서만 [appTheme]으로 들어가고 다른 페이지에서는 [theme]으로 작동 -->
-  <div :class="colorTheme[appTheme] && colorTheme[appTheme].back" class="fixed w-[100%] h-1.5 z-50 top-0"></div>
+    <!-- app.vue 에서만 [appTheme]으로 들어가고 다른 페이지에서는 [theme]으로 작동 -->
+    <div :class="colorTheme[appTheme] && colorTheme[appTheme].back" class="fixed w-[100%] h-1.5 z-50 top-0"></div>
+
+    <router-view 
+      :langList="langList[lang]"  
+      :theme="appTheme"
+      :colorTheme="colorTheme"
+      :loc="loc" />
+    <Footer />
+
 </template>
 
 <script>
