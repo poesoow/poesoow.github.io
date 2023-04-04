@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-import App from './App(작업하다 버림).vue'
+import App from './App.vue'
 import "./index.css"
 import router from "./router"
 // fontawesome

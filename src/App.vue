@@ -1,5 +1,4 @@
 <template lang="ko">
-  <FontBox />
   <NavMenu :isDark="isDark" @dark="toggleDark()" />
   <router-view />
   <Footer />
