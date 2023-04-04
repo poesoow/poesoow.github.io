@@ -1,4 +1,8 @@
 <template lang="ko">
+
+    <!-- app.vue 에서만 [appTheme]으로 들어가고 다른 페이지에서는 [theme]으로 작동 -->
+    <div :class="(colorTheme[appTheme] && colorTheme[appTheme].back), `scale-[${imsivalue}]`" class="fixed w-[100%] h-1.5 z-[60] top-0 origin-top-left transition-transform duration-200 ease-out"></div>
+
     <NavMenu 
       :isDark="isDark" 
       @dark="toggleDark()"
@@ -10,8 +14,7 @@
       :loc="loc"
       @updateLoc="updateLoc()" />
 
-    <!-- app.vue 에서만 [appTheme]으로 들어가고 다른 페이지에서는 [theme]으로 작동 -->
-    <div :class="colorTheme[appTheme] && colorTheme[appTheme].back" class="fixed w-[100%] h-1.5 z-50 top-0"></div>
+    
 
     <router-view 
       :langList="langList[lang]"  
@@ -43,7 +46,8 @@
         lang: 0,
         langList: Language,
         // 포트폴리오 home, portfolio 차이 두기 위해서
-        loc: window.location.href
+        loc: window.location.href,
+        imsivalue: 
       }
     },
     components: {
@@ -68,8 +72,12 @@
       // 화면 로딩 되면, lang 값을 스토리지 language 값으로 넣음
       this.lang = localStorage.getItem("language")
       this.appTheme = localStorage.getItem('theme')
+      console.log(window.pageYOffset)
+      // console.log(window.onscroll)
     },
-
+    watch: {
+      
+    },
   }
 </script>
 
