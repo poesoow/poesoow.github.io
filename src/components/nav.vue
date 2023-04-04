@@ -13,7 +13,7 @@
       <div class="basis-3/4 hidden md:block">
         <ul class="flex justify-around">
           <li v-for="(e, index) in NavList[0]" :key="e" class="relative">
-            <router-link :to="NavList[1][index]">{{ e }}</router-link>
+            <router-link :to="NavList[1][index]">{{  langList.Nav[index]  }}</router-link>
             <!-- <button @click="$emit('menuindex', `section-${(index + 1)}`)">{{ e }}</button> -->
           </li>
         </ul>
@@ -25,8 +25,12 @@
           <li class="basis-1/4 text-center cursor-pointer">
             <font-awesome-icon :icon="isDark ? 'moon' : 'sun'" class="text-2xl" @click="$emit('dark')" />
           </li>
-          <li class="basis-1/4 text-center cursor-pointer">
+          <li class="basis-1/4 text-center cursor-pointer relative group">
             <font-awesome-icon icon="globe" class="text-2xl" />
+            <ul class="absolute left-0 top-10 bg-white w-20 group-hover:border rounded-md h-0 group-hover:h-20 transition-all duration-500 overflow-hidden">
+              <li @click="$emit('lang', 0); Selectlang(0)" class="pt-2.5 hover:text-blue-500"><button>한국어</button></li>
+              <li @click="$emit('lang', 1); Selectlang(1)" class="py-2.5 hover:text-blue-500"><button>영어</button></li>
+            </ul>
           </li>
           <li class="basis-1/4 text-center cursor-pointer">
             <FontBox device="pc" />
@@ -63,22 +67,26 @@
         <ul class="mt-12">
           <li v-for="(e, index) in NavList[0]" :key="e" class="py-4 border-b">
             <font-awesome-icon :icon="NavList[2][index]" class="mr-1" />
-            <router-link :to="NavList[1][index]">{{ e }}</router-link>
+            <router-link :to="NavList[1][index]">{{ langList.Nav[index] }}</router-link>
           </li>
         </ul>
         <ul class="mt-2 flex gap-2">
           <li class="text-center cursor-pointer">
             <font-awesome-icon :icon="isDark ? 'moon' : 'sun'" class="text-2xl" @click="$emit('dark')" />
           </li>
-          <li class="text-center cursor-pointer">
+          <li class="text-center cursor-pointer relative group">
             <font-awesome-icon icon="globe" class="text-2xl" />
+            <ul class="absolute left-0 top-10 bg-white w-20 group-hover:border rounded-md h-0 group-hover:h-20 transition-all duration-500 overflow-hidden">
+              <li @click="$emit('lang', 0); Selectlang(0)" class="pt-2.5 hover:text-blue-500"><button>한국어</button></li>
+              <li @click="$emit('lang', 1); Selectlang(1)" class="py-2.5 hover:text-blue-500"><button>영어</button></li>
+            </ul>
           </li>
           <li class="text-center cursor-pointer">
             <FontBox device="mobile" />
           </li>
           <li  class="text-center cursor-pointer relative group">
             <font-awesome-icon icon="fa-palette" class="text-2xl" />
-            <div class="absolute left-0 top-10 bg-white w-20 group-hover:border rounded-md h-0 group-hover:h-20 transition-all duration-500 overflow-hidden">
+            <div class="absolute left-0 top-10 bg-white w-16 group-hover:border rounded-md h-0 group-hover:h-20 transition-all duration-500 overflow-hidden">
               <button class="mx-1 md:mx-2 xl:mx-3" @click="$emit('changeTheme', 'default')">기본</button>
               <button class="mx-1 md:mx-2 xl:mx-3 text-blue-700" @click="$emit('changeTheme', 'blue')">블루</button>
               <button class="mx-1 md:mx-2 xl:mx-3 text-green-700" @click="$emit('changeTheme', 'green')">그린</button>
@@ -112,8 +120,15 @@ export default {
   props: {
     isDark: Boolean,
     theme: String,
-    themecolor: Object
-  }
+    themecolor: Object,
+    langList: Object,
+  },
+  methods: {
+    // 새로고침해도 언어설정 그대로 이도록
+    Selectlang(index) {
+      localStorage.setItem("language", index)
+    }
+  },
 }
 </script>
 

@@ -3,13 +3,16 @@
     :isDark="isDark" 
     @dark="toggleDark()"
     :theme="appTheme"
-    @changeTheme="chageTheme($event)"  />
-  <router-view />
+    @changeTheme="chageTheme($event)"
+    :langList="langList[lang]" 
+    @lang="lang = $event" />
+  <router-view :langList="langList[lang]" />
   <Footer />
   <div :class="themecolor[appTheme] && themecolor[appTheme].back" class="fixed w-[100%] h-1.5 z-50 top-0"></div>
 </template>
 
 <script>
+  import Language from '@/assets/language.json'
   import NavMenu from '@/components/nav.vue'
   import Footer from '@/components/Footer.vue'
   import FontBox from '@/components/FontBox.vue'
@@ -25,15 +28,17 @@
         appTheme: 'default',
         themecolor: {
           "default": {
-            "back": "bg-slate-500", "hover": "hover:bg-slate-500", "active": "bg-slate-400", "text": "text-black"
+            "back": "bg-slate-500", "hover": "hover:text-slate-500", "active": "bg-slate-400", "text": "text-black"
           },
           "blue": {
-            "back": "bg-blue-500", "hover": "hover:bg-blue-500", "active": "bg-blue-400", "text": "text-blue"
+            "back": "bg-blue-500", "hover": "hover:text-blue-500", "active": "bg-blue-400", "text": "text-blue"
           },
           "green": {
-            "back": "bg-green-500", "hover": "hover:bg-green-500", "active": "bg-green-400", "text": "text-green"
+            "back": "bg-green-500", "hover": "hover:text-green-500", "active": "bg-green-400", "text": "text-green"
           }
-        }
+        },
+        lang: 0,
+        langList: Language,
       }
     },
     components: {
@@ -52,6 +57,8 @@
     mounted() {
       this.FontStyle = localStorage.getItem("font")
       document.querySelector("body").classList.add(this.FontStyle)
+      // 화면 로딩 되면, lang 값을 스토리지 language 값으로 넣음
+      this.lang = localStorage.getItem("language")
     },
 
   }

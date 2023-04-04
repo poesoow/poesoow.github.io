@@ -1,4 +1,5 @@
 <template>
+  
   <div class="w-full">
     <div class="max-w-7xl mx-auto pt-10 lg:pt-40">
       <div class="flex flex-wrap items-center">
@@ -23,7 +24,12 @@
   import "@lottiefiles/lottie-player"
 
   export default {
-    name: "HomePage"
+    name: "HomePage",
+    props: {
+      // router 링크에서 pops 는?
+      langList: Object
+    },
+
   }
 </script>
 
