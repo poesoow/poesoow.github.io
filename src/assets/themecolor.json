@@ -1,0 +1,20 @@
+{
+  "default": {
+    "back": "bg-slate-500",
+    "hover": "hover:text-slate-500",
+    "active": "bg-slate-400",
+    "text": "text-black"
+  },
+  "blue": {
+    "back": "bg-blue-500",
+    "hover": "hover:text-blue-500",
+    "active": "bg-blue-400",
+    "text": "text-blue"
+  },
+  "green": {
+    "back": "bg-green-500",
+    "hover": "hover:text-green-500",
+    "active": "bg-green-400",
+    "text": "text-green"
+  }
+}

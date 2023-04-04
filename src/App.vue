@@ -1,17 +1,25 @@
 <template lang="ko">
+
   <NavMenu 
     :isDark="isDark" 
     @dark="toggleDark()"
     :theme="appTheme"
+    :colorTheme="colorTheme"
     @changeTheme="chageTheme($event)"
     :langList="langList[lang]" 
     @lang="lang = $event" />
-  <router-view :langList="langList[lang]" />
+  <router-view 
+    :langList="langList[lang]"  
+    :theme="appTheme"
+    :colorTheme="colorTheme" />
   <Footer />
-  <div :class="themecolor[appTheme] && themecolor[appTheme].back" class="fixed w-[100%] h-1.5 z-50 top-0"></div>
+
+  <!-- app.vue 에서만 [appTheme]으로 들어가고 다른 페이지에서는 [theme]으로 작동 -->
+  <div :class="colorTheme[appTheme] && colorTheme[appTheme].back" class="fixed w-[100%] h-1.5 z-50 top-0"></div>
 </template>
 
 <script>
+  import colorthemeJson from '@/assets/themecolor.json'
   import Language from '@/assets/language.json'
   import NavMenu from '@/components/nav.vue'
   import Footer from '@/components/Footer.vue'
@@ -26,17 +34,7 @@
         FontStyle: "",
         // 테마생성
         appTheme: 'default',
-        themecolor: {
-          "default": {
-            "back": "bg-slate-500", "hover": "hover:text-slate-500", "active": "bg-slate-400", "text": "text-black"
-          },
-          "blue": {
-            "back": "bg-blue-500", "hover": "hover:text-blue-500", "active": "bg-blue-400", "text": "text-blue"
-          },
-          "green": {
-            "back": "bg-green-500", "hover": "hover:text-green-500", "active": "bg-green-400", "text": "text-green"
-          }
-        },
+        colorTheme: colorthemeJson,
         lang: 0,
         langList: Language,
       }

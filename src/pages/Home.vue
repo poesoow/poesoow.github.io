@@ -4,7 +4,6 @@
       <div class="flex flex-wrap items-center">
         <div class="basis-full md:basis-2/4 text-center py-3">
           <p v-html="langList.MainTxt[0]" class="text-green-600 hover:text-green-500 text-2xl lg:text-4xl font-medium lg:font-semibold mb-5 lg:leading-normal leading-snug dark:[text-#d9d9d9]">
-            
           </p>
         </div>
         <div class="basis-full md:basis-2/4 text-center">
@@ -23,8 +22,7 @@
   export default {
     name: "HomePage",
     props: {
-      // router 링크에서 pops 는?
-      langList: Object
+      langList: Object,
     },
 
   }
