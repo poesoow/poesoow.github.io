@@ -1,7 +1,7 @@
 <template>
   <div :class="device === 'mobile' ? 'block md:hidden' : 'hidden md:block'" class="z-50">
     <div :class="isOpen && 'top-50' || device === 'mobile' && 'top-0'"
-      class="darkMode text-center  cursor-pointer transition-all duration-500">
+      class="darkMode text-center  cursor-pointer">
       <font-awesome-icon @click="!isOpen ? isOpen = true : isOpen = false" icon="pencil" class="text-2xl" />
     </div>
     <ul :class="isOpen && '!right-8' || device === 'mobile' && 'mt-[700px]'"

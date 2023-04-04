@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-full px-[2%] sticky top-0 bg-white py-2.5 z-50 dark:bg-[#333] dark:border-b dark:border-b-[#3a3b3d] dark:text-[#d9d9d9]">
+    class="w-full px-[2%] fixed top-0 bg-white py-2.5 z-50 dark:bg-[#333] dark:border-b dark:border-b-[#3a3b3d] dark:text-[#d9d9d9]">
     <div class="max-w-7xl mx-auto flex justify-between items-center">
 
       <!-- 원페이지 -->
@@ -22,16 +22,26 @@
       <!-- 태블릿 이상 상단 우측 유틸영역 -->
       <div class="basis-1/6 md:basis-1/12 hidden md:block">
         <ul class="flex justify-between">
-          <li class="basis-1/3 text-center cursor-pointer">
+          <li class="basis-1/4 text-center cursor-pointer">
             <font-awesome-icon :icon="isDark ? 'moon' : 'sun'" class="text-2xl" @click="$emit('dark')" />
           </li>
-          <li class="basis-1/3 text-center cursor-pointer">
+          <li class="basis-1/4 text-center cursor-pointer">
             <font-awesome-icon icon="globe" class="text-2xl" />
           </li>
-          <li class="basis-1/3 text-center cursor-pointer">
+          <li class="basis-1/4 text-center cursor-pointer">
             <FontBox device="pc" />
           </li>
+          <li  class="basis-1/4 text-center cursor-pointer relative group">
+            <font-awesome-icon icon="fa-palette" class="text-2xl" />
+            <div class="absolute right-0 top-10 bg-white w-20 group-hover:border rounded-md h-0 group-hover:h-20 transition-all duration-500 overflow-hidden">
+              <button class="mx-1 md:mx-2 xl:mx-3" @click="$emit('changeTheme', 'default')">기본</button>
+              <button class="mx-1 md:mx-2 xl:mx-3 text-blue-700" @click="$emit('changeTheme', 'blue')">블루</button>
+              <button class="mx-1 md:mx-2 xl:mx-3 text-green-700" @click="$emit('changeTheme', 'green')">그린</button>
+            </div>
+          </li>
         </ul>
+
+
       </div>
 
 
@@ -66,6 +76,14 @@
           <li class="text-center cursor-pointer">
             <FontBox device="mobile" />
           </li>
+          <li  class="text-center cursor-pointer relative group">
+            <font-awesome-icon icon="fa-palette" class="text-2xl" />
+            <div class="absolute left-0 top-10 bg-white w-20 group-hover:border rounded-md h-0 group-hover:h-20 transition-all duration-500 overflow-hidden">
+              <button class="mx-1 md:mx-2 xl:mx-3" @click="$emit('changeTheme', 'default')">기본</button>
+              <button class="mx-1 md:mx-2 xl:mx-3 text-blue-700" @click="$emit('changeTheme', 'blue')">블루</button>
+              <button class="mx-1 md:mx-2 xl:mx-3 text-green-700" @click="$emit('changeTheme', 'green')">그린</button>
+            </div>
+          </li>
         </ul>
       </div>
 
@@ -82,6 +100,7 @@ export default {
   name: "NavPage",
   components: {
     FontBox,
+    
   },
   data() {
     return {
@@ -92,6 +111,8 @@ export default {
   },
   props: {
     isDark: Boolean,
+    theme: String,
+    themecolor: Object
   }
 }
 </script>
