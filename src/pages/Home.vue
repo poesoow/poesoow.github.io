@@ -23,11 +23,10 @@
     <Skill />
   </div> 
   <div ref="section-3">
-    <Portfolio />
+    <Portfolio :loc="loc" />
   </div>
 
   <div class="fixed top-40 right-0 hidden md:block">
-    <!-- {{ MenuIndex }} -->
     <ul class="flex flex-col gap-4">
       <li>
         <button @click="SectionMove('section-0')"><img src="http://via.placeholder.com/120x50" alt="logo" /></button>
@@ -60,6 +59,7 @@
       return {
         MenuIndex: '',
         ArrayList: '',
+        loc: window.location.href
       }
     },
     methods: {

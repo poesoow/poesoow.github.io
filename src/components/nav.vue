@@ -3,16 +3,20 @@
     class="w-full px-[2%] fixed top-0 bg-white py-2.5 z-50 dark:bg-[#333] dark:border-b dark:border-b-[#3a3b3d] dark:text-[#d9d9d9]">
     <div class="max-w-7xl mx-auto flex justify-between items-center">
 
-      <!-- 원페이지 -->
-      <router-link to="/">
-        <img src="http://via.placeholder.com/120x50" alt="logo">
-      </router-link>
+      <div @click="$emit('updateLoc')">
+        <router-link to="/">
+          <img src="http://via.placeholder.com/120x50" alt="logo">
+        </router-link>
+      </div>
       
 
       <!-- 태블릿 이상 상단 네비영역 -->
       <div class="basis-3/4 hidden md:block">
         <ul class="flex justify-around">
-          <li :class="colorTheme[theme] && colorTheme[theme].hover" v-for="(e, index) in NavList[0]" :key="e" class="relative">
+          <li 
+            @click="$emit('updateLoc')"
+            :class="colorTheme[theme] && colorTheme[theme].hover" 
+            v-for="(e, index) in NavList[0]" :key="e" class="relative">
             <router-link :to="NavList[1][index]">{{  langList.Nav[index]  }}</router-link>
           </li>
         </ul>

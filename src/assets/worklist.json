@@ -1,0 +1,195 @@
+[
+  {
+    "img": "https://via.placeholder.com/500",
+    "descTitle": "xxxx 웹앱1",
+    "desc": "API를 활용한 웹앱 개발...",
+    "keyword": [
+      "#심플함",
+      "#깔끔한",
+      "#taliwind"
+    ],
+    "color": [
+      "blue",
+      "green"
+    ],
+    "font": "Noto sans KR",
+    "tools": [
+      "PS",
+      "AI"
+    ],
+    "date": "10일(기획1일/구상1일/제작8일)",
+    "contribution": "100%",
+    "type": "Webapp",
+    "progress": "https://via.placeholder.com/1200x5000",
+    "original": "https://www.naver.com",
+    "redesign": "https://www.kakao.com",
+    "best": "true"
+  },
+  {
+    "img": "https://via.placeholder.com/500",
+    "descTitle": "XXX 클론코딩1",
+    "desc": "API를 활용한 웹앱 개발...",
+    "keyword": [
+      "#심플함",
+      "#깔끔한",
+      "#taliwind"
+    ],
+    "color": [
+      "blue",
+      "pink"
+    ],
+    "font": "Noto sans KR",
+    "tools": [
+      "PS",
+      "",
+      "VSCODE"
+    ],
+    "date": "10일(기획1일/구상1일/제작8일)",
+    "contribution": "100%",
+    "type": "Publishing",
+    "progress": "https://via.placeholder.com/1200x5000",
+    "original": "",
+    "redesign": "",
+    "best": "true"
+  },
+  {
+    "img": "https://via.placeholder.com/500",
+    "descTitle": "xxxx 웹앱2",
+    "desc": "API를 활용한 웹앱 개발...",
+    "keyword": [
+      "#심플함",
+      "#깔끔한",
+      "#taliwind"
+    ],
+    "color": [
+      "",
+      "green",
+      "pink"
+    ],
+    "font": "Noto sans KR",
+    "tools": [
+      "",
+      "AI",
+      "VSCODE"
+    ],
+    "date": "10일(기획1일/구상1일/제작8일)",
+    "contribution": "100%",
+    "type": "Webapp",
+    "progress": "https://via.placeholder.com/1200x5000",
+    "original": "",
+    "redesign": "https://www.kakao.com",
+    "best": ""
+  },
+  {
+    "img": "https://via.placeholder.com/500",
+    "descTitle": "xxxx 클론코딩2",
+    "desc": "API를 활용한 웹앱 개발...",
+    "keyword": [
+      "#심플함",
+      "#깔끔한",
+      "#taliwind"
+    ],
+    "color": [
+      "blue",
+      "green",
+      "pink"
+    ],
+    "font": "Noto sans KR",
+    "tools": [
+      "PS",
+      "AI",
+      "VSCODE"
+    ],
+    "date": "10일(기획1일/구상1일/제작8일)",
+    "contribution": "100%",
+    "type": "Publishing",
+    "progress": "https://via.placeholder.com/1200x5000",
+    "original": "https://www.naver.com",
+    "redesign": "",
+    "best": ""
+  },
+  {
+    "img": "https://via.placeholder.com/500",
+    "descTitle": "xxxx 웹앱3",
+    "desc": "API를 활용한 웹앱 개발...",
+    "keyword": [
+      "#심플함",
+      "#깔끔한",
+      "#taliwind"
+    ],
+    "color": [
+      "blue",
+      "green",
+      "pink"
+    ],
+    "font": "Noto sans KR",
+    "tools": [
+      "PS",
+      "",
+      ""
+    ],
+    "date": "10일(기획1일/구상1일/제작8일)",
+    "contribution": "100%",
+    "type": "Webapp",
+    "progress": "",
+    "original": "https://www.naver.com",
+    "redesign": "https://www.kakao.com",
+    "best": ""
+  },
+  {
+    "img": "https://via.placeholder.com/500",
+    "descTitle": "xxxx 클론코딩3",
+    "desc": "API를 활용한 웹앱 개발...",
+    "keyword": [
+      "#심플함",
+      "#깔끔한",
+      "#taliwind"
+    ],
+    "color": [
+      "blue",
+      "",
+      "pink"
+    ],
+    "font": "Noto sans KR",
+    "tools": [
+      "",
+      "AI",
+      "VSCODE"
+    ],
+    "date": "10일(기획1일/구상1일/제작8일)",
+    "contribution": "100%",
+    "type": "Publishing",
+    "progress": "https://via.placeholder.com/1200x5000",
+    "original": "https://www.naver.com",
+    "redesign": "https://www.kakao.com",
+    "best": ""
+  },
+  {
+    "img": "https://via.placeholder.com/500",
+    "descTitle": "xxxx 웹앱4",
+    "desc": "API를 활용한 웹앱 개발...",
+    "keyword": [
+      "#심플함",
+      "#깔끔한",
+      "#taliwind"
+    ],
+    "color": [
+      "blue",
+      "green",
+      ""
+    ],
+    "font": "Noto sans KR",
+    "tools": [
+      "PS",
+      "AI",
+      "VSCODE"
+    ],
+    "date": "10일(기획1일/구상1일/제작8일)",
+    "contribution": "100%",
+    "type": "Webapp",
+    "progress": "https://via.placeholder.com/1200x5000",
+    "original": "https://www.naver.com",
+    "redesign": "",
+    "best": "true"
+  }
+]
