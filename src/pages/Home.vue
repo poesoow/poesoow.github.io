@@ -67,7 +67,7 @@
     methods: {
       SectionMove(index) {
         this.MenuIndex = index;
-        console.log(this.MenuIndex)
+        // console.log(this.MenuIndex)
         const rect = this.ArrayList[this.MenuIndex].getBoundingClientRect();
         // console.log(rect)
         const offset = rect.top + window.scrollY - 60;

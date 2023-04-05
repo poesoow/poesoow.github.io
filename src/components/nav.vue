@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-full px-[2%] fixed top-0 bg-white py-2.5 z-50 dark:bg-[#333] dark:border-b dark:border-b-[#3a3b3d] dark:text-[#d9d9d9]">
+    class="w-full px-[2%] fixed top-1.5 bg-white py-2.5 z-50 dark:bg-[#333] dark:border-b dark:border-b-[#3a3b3d] dark:text-[#d9d9d9]">
     <div class="max-w-7xl mx-auto flex justify-between items-center">
 
       <div @click="$emit('updateLoc')">
@@ -47,8 +47,6 @@
             </div>
           </li>
         </ul>
-
-
       </div>
 
 
