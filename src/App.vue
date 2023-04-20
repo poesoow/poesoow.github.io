@@ -14,9 +14,10 @@
     <!-- app.vue 에서만 [appTheme]으로 들어가고 다른 페이지에서는 [theme]으로 작동 
       빌드 후 테마색에 맞게 변화하는지 확인 필요
       (true && `w-[${scrollPercent}%]`) 로 class 바인딩하니까 되는 숫자도 있고 안되는 숫자있어서 style 바인딩으로 수정  -->
+      <!-- :style="{width: `${scrollPercent}%`}" -->
     <div
       ref='el'
-      :style="{width: `${scrollPercent}%`}"
+      :style="`width: ${scrollPercent}%`"
       :class="(colorTheme[appTheme] && colorTheme[appTheme].back)" 
       class="fixed h-1.5 z-[60] top-0 origin-top-left transition-transform duration-200 ease-out"></div>
 
@@ -60,7 +61,7 @@
         // 포트폴리오 home, portfolio 차이 두기 위해서
         loc: Loc,
         // 꼭 스크롤 이벤트 성공시키기
-        scrollPercent: 100,
+        scrollPercent: 0,
       }
     },
     components: {
@@ -78,6 +79,19 @@
       updateLoc(){
         this.loc = window.location.href
       },
+      scrollwatch(){
+      window.addEventListener('scroll', function () {
+        const posY = this.window.pageYOffset;
+        const bodyHeight = this.document.querySelector('body').scrollHeight
+        // const aa = this.document.querySelector('body').getBoundingClientRect()
+
+        const current = posY / bodyHeight
+        this.scrollPercent = Number(current * 100)
+        // console.log(posY, bodyHeight, current)
+        // console.log(aa)
+        console.log(this.scrollPercent)
+      });
+      }
     },
     mounted() {
       this.FontStyle = localStorage.getItem("font")
@@ -85,9 +99,6 @@
       // 화면 로딩 되면, lang 값을 스토리지 language 값으로 넣음
       this.lang = localStorage.getItem("language")
       this.appTheme = localStorage.getItem('theme')
-      // 스크롤 이벤트 꼭 성공하기
-      // console.log(window.pageYOffset)
-      // document.addEventListener('scroll', console.log(window.pageYOffset))
     },
   }
 </script>
