@@ -31,8 +31,8 @@
 </template>
 
 <script>
-  import colorthemeJson from './assets/themecolor.json'
-  import Language from './assets/language.json'
+  import colorthemeJson from '@/assets/themecolor.json'
+  import Language from '@/assets/language.json'
   import NavMenu from '@/components/nav.vue'
   import Footer from '@/components/Footer.vue'
   import FontBox from '@/components/FontBox.vue'

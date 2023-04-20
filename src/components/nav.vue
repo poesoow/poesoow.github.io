@@ -3,7 +3,7 @@
     class="w-full px-[2%] fixed top-1.5 bg-white py-2.5 z-50 dark:bg-[#333] dark:border-b dark:border-b-[#3a3b3d] dark:text-[#d9d9d9]">
     <div class="max-w-7xl mx-auto flex justify-between items-center">
 
-      <div @click="$emit('updateLoc')">
+      <div @click="$emit('updateLoc'); focusOn = false; num = null">
         <router-link to="/">
           <img src="http://via.placeholder.com/120x50" alt="logo">
         </router-link>
@@ -14,10 +14,11 @@
       <div class="basis-3/4 hidden md:block">
         <ul class="flex justify-around">
           <li 
-            @click="$emit('updateLoc')"
+            @click="$emit('updateLoc'); menuClick(index)"
             :class="colorTheme[theme] && colorTheme[theme].hover" 
             v-for="(e, index) in NavList[0]" :key="e" class="relative">
-            <router-link :to="NavList[1][index]">{{  langList.Nav[index]  }}</router-link>
+            <!-- 색 분홍색에서 after로 아래에 줄 그어지도록 바꾸기 -->
+            <router-link :class="(focusOn && num===index) && 'fcsOnCls'" class="fcsOffCls" :to="NavList[1][index]">{{  langList.Nav[index]  }}</router-link>
           </li>
         </ul>
       </div>
@@ -116,6 +117,8 @@ export default {
       // 오른쪽 메뉴바 
       isOpen: false,
       NavList: [["프로필", "스킬", "포트폴리오"], ["/profile", "/skill", "/portfolio"], ["user", "code", "folder-open"]],
+      focusOn: false,
+      num: null,
     }
   },
   props: {
@@ -125,6 +128,14 @@ export default {
     langList: Object,
   },
   methods: {
+    menuClick(i){
+      if(this.focusOn === false){
+        this.focusOn = !this.focusOn
+        this.num = i
+      }else{
+        this.num = i
+      }
+    },
     // 새로고침해도 언어설정 그대로 이도록
     Selectlang(index) {
       localStorage.setItem("language", index)
