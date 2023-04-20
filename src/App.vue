@@ -27,6 +27,10 @@
       :colorTheme="colorTheme"
       :loc="loc" />
     <Footer />
+    <!-- tailwindcss 테마적용위해 -->
+    <div class="bg-slate-500 bg-blue-500 bg-green-500 
+    hover:text-slate-500 hover:text-blue-500 hover:text-green-500 
+    text-slate-400 text-blue-400 text-green-400"></div>
   </div>
 </template>
 
