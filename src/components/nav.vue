@@ -107,7 +107,6 @@ export default {
   },
   props: {
     isDark: Boolean,
-    theme: String,
     langList: Object,
   },
   methods: {
