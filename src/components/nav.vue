@@ -15,7 +15,6 @@
         <ul class="flex justify-around">
           <li 
             @click="$emit('updateLoc'); menuClick(index)"
-            :class="colorTheme[theme] && colorTheme[theme].hover" 
             v-for="(e, index) in NavList[0]" :key="e" class="relative">
             <!-- 색 분홍색에서 after로 아래에 줄 그어지도록 바꾸기 -->
             <router-link :class="(focusOn && num===index) && 'fcsOnCls'" class="fcsOffCls" :to="NavList[1][index]">{{  langList.Nav[index]  }}</router-link>
@@ -32,20 +31,12 @@
           <li class="basis-1/4 text-center cursor-pointer relative group">
             <font-awesome-icon icon="globe" class="text-2xl" />
             <ul class="absolute left-0 top-10 bg-white w-20 group-hover:border rounded-md h-0 group-hover:h-20 transition-all duration-500 overflow-hidden">
-              <li :class="colorTheme[theme] && colorTheme[theme].hover"  @click="$emit('lang', 0); Selectlang(0)" class="pt-2.5"><button>한국어</button></li>
-              <li :class="colorTheme[theme] && colorTheme[theme].hover"  @click="$emit('lang', 1); Selectlang(1)" class="py-2.5"><button>영어</button></li>
+              <li  @click="$emit('lang', 0); Selectlang(0)" class="pt-2.5"><button>한국어</button></li>
+              <li  @click="$emit('lang', 1); Selectlang(1)" class="py-2.5"><button>영어</button></li>
             </ul>
           </li>
           <li class="basis-1/4 text-center cursor-pointer">
             <FontBox device="pc" />
-          </li>
-          <li  class="basis-1/4 text-center cursor-pointer relative group">
-            <font-awesome-icon icon="fa-palette" class="text-2xl" />
-            <div class="absolute right-0 top-10 bg-white w-20 group-hover:border rounded-md h-0 group-hover:h-20 transition-all duration-500 overflow-hidden">
-              <button class="mx-1 md:mx-2 xl:mx-3" @click="$emit('changeTheme', 'default'); SelectColorTheme('default')">기본</button>
-              <button class="mx-1 md:mx-2 xl:mx-3 text-blue-700" @click="$emit('changeTheme', 'blue'); SelectColorTheme('blue')">블루</button>
-              <button class="mx-1 md:mx-2 xl:mx-3 text-green-700" @click="$emit('changeTheme', 'green'); SelectColorTheme('green')">그린</button>
-            </div>
           </li>
         </ul>
       </div>
@@ -67,7 +58,7 @@
           <p>프론트엔드 개발자 홍길동</p>
         </div>
         <ul class="mt-12">
-          <li :class="colorTheme[theme] && colorTheme[theme].hover" v-for="(e, index) in NavList[0]" :key="e" class="py-4 border-b">
+          <li v-for="(e, index) in NavList[0]" :key="e" class="py-4 border-b">
             <font-awesome-icon :icon="NavList[2][index]" class="mr-1" />
             <router-link :to="NavList[1][index]">{{ langList.Nav[index] }}</router-link>
           </li>
@@ -79,21 +70,14 @@
           <li class="text-center cursor-pointer relative group">
             <font-awesome-icon icon="globe" class="text-2xl" />
             <ul class="absolute left-0 top-10 bg-white w-20 group-hover:border rounded-md h-0 group-hover:h-20 transition-all duration-500 overflow-hidden">
-              <li :class="colorTheme[theme] && colorTheme[theme].hover" @click="$emit('lang', 0); Selectlang(0)" class="pt-2.5"><button>한국어</button></li>
-              <li :class="colorTheme[theme] && colorTheme[theme].hover" @click="$emit('lang', 1); Selectlang(1)" class="py-2.5"><button>영어</button></li>
+              <li @click="$emit('lang', 0); Selectlang(0)" class="pt-2.5"><button>한국어</button></li>
+              <li @click="$emit('lang', 1); Selectlang(1)" class="py-2.5"><button>영어</button></li>
             </ul>
           </li>
           <li class="text-center cursor-pointer">
             <FontBox device="mobile" />
           </li>
-          <li  class="text-center cursor-pointer relative group">
-            <font-awesome-icon icon="fa-palette" class="text-2xl" />
-            <div class="absolute left-0 top-10 bg-white w-16 group-hover:border rounded-md h-0 group-hover:h-20 transition-all duration-500 overflow-hidden">
-              <button class="mx-1 md:mx-2 xl:mx-3" @click="$emit('changeTheme', 'default'); SelectColorTheme('default')">기본</button>
-              <button class="mx-1 md:mx-2 xl:mx-3 text-blue-700" @click="$emit('changeTheme', 'blue'); SelectColorTheme('blue')">블루</button>
-              <button class="mx-1 md:mx-2 xl:mx-3 text-green-700" @click="$emit('changeTheme', 'green'); SelectColorTheme('green')">그린</button>
-            </div>
-          </li>
+         
         </ul>
       </div>
 
@@ -124,7 +108,6 @@ export default {
   props: {
     isDark: Boolean,
     theme: String,
-    colorTheme: Object,
     langList: Object,
   },
   methods: {
@@ -140,9 +123,6 @@ export default {
     Selectlang(index) {
       localStorage.setItem("language", index)
     },
-    SelectColorTheme(color) {
-      localStorage.setItem("theme", color)
-    }
   },
 }
 </script>

@@ -1,8 +1,5 @@
 <template>
   <div class="w-full pt-12 mt-6 px-[2%] pb-8 ">
-    <!-- <div class="max-w-7xl p-5 mx-auto bg-white rounded-md border darkMode">
-      <h3 class="relative after:absolute w-max mx-auto after:w-[100%] after:h-[2px] after:bg-black after:dark:bg-[#d9d9d9] after:-bottom-1 after:left-2/4 after:-translate-x-2/4 tracking-widest text-center text-xl sm:text-2xl lg:text-3xl">스킬</h3>
-    </div> -->
     <Title title="스킬" />
     <div class="max-w-7xl mx-auto mt-8">
       <div class="bg-white rounded-md border darkMode p-5 mb-8 last:mb-0">
