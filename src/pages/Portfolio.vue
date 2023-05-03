@@ -6,7 +6,6 @@
         <li class="mr-4 border darkMode bg-white rounded-md">
           <button class="py-2 px-5" @click="CateName = '전체'" :class="CateName === '전체' && 'font-bold text-blue-500'">전체</button>
         </li>
-        <!-- v-for 할때 만약 CateList 가 메소드에 있었다면 CateList() 이렇게 소괄호가 필요함  -->
         <li v-for="e in CateList" :key="e" class="mr-4 border darkMode bg-white rounded-md">
           <button class="py-2 px-5" @click="CateName = e.type" :class="CateName === e.type && 'font-bold text-blue-500 underline'">{{ e.type }}</button>
         </li>
@@ -27,17 +26,13 @@
           <div class="basis-full md:basis-[52%] pt-10  group-even:order-2 xl:group-even:order-1">
             <h3 class="text-2xl font-bold py-[10px] lg:pl-[50px]"> {{ e.descTitle }}</h3>
             <p class="text-base pt-[10px] lg:pl-[50px]">{{ e.desc }}</p>
-            <!-- {{ WorkList[0].keyword[0] }} {{ WorkList[0].keyword[1] }} {{ WorkList[0].keyword[2] }} 을 반복문을 사용하여 아래처럼 작성 -->
             <p class="text-base pt-[10px] lg:pl-[50px]">키워드 : <span v-for="el in e.keyword" :key="el" class="mr-2">{{ el }}</span></p>
-            <!-- <p class="text-base pt-[10px] lg:pl-[50px]">컬러 : {{ WorkList[0].color[0] }} {{ WorkList[0].color[1] }} {{ WorkList[0].color[2] }}</p> -->
-            <!-- :class="el === '' && 'hidden'" 없애면 아래 스크립트코드에서 ""으로 값이 비워진 부분들은 값이 비워진 채로 자리만 차지하며 나타남 -->
             <p class="text-base pt-[10px] lg:pl-[50px]">컬러 : <span v-for="el in e.color" :key="el" :class="el === '' && 'hidden'" class="w-max h-5 inline-block align-middle mr-2 text-sm text-center" :style="{ backgroundColor: `${el}` }">{{ el }}</span></p>
             <p class="text-base pt-[10px] lg:pl-[50px]">폰트 : {{ e.font }}</p>
             <p class="text-base pt-[10px] lg:pl-[50px]">사용툴 : <span v-for="el in e.tools" :key="el" class="mr-2 align-middle">{{ el }}</span></p>
             <p class="text-base pt-[10px] lg:pl-[50px]">작업기간 : {{ e.date }}</p>
             <p class="text-base pt-[10px] lg:pl-[50px]">기여도 : {{ e.contribution }}</p>
             <ul class="flex justify-center mt-6">
-              <!-- class 바인딩으로 값이 없으면 안나오게 만들기 or v-if로 활용할수 있음 (참고 아래 스크립트 코드에서 ""을 없애면(즉 빈데이터 자체를 없애면) class 바인딩이나 v-if문 없이 빈 값 없이 나타나게 할 수 있음) -->
               <li :class="e.progress === '' && 'hidden'"><a :href="e.progress" class="py-1 px-8 border rounded-md darkMode text-sm">progress</a></li>
               <li v-if="e.original" class="mx-4"><a :href="e.original" target="_blank" class="py-1 px-8 border rounded-md darkMode text-sm">original</a></li>
               <li v-if="e.original" ><a :href="e.redesign" target="_blank" class="py-1 px-8 border rounded-md darkMode text-sm">redesign</a></li>
@@ -57,17 +52,13 @@
           <div class="basis-full md:basis-[52%] pt-10  group-even:order-2 xl:group-even:order-1">
             <h3 class="text-2xl font-bold py-[10px] lg:pl-[50px]"> {{ e.descTitle }}</h3>
             <p class="text-base pt-[10px] lg:pl-[50px]">{{ e.desc }}</p>
-            <!-- {{ WorkList[0].keyword[0] }} {{ WorkList[0].keyword[1] }} {{ WorkList[0].keyword[2] }} 을 반복문을 사용하여 아래처럼 작성 -->
             <p class="text-base pt-[10px] lg:pl-[50px]">키워드 : <span v-for="el in e.keyword" :key="el" class="mr-2">{{ el }}</span></p>
-            <!-- <p class="text-base pt-[10px] lg:pl-[50px]">컬러 : {{ WorkList[0].color[0] }} {{ WorkList[0].color[1] }} {{ WorkList[0].color[2] }}</p> -->
-            <!-- :class="el === '' && 'hidden'" 없애면 아래 스크립트코드에서 ""으로 값이 비워진 부분들은 값이 비워진 채로 자리만 차지하며 나타남 -->
             <p class="text-base pt-[10px] lg:pl-[50px]">컬러 : <span v-for="el in e.color" :key="el" :class="el === '' && 'hidden'" class="w-max h-5 inline-block align-middle mr-2 text-sm text-center" :style="{backgroundColor: `${el}`}">{{ el }}</span></p>
             <p class="text-base pt-[10px] lg:pl-[50px]">폰트 : {{ e.font }}</p>
             <p class="text-base pt-[10px] lg:pl-[50px]">사용툴 : <span v-for="el in e.tools" :key="el" class="mr-2 align-middle">{{ el }}</span></p>
             <p class="text-base pt-[10px] lg:pl-[50px]">작업기간 : {{ e.date }}</p>
             <p class="text-base pt-[10px] lg:pl-[50px]">기여도 : {{ e.contribution }}</p>
             <ul class="flex justify-center mt-6">
-              <!-- class 바인딩으로 값이 없으면 안나오게 만들기 or v-if로 활용할수 있음 (참고 아래 스크립트 코드에서 ""을 없애면(즉 빈데이터 자체를 없애면) class 바인딩이나 v-if문 없이 빈 값 없이 나타나게 할 수 있음) -->
               <li :class="e.progress === '' && 'hidden'"><a :href="e.progress" class="py-1 px-8 border rounded-md darkMode text-sm">progress</a></li>
               <li v-if="e.original" class="mx-4"><a :href="e.original" target="_blank" class="py-1 px-8 border rounded-md darkMode text-sm">original</a></li>
               <li v-if="e.original" ><a :href="e.redesign" target="_blank" class="py-1 px-8 border rounded-md darkMode text-sm">redesign</a></li>
@@ -120,7 +111,6 @@ export default {
     },
     BestItem() {
       return this.WorkList.filter((data) => {
-        // console.log(data)
         if (data.best !== 'true') {
           return data.best === this.WorkList.best
         } else {

@@ -23,7 +23,7 @@
     "progress": "https://via.placeholder.com/1200x5000",
     "original": "https://www.naver.com",
     "redesign": "https://www.kakao.com",
-    "best": "true"
+    "best": "false"
   },
   {
     "img": "https://via.placeholder.com/500",
@@ -190,6 +190,6 @@
     "progress": "https://via.placeholder.com/1200x5000",
     "original": "https://www.naver.com",
     "redesign": "",
-    "best": "true"
+    "best": "false"
   }
 ]

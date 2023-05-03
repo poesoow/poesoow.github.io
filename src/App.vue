@@ -12,7 +12,7 @@
     <div
       ref='el'
       :style="`width: ${scrollPercent}%`"
-      class="fixed h-1.5 z-[60] top-0 origin-top-left transition-transform duration-200 ease-out"></div>
+      class="bg-black fixed h-1.5 z-[60] top-0 origin-top-left transition-transform duration-200 ease-out"></div>
 
 
     <router-view 
@@ -44,7 +44,7 @@
         // 포트폴리오 home, portfolio 차이 두기 위해서
         loc: Loc,
         // 꼭 스크롤 이벤트 성공시키기
-        scrollPercent: 0,
+        scrollPercent: 21.11244019138756,
       }
     },
     components: {
@@ -59,25 +59,28 @@
       updateLoc(){
         this.loc = window.location.href
       },
-      scrollwatch(){
-      window.addEventListener('scroll', function () {
-        const posY = this.window.pageYOffset;
-        const bodyHeight = this.document.querySelector('body').scrollHeight
-        // const aa = this.document.querySelector('body').getBoundingClientRect()
+      // // 스크롤 감지는 되는데 왜 값이 들어가지지는 않을까 + 100 퍼센트 맞추기 필요함
+      // scrollwatch(){
+      // window.addEventListener('scroll', function () {
+      //   const posY = this.window.pageYOffset;
+      //   const bodyHeight = this.document.querySelector('body').scrollHeight
+      //   // const aa = this.document.querySelector('body').getBoundingClientRect()
 
-        const current = posY / bodyHeight
-        this.scrollPercent = Number(current * 100)
-        // console.log(posY, bodyHeight, current)
-        // console.log(aa)
-        console.log(this.scrollPercent)
-      });
-      }
+      //   const current = posY / bodyHeight
+      //   this.scrollPercent = Number(current * 100)
+      //   // console.log(posY, bodyHeight, current)
+      //   // console.log(aa)
+      //   console.log(this.scrollPercent)
+      // });
+      // }
     },
     mounted() {
       this.FontStyle = localStorage.getItem("font")
       document.querySelector("body").classList.add(this.FontStyle)
       // 화면 로딩 되면, lang 값을 스토리지 language 값으로 넣음
       this.lang = localStorage.getItem("language")
+      // scroll 함수 완성 후 다시 해보기
+      // this.scrollwatch()
     },
   }
 </script>
