@@ -13,6 +13,7 @@
       :langList="langList[lang]"  
       :loc="loc" />
     <Footer />
+    <TotopButton />
   </div>
 </template>
 
@@ -20,6 +21,8 @@
   import Language from '@/assets/language.json'
   import NavMenu from '@/components/nav.vue'
   import Footer from '@/components/Footer.vue'
+  import TotopButton from '@/components/TotopBtn.vue'
+
   import FontBox from '@/components/FontBox.vue'
   import { useDark, useToggle } from '@vueuse/core';
   
@@ -42,7 +45,8 @@
     components: {
       NavMenu,
       Footer,
-      FontBox
+      FontBox,
+      TotopButton
     },
     methods:{
       DarkMode(){
