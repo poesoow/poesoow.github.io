@@ -21,7 +21,10 @@
       <Skill />
     </div> 
     <div ref="section-3">
-      <Portfolio :loc="loc" />
+      <Work :loc="loc" />
+    </div>
+    <div ref="section-4">
+      <Contact />
     </div>
 
     <div class="fixed top-40 right-0 hidden xl:block dark:text-[#d9d9d9] dark:bg-[#333]">
@@ -39,8 +42,9 @@
 
 <script>
   import Profile from '@/pages/Profile.vue'
-  import Portfolio from '@/pages/Portfolio.vue'
+  import Work from '@/pages/Work.vue'
   import Skill from '@/pages/Skill.vue'
+  import Contact from '@/pages/Contact.vue'
 
   export default {
     name: "HomePage",
@@ -49,8 +53,9 @@
     },
     components: {
       Profile,
-      Portfolio,
-      Skill
+      Work,
+      Skill,
+      Contact
     },
     data() {
       return {

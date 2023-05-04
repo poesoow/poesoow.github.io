@@ -17,9 +17,9 @@ const routes = [
     component: () => import('@/pages/Skill')
   },
   {
-    path: "/portfolio",
-    name: "PortFolio",
-    component: () => import('@/pages/Portfolio')
+    path: "/work",
+    name: "Work",
+    component: () => import('@/pages/Work')
   },
   // 404 페이지 만들기
   {
