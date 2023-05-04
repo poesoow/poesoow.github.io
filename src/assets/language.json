@@ -3,7 +3,7 @@
     "Nav": [
       "프로필",
       "스킬",
-      "포트폴리오"
+      "작업"
     ],
     "MainTxt": [
       "안녕하세요.<br>프론트엔드 개발자<br>송우섭 입니다."
@@ -19,7 +19,7 @@
     "Nav": [
       "Profile",
       "Skill",
-      "Portfolio"
+      "work"
     ],
     "MainTxt": [
       "Hello.<br>I am Song Woo-seop<br>Front-End Developer."

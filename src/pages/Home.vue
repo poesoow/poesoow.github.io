@@ -24,7 +24,7 @@
       <Portfolio :loc="loc" />
     </div>
 
-    <div class="fixed top-40 right-0 hidden md:block dark:text-[#d9d9d9]  dark:bg-[#333]">
+    <div class="fixed top-40 right-0 hidden xl:block dark:text-[#d9d9d9] dark:bg-[#333]">
       <ul class="flex flex-col gap-4">
         <li>
           <button @click="SectionMove('section-0')"><img src="http://via.placeholder.com/120x50" alt="logo" /></button>

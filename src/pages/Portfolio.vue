@@ -1,13 +1,15 @@
 <template>
   <div class="w-full pt-12 mt-6 px-[2%] pb-8 ">
-    <Title title="포트폴리오" />
-    <div class="max-w-7xl mx-auto mt-8">
+    <Title title="작업" />
+    <div 
+       v-if="loc.indexOf('portfolio') !== -1"
+      class="max-w-7xl mx-auto mt-8">
       <ul class="flex m-4 ml-0">
         <li class="mr-4 border darkMode bg-white rounded-md">
-          <button class="py-2 px-5" @click="CateName = '전체'" :class="CateName === '전체' && 'font-bold text-blue-500'">전체</button>
+          <button class="py-2 px-5" @click="CateName = '전체'" :class="CateName === '전체' && 'font-bold text-[#42b983]'">전체</button>
         </li>
         <li v-for="e in CateList" :key="e" class="mr-4 border darkMode bg-white rounded-md">
-          <button class="py-2 px-5" @click="CateName = e.type" :class="CateName === e.type && 'font-bold text-blue-500 underline'">{{ e.type }}</button>
+          <button class="py-2 px-5" @click="CateName = e.type" :class="CateName === e.type && 'font-bold text-[#42b983] underline'">{{ e.type }}</button>
         </li>
       </ul>
     </div>

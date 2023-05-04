@@ -16,7 +16,7 @@
           <li 
             @click="$emit('updateLoc'); menuClick(index)"
             v-for="(e, index) in NavList[0]" :key="e" 
-            class="relative hover:text-green-600">
+            class="relative hover:text-[#42b983]">
             <router-link :class="(focusOn && num===index) && 'fcsOnCls'" class="fcsOffCls" :to="NavList[1][index]">{{  langList.Nav[index]  }}</router-link>
           </li>
         </ul>
