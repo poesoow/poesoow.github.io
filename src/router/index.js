@@ -21,6 +21,11 @@ const routes = [
     name: "Work",
     component: () => import('@/pages/Work')
   },
+  {
+    path: "/contact",
+    name: "Contact",
+    component: () => import('@/pages/Contact')
+  },
   // 404 페이지 만들기
   {
     path: "/:pathMatch(.*)*",

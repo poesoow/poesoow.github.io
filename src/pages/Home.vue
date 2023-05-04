@@ -32,8 +32,8 @@
         <li>
           <button @click="SectionMove('section-0')"><img src="http://via.placeholder.com/120x50" alt="logo" /></button>
         </li>
-        <li v-for="(e, index) in 3" :key="e" class="relative">
-          <button @click="SectionMove(`section-${(index + 1)}`)">{{ langList.Nav[index] }}</button>
+        <li v-for="(nav, index) in langList.Nav" :key="nav" class="relative">
+          <button @click="SectionMove(`section-${(index + 1)}`)">{{ nav }}</button>
         </li>
       </ul>
     </div>
