@@ -15,8 +15,8 @@
         <ul class="flex justify-around">
           <li 
             @click="$emit('updateLoc'); menuClick(index)"
-            v-for="(e, index) in NavList[0]" :key="e" class="relative">
-            <!-- 색 분홍색에서 after로 아래에 줄 그어지도록 바꾸기 -->
+            v-for="(e, index) in NavList[0]" :key="e" 
+            class="relative hover:text-green-600">
             <router-link :class="(focusOn && num===index) && 'fcsOnCls'" class="fcsOffCls" :to="NavList[1][index]">{{  langList.Nav[index]  }}</router-link>
           </li>
         </ul>
@@ -31,8 +31,8 @@
           <li class="basis-1/4 text-center cursor-pointer relative group">
             <font-awesome-icon icon="globe" class="text-2xl" />
             <ul class="absolute left-0 top-10 bg-white w-20 group-hover:border rounded-md h-0 group-hover:h-20 transition-all duration-500 overflow-hidden">
-              <li  @click="$emit('lang', 0); Selectlang(0)" class="pt-2.5"><button>한국어</button></li>
-              <li  @click="$emit('lang', 1); Selectlang(1)" class="py-2.5"><button>영어</button></li>
+              <li  @click="$emit('lang', 0); Selectlang(0)" class="pt-2.5 hover:text-green-700"><button>한국어</button></li>
+              <li  @click="$emit('lang', 1); Selectlang(1)" class="py-2.5 hover:text-green-700"><button>영어</button></li>
             </ul>
           </li>
           <li class="basis-1/4 text-center cursor-pointer">
@@ -55,7 +55,7 @@
           class="absolute top-5 right-5 text-3xl cursor-pointer md:hidden" />
         <div class="text-center mt-6">
           <img src="https://via.placeholder.com/150" alt="이미지" class="mx-auto rounded-full mb-4">
-          <p>프론트엔드 개발자 홍길동</p>
+          <p v-html="langList.MainTxt[0]"></p>
         </div>
         <ul class="mt-12">
           <li v-for="(e, index) in NavList[0]" :key="e" class="py-4 border-b">
