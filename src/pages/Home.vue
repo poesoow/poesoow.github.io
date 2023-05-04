@@ -24,7 +24,7 @@
       <Work :loc="loc" />
     </div>
     <div ref="section-4">
-      <Contact />
+      <Contact :loc="loc" />
     </div>
 
     <div class="fixed top-40 right-0 hidden xl:block dark:text-[#d9d9d9] dark:bg-[#333]">

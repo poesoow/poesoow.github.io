@@ -1,6 +1,6 @@
 <template>
   <div>
-    읽기
+    읽기 {{ this.$store.state.noticeId }}
   </div>
 </template>
 

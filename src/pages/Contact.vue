@@ -4,7 +4,11 @@
 
     <div class="max-w-7xl mx-auto mt-8">
       <div class="bg-white rounded-md border darkMode p-5 mb-8 last:mb-0">
-        <router-view></router-view>
+        home 화면에서 보일 컨택트 내용
+      </div>
+      <div class="bg-white rounded-md border darkMode p-5 mb-8 last:mb-0">
+        <!-- contact 페이지 에서는 이렇게 추가로 게시판 기능 -->
+        <router-view v-if="loc.indexOf('contact') !== -1"></router-view>
       </div>
     </div>
   </div>
@@ -18,7 +22,10 @@
     name: 'ContactPage',
     components: {
       Title
-    }
+    },
+    props: {
+    loc: String
+  },
   }
 </script>
 
