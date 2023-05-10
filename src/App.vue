@@ -2,17 +2,13 @@
   <div>
     <NavMenu 
       :isDark="isDark" 
-      :loc="loc"
       @dark="toggleDark()"
       @updateLoc="updateLoc()" 
     />
-
     <router-view 
       :loc="loc" 
     />
-
     <Footer />
-
     <TotopButton />
   </div>
 </template>
@@ -31,7 +27,7 @@
     data() {
       return {
         toggleDark: useToggle(useDark()),
-        isDark : useDark(),
+        isDark: useDark(),
         loc: Loc,
       }
     },

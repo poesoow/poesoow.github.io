@@ -2,7 +2,7 @@
   <div class="w-full pt-12 mt-6 px-[2%] pb-8 ">
     <Title title="작업" />
     <div 
-       v-if="loc.indexOf('portfolio') !== -1"
+       v-if="loc.indexOf('work') !== -1"
       class="max-w-7xl mx-auto mt-8">
       <ul class="flex m-4 ml-0">
         <li class="mr-4 border darkMode bg-white rounded-md">
@@ -17,7 +17,7 @@
 
       <!-- /home 에서 best만 
         핵심은 app.vue 뿐 아니라 home.vue 에도 loc를 바인딩해주어야 함 + 클릭했을때 loc 값 최신화해주기 -->
-      <div v-if="loc.indexOf('portfolio') === -1">
+      <div v-if="loc.indexOf('work') === -1">
         <h3>best</h3>
         <div v-for="e in BestItem" :key="e" class="bg-white mb-8 pt-12 px-8 pb-16 rounded-md flex border flex-wrap darkMode group">
           <div class="basis-[48%] relative group-even:order-1 xl:group-even:order-2 mokup-img">

@@ -25,8 +25,8 @@
       </div>
 
       <!-- 태블릿 이상 상단 우측 유틸영역 -->
-      <div class="basis-1/6 md:basis-1/12 hidden md:block">
-        <ul class="flex justify-between">
+      <div class="basis-1/6 md:basis-1/12 hidden md:block border">
+        <ul class="flex justify-end">
           <li class="">
             <font-awesome-icon :icon="isDark ? 'sun' : 'moon'" class="text-center cursor-pointer text-2xl" @click="$emit('dark')" />
           </li>
