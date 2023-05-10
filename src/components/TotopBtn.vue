@@ -27,7 +27,6 @@
       },
       updateScroll() {
         this.windowScroll = window.scrollY;
-        // console.log(this.windowScroll)
         if (this.windowScroll > 600) {
           this.TopBtnChk = true
         } else {

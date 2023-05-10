@@ -42,17 +42,12 @@ export default {
   },
   methods: {
     FontSelect(index) {
-      // console.log(index)
-      // document.querySelector("body").classList = []; 필요한 이유는 클래스가 쌓이는 것을 없앰
       document.querySelector("body").classList = [];
       document.querySelector("body").classList.add(this.FontList[index].font);
       localStorage.setItem("font", this.FontList[index].font)
     },
     FontView(index) {
       document.querySelector("body").style.fontFamily = this.FontList[index].font
-      // 내방법
-      // html 에 주게되면 폰트는 작동하지만 다크모드가 작동안함
-      // document.querySelector("body").classList.add(this.FontList[index].font)
     },
     FontRemove() {
       document.querySelector("body").classList = [];

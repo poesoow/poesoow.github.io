@@ -8,8 +8,8 @@
           <div class="flex flex-wrap items-center h-[103vh]">
             <div class="basis-full md:basis-full text-center py-3">
               <p 
-                v-html="langList.MainTxt[0]" 
                 class="text-green-600 hover:text-green-500 text-2xl lg:text-4xl font-medium lg:font-semibold mb-5 lg:leading-normal leading-snug dark:[text-#d9d9d9]">
+                 "안녕하세요.<br>프론트엔드 개발자<br>송우섭 입니다."
               </p>
             </div>
           </div>
@@ -38,7 +38,7 @@
             </div>
           </button>
         </li>
-        <li v-for="(nav, index) in langList.Nav" :key="nav" class="relative">
+        <li v-for="(nav, index) in Nav" :key="nav" class="relative">
           <button @click="SectionMove(`section-${(index + 1)}`)">{{ nav }}</button>
         </li>
       </ul>
@@ -69,6 +69,12 @@
         ArrayList: '',
         loc: window.location.href,
         visual: 0,
+        Nav: [
+          "프로필",
+          "스킬",
+          "작업",
+          "연락"
+        ],
       }
     },
     methods: {
