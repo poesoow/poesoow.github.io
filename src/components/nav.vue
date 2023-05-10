@@ -149,14 +149,14 @@ export default {
 
 .logo.highlight:hover:after {
   content: ' ';
-  width: 250%;
-  height: 250%;
+  width: 100px;
+  height: 100px;
   position: absolute;
   top: var(--y);
   left: var(--x);
   transform: translate(-50%, -50%);
   opacity: 1;
-  background: radial-gradient(circle closest-side, rgba(225, 225, 225, 0.9), transparent);
+  background: radial-gradient(circle closest-side, rgba(66, 185, 131, 0.4), transparent);
   transition: opacity 0.5s ease-out;
 }
 
