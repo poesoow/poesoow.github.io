@@ -5,7 +5,9 @@
 
       <div @click="$emit('updateLoc'); focusOn = false; num = null">
         <router-link to="/">
-          <img src="http://via.placeholder.com/120x50" alt="logo">
+          <div @mousemove="shine" class="text-2xl h-12 leading-[48px] logo highlight">
+            &lt;Yapdiv /&gt;
+          </div>
         </router-link>
       </div>
       
@@ -122,8 +124,40 @@ export default {
     Selectlang(index) {
       localStorage.setItem("language", index)
     },
+    shine(event){
+      const highlight = document.querySelector('.highlight')
+
+      const x = event.pageX - highlight.offsetLeft;
+      const y = event.pageY - highlight.offsetTop;
+
+      highlight.style.setProperty('--x', x + 'px');
+      highlight.style.setProperty('--y', y + 'px');
+    },
   },
 }
 </script>
 
-<style></style>
+<style>
+.logo{
+  font-family: 'thejamsil5';
+  display: flex;
+  position: relative;
+  border-radius: 6px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  overflow: hidden;
+}
+
+.logo.highlight:hover:after {
+  content: ' ';
+  width: 250%;
+  height: 250%;
+  position: absolute;
+  top: var(--y);
+  left: var(--x);
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  background: radial-gradient(circle closest-side, rgba(225, 225, 225, 0.9), transparent);
+  transition: opacity 0.5s ease-out;
+}
+
+</style>

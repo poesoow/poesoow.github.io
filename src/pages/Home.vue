@@ -27,10 +27,14 @@
       <Contact :loc="loc" />
     </div>
 
-    <div class="fixed top-40 right-0 hidden xl:block dark:text-[#d9d9d9] dark:bg-[#333]">
+    <div class="fixed top-40 right-3 hidden xl:block dark:text-[#d9d9d9] dark:bg-[#333]">
       <ul class="flex flex-col gap-4">
         <li>
-          <button @click="SectionMove('section-0')"><img src="http://via.placeholder.com/120x50" alt="logo" /></button>
+          <button @click="SectionMove('section-0')"> 
+            <div class="text-xl logo py-1">
+              &lt;Yapdiv /&gt;
+            </div>
+          </button>
         </li>
         <li v-for="(nav, index) in langList.Nav" :key="nav" class="relative">
           <button @click="SectionMove(`section-${(index + 1)}`)">{{ nav }}</button>
