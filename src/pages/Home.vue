@@ -1,9 +1,11 @@
 <template>
   <div>
     <div ref="section-0">
-      <div class="w-full">
+      <div 
+        class="w-full bg-cover bg-center bg-no-repeat" 
+        :style="visual > 1400 ? { 'background-image': 'url(' + require('@/assets/images/visual_desk.jpg') + ')' } : { 'background-image': 'url(' + require('@/assets/images/visual_mobile.jpg') + ')' }">
         <div class="max-w-7xl mx-auto">
-          <div class="flex flex-wrap items-center h-[80vh]">
+          <div class="flex flex-wrap items-center h-[103vh]">
             <div class="basis-full md:basis-full text-center py-3">
               <p 
                 v-html="langList.MainTxt[0]" 
@@ -65,7 +67,8 @@
       return {
         MenuIndex: '',
         ArrayList: '',
-        loc: window.location.href
+        loc: window.location.href,
+        visual: 0,
       }
     },
     methods: {
@@ -78,13 +81,23 @@
           behavior: 'smooth'
         })
       },
+      handleResize(){
+        this.visual = visualViewport.width
+      }
     },
     mounted() {
       this.ArrayList = this.$refs;
+
+      this.visual = visualViewport.width
+      window.addEventListener('resize', this.handleResize);
+    },
+    beforeUnmount() {
+      window.removeEventListener('resize', this.handleResize);
     },
   }
 </script>
 
 <style>
+
 
 </style>

@@ -102,7 +102,7 @@ export default {
     return {
       // 오른쪽 메뉴바 
       isOpen: false,
-      NavList: [["프로필", "스킬", "작업", "Contact Me"], ["/profile", "/skill", "/work", "/contact"], ["user", "code", "folder-open", "message"]],
+      NavList: [["프로필", "스킬", "작업", "연락"], ["/profile", "/skill", "/work", "/contact"], ["user", "code", "folder-open", "message"]],
       focusOn: false,
       num: null,
     }
@@ -143,7 +143,7 @@ export default {
   display: flex;
   position: relative;
   border-radius: 6px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  /* box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23); */
   overflow: hidden;
 }
 
