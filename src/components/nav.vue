@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/no-mutating-props -->
 <template>
   <div
     class="w-full px-[2%] fixed top-0 bg-white py-2.5 z-50 dark:bg-[#333] dark:border-b dark:border-b-[#3a3b3d] dark:text-[#d9d9d9]">
@@ -25,10 +26,11 @@
       </div>
 
       <!-- 태블릿 이상 상단 우측 유틸영역 -->
-      <div class="basis-1/6 md:basis-1/12 hidden md:block border">
+      <div class="basis-1/6 md:basis-1/12 hidden md:block">
         <ul class="flex justify-end">
-          <li class="">
-            <font-awesome-icon :icon="isDark ? 'sun' : 'moon'" class="text-center cursor-pointer text-2xl" @click="$emit('dark')" />
+          <li class="basis-full flex flex-col items-center justify-center">
+            <input type="checkbox" id="darkmode-toggle" :value="isDark" >
+            <label for="darkmode-toggle"  @click="$emit('dark')"></label>
           </li>
         </ul>
       </div>
@@ -61,6 +63,8 @@
         <ul class="mt-2 flex gap-2">
           <li class="text-center cursor-pointer">
             <font-awesome-icon :icon="isDark ? 'sun' : 'moon'" class="text-2xl" @click="$emit('dark')" />
+            <input type="checkbox" id="darkmode-toggle" :value="isDark" >
+            <label for="darkmode-toggle"  @click="$emit('dark')"></label>
           </li>
         </ul>
       </div>
@@ -133,5 +137,55 @@ export default {
   background: radial-gradient(circle closest-side, rgba(66, 185, 131, 0.4), transparent);
   transition: opacity 0.5s ease-out;
 }
+
+
+
+label {
+  width: 80px;
+  height: 24px;
+  position: relative;
+  display: block;
+  background: #ebebeb;
+  border-radius: 200px;
+  box-shadow: inset 0px 5px 15px rgba(0,0,0, 0.4),  inset 0px -5px 15px rgba(255,255,255, 0.4);
+  cursor: pointer; 
+  transition: 0.3s;
+}
+
+label:after {
+  content: '';
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  background: linear-gradient(180deg, #ffcc89, #d8860d);
+  border-radius: 32px;
+  box-shadow: 0 5px 10px rgba(0,0,0, 0.2);
+  transition: 0.3s;
+}
+
+input{
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+input:checked + label{
+  background: #242424;
+}
+
+input:checked + label:after {
+  left: 100%;
+  transform: translateX(-100%);
+  background: linear-gradient(180deg, #777, #3a3a3a);
+}
+
+label:active:after {
+  width: 40px;
+}
+
+
+
 
 </style>
