@@ -115,9 +115,8 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .logo{
-  font-family: 'thejamsil5';
   display: flex;
   position: relative;
   border-radius: 6px;
