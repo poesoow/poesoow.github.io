@@ -106,7 +106,7 @@ export default {
       const highlight = document.querySelector('.highlight')
 
       const x = event.pageX - highlight.offsetLeft;
-      const y = event.pageY - highlight.offsetTop;
+      const y = event.pageY - highlight.offsetTop - visualViewport.pageTop;
 
       highlight.style.setProperty('--x', x + 'px');
       highlight.style.setProperty('--y', y + 'px');
@@ -124,10 +124,18 @@ export default {
   overflow: hidden;
 }
 
-.logo.highlight:hover:after {
+.logo.highlight:after {
   content: ' ';
-  width: 100px;
-  height: 100px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.logo.highlight:hover:after {
+  border: 1px solid red;
+  content: ' ';
+  width: 250%;
+  height: 250%;
   position: absolute;
   top: var(--y);
   left: var(--x);
