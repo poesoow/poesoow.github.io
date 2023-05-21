@@ -4,7 +4,7 @@
     <div class="max-w-7xl mx-auto">
       <div class="h-auto flex overflow-hidden mt-8 flex-wrap justify-between">
         <div class="basis-full md:basis-[30%] py-12 px-4 bg-white rounded-md darkMode text-center border">
-          <img :src="require(`@/assets/images/profile2.png`)" alt="사진" class="rounded-full block mx-auto">
+          <img :src="require(`@/assets/images/profile.svg`)" alt="사진" class="rounded-full block mx-auto">
           <ul>
             <li class="pl-5 box-border pt-6">송우섭</li>
             <li class="pl-5 box-border pt-6"><a href="mailto:ws71144612@daum.net">ws71144612@daum.net</a></li>

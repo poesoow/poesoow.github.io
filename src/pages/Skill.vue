@@ -5,9 +5,9 @@
     <div class="max-w-7xl mx-auto mt-8">
       <div class="bg-white rounded-md border darkMode p-5 mb-8 last:mb-0">
 
+        <!-- 기존 ui
         <div v-for="e in ProgressList" :key="e" class="w-full h-20">
           <div class="w-full h-5 bg-[#e0e0de] rounded-[50px]">
-            <!-- style 에 바인딩을 주어야 함 transition-[width]는 내가 넓이만 transition 주고 싶어서 추가 -->
             <div class="h-full bg-slate-700 transition-[width] duration-1000 ease-in-out rounded-[50px] text-right relative mb-3 first:mt-10"
               :style="{ width: `${e.progressBefore}%` }">
               <p class="absolute -top-6 md:-top-7 left-1 text-sm md:text-lg">{{ e.skillList }}</p>
@@ -15,7 +15,12 @@
             </div>
             <p class="text-sm md:text-base">{{ e.desc }}</p>
           </div>
+        </div> -->
+
+        <div class="w-full">
+
         </div>
+
 
       </div>
     </div>

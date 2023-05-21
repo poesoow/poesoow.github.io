@@ -1,12 +1,12 @@
 <template lang="ko">
   <div>
-    <NavMenu 
-      :isDark="isDark" 
-      @dark="toggleDark()"
-      @updateLoc="updateLoc()" 
+    <NavMenu
+    :isDark="isDark"
+    @dark="toggleDark()"
+    @updateLoc="updateLoc()"
     />
-    <router-view 
-      :loc="loc" 
+    <router-view
+    :loc="loc"
     />
     <Footer />
     <TotopButton />
@@ -19,7 +19,7 @@
   import TotopButton from '@/components/TotopBtn.vue'
 
   import { useDark, useToggle } from '@vueuse/core';
-  
+
   const Loc = window.location.href;
 
   export default {
