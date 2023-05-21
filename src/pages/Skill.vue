@@ -3,23 +3,23 @@
     <Title>스킬</Title>
 
     <div class="max-w-7xl mx-auto mt-8">
-      <div class="bg-white rounded-md border darkMode p-5 mb-8 last:mb-0">
+      <div class="bg-white rounded-md border darkMode p-5 mb-8">
 
-        <!-- 기존 ui
-        <div v-for="e in ProgressList" :key="e" class="w-full h-20">
-          <div class="w-full h-5 bg-[#e0e0de] rounded-[50px]">
-            <div class="h-full bg-slate-700 transition-[width] duration-1000 ease-in-out rounded-[50px] text-right relative mb-3 first:mt-10"
-              :style="{ width: `${e.progressBefore}%` }">
-              <p class="absolute -top-6 md:-top-7 left-1 text-sm md:text-lg">{{ e.skillList }}</p>
-              <span class="text-sm pr-2 relative -top-0.5">{{ e.progressBefore }}%</span>
-            </div>
-            <p class="text-sm md:text-base">{{ e.desc }}</p>
-          </div>
-        </div> -->
-
-        <div class="w-full">
-
-        </div>
+        <ul class="flex flex-col gap-3">
+          <li v-for="skill in skills" :key="skill" class="flex flex-col gap-5">
+              <h3 class="text-2xl text-[#42b983] border-b-2">{{ skill.type }}</h3>
+              <ul class="flex gap-10">
+                <li v-for="list in skill.list" :key="list"
+                  class="flex gap-1 p-2">
+                  <img v-if="list.img" :src="list.img" :alt="list.name" class="w-36">
+                  <div>
+                    <h4>{{ list.name }}</h4>
+                    <div>{{ list.desc }}</div>
+                  </div>
+                </li>
+              </ul>
+          </li>
+        </ul>
 
 
       </div>
@@ -37,48 +37,16 @@
     },
     data() {
       return {
-        // 배열로 하면 transition 안먹힘 (style 바인딩과 mount에 settime 함수 사용으로 진행바 차게 함)
-        ProgressList: [
-          {
-            skillList: "HTML",
-            progressBefore: 0,
-            progressAfter: 30,
-            desc: "웹표준을 준수하여, 마크업을 할 수 있다. ... "
-          },
-          {
-            skillList: "CSS",
-            progressBefore: 0,
-            progressAfter: 40,
-            desc: "웹표준을 준수하여, 마크업을 할 수 있다. ... "
-          },
-          {
-            skillList: "Javascript",
-            progressBefore: 0,
-            progressAfter: 50,
-            desc: "웹표준을 준수하여, 마크업을 할 수 있다. ... "
-          },
-          {
-            skillList: "Jquery",
-            progressBefore: 0,
-            progressAfter: 30,
-            desc: "웹표준을 준수하여, 마크업을 할 수 있다. ... "
-          },
-          {
-            skillList: "Vue",
-            progressBefore: 0,
-            progressAfter: 40,
-            desc: "웹표준을 준수하여, 마크업을 할 수 있다. ... "
-          }
+        skills: [
+          {type: 'Language', list: [{ name: 'Javascript', desc: '', img: '' }, { name: 'Typescript', desc: '', img: '' }]},
+          {type: 'Framework / Library', list: [{ name: 'Vue', desc: '', img: '' }, { name: 'Vue Router', desc: '', img: '' }, { name: 'tailwindcss', desc: '', img: '' }]},
+          {type: 'MarkUp', list: [{ name: 'HTML', desc: '', img: '' }, { name: 'CSS', desc: '', img: '' }]},
+          {type: 'Tools', list: [{ name: 'Git', desc: '', img: '' }, { name: 'Github', desc: '', img: '' }]},
         ]
       }
     },
     mounted() {
-      // 로딩시 또는 페이지 새로고침하면 퍼센트가 차기 위해서
-      this.ProgressList.forEach((e)=>{
-        setTimeout(() => {
-          e.progressBefore = e.progressAfter
-        }, 400);
-      })
+
     },
   }
 </script>
