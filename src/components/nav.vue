@@ -29,7 +29,7 @@
       <div class="basis-1/6 md:basis-1/12 hidden md:block">
         <ul class="flex justify-end">
           <li class="basis-full flex flex-col items-center justify-center">
-            <input type="checkbox" id="darkmode-toggle" :value="isDark" >
+            <input type="checkbox" id="darkmode-toggle">
             <label for="darkmode-toggle"  @click="$emit('dark')"></label>
           </li>
         </ul>
@@ -60,13 +60,13 @@
             <router-link :to="NavList[1][index]">{{ nav }}</router-link>
           </li>
         </ul>
+        <!-- 데스크탑과 모바일버전 동기화가 안되서 주석 처리
         <ul class="mt-2 flex gap-2">
           <li class="text-center cursor-pointer">
-            <font-awesome-icon :icon="isDark ? 'sun' : 'moon'" class="text-2xl" @click="$emit('dark')" />
-            <input type="checkbox" id="darkmode-toggle" :value="isDark" >
-            <label for="darkmode-toggle"  @click="$emit('dark')"></label>
+            <input type="checkbox" id="darkmode-toggle2">
+            <label for="darkmode-toggle2"  @click="$emit('dark')"></label>
           </li>
-        </ul>
+        </ul> -->
       </div>
 
 
@@ -85,7 +85,7 @@ export default {
     return {
       // 오른쪽 메뉴바
       isOpen: false,
-      NavList: [["프로필", "스킬", "작업", "연락"], ["/profile", "/skill", "/work", "/contact"], ["user", "code", "folder-open", "message"]],
+      NavList: [["프로필", "스킬", "작업", "연락/묻고답하기"], ["/profile", "/skill", "/work", "/contact"], ["user", "code", "folder-open", "message"]],
       focusOn: false,
       num: null,
     }
@@ -112,6 +112,11 @@ export default {
       highlight.style.setProperty('--y', y + 'px');
     },
   },
+  mounted() {
+    const darkInput = document.querySelector('#darkmode-toggle')
+    darkInput.checked = this.isDark
+  },
+
 }
 </script>
 
