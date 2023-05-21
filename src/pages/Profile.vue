@@ -7,14 +7,16 @@
           <img :src="require(`@/assets/images/profile.svg`)" alt="사진" class="rounded-full block mx-auto">
           <ul>
             <li class="pl-5 box-border pt-6">송우섭</li>
-            <li class="pl-5 box-border pt-6"><a href="mailto:ws71144612@daum.net">ws71144612@daum.net</a></li>
+            <li class="pl-5 box-border pt-7"><a href="https://github.com/poesoow">GitHub</a></li>
+            <li class="pl-5 box-border pt-3"><a href="https://velog.io/@ws71144612">velog</a></li>
+            <li class="pl-5 box-border pt-3"><a href="mailto:ws71144612@daum.net">ws71144612@daum.net</a></li>
           </ul>
         </div>
         <div class="basis-full md:basis-[67.5%] mt-8 md:mt-0">
 
 
           <div v-for="content in Contents" :key="content" class="bg-white rounded-md border darkMode p-5 mb-8 last:mb-0">
-            <h3 class="text-base md:text-xl mb-4 ">◆ {{ content.title }}</h3>
+            <h3 class="text-base md:text-xl mb-4">◆ <span class="text-[#42b983]">{{ content.title }}</span></h3>
             <div class="mb-2 last:mb-0 text-sm md:text-base font-light">
               <div class="mb-2" v-for="mind in content.mind" :key="mind">
                 <span class="font-bold">{{ mind.desc }}</span>
@@ -60,7 +62,7 @@
               },
               {
                 desc: '"Simple is best."',
-                desc2: "최대한 단순하게 작업하는 것을 좋아합니다."
+                desc2: "최대한 단순화 시키는 것을 좋아합니다."
               }
             ]
           },
@@ -94,6 +96,9 @@
               },
               {
                 item: "여행",
+              },
+              {
+                item: "학습",
               },
               {
                 item: "노을",
