@@ -1,6 +1,6 @@
 <template>
   <div class="w-full pt-12 mt-6 px-[2%] pb-8 ">
-    <Title title="Contact Me" />
+    <Title>Contact Me</Title>
 
     <div class="max-w-7xl mx-auto mt-8">
       <div class="bg-white rounded-md border darkMode p-5 mb-8 last:mb-0">

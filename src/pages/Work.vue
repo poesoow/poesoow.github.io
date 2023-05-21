@@ -1,7 +1,7 @@
 <template>
   <div class="w-full pt-12 mt-6 px-[2%] pb-8 ">
-    <Title title="작업" />
-    <div 
+    <Title>작업</Title>
+    <div
        v-if="loc.indexOf('work') !== -1"
       class="max-w-7xl mx-auto mt-8">
       <ul class="flex m-4 ml-0">
@@ -15,7 +15,7 @@
     </div>
     <div class="max-w-7xl mx-auto mt-8">
 
-      <!-- /home 에서 best만 
+      <!-- /home 에서 best만
         핵심은 app.vue 뿐 아니라 home.vue 에도 loc를 바인딩해주어야 함 + 클릭했을때 loc 값 최신화해주기 -->
       <div v-if="loc.indexOf('work') === -1">
         <h3>best</h3>
@@ -90,7 +90,7 @@ export default {
     loc: String
   },
   methods: {
-    
+
   },
   computed: {
     CateList() {

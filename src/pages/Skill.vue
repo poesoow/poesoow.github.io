@@ -1,13 +1,14 @@
 <template>
   <div class="w-full pt-12 mt-6 px-[2%] pb-8 ">
-    <Title title="스킬" />
+    <Title>스킬</Title>
+
     <div class="max-w-7xl mx-auto mt-8">
       <div class="bg-white rounded-md border darkMode p-5 mb-8 last:mb-0">
 
         <div v-for="e in ProgressList" :key="e" class="w-full h-20">
           <div class="w-full h-5 bg-[#e0e0de] rounded-[50px]">
             <!-- style 에 바인딩을 주어야 함 transition-[width]는 내가 넓이만 transition 주고 싶어서 추가 -->
-            <div class="h-full bg-slate-700 transition-[width] duration-1000 ease-in-out rounded-[50px] text-right relative mb-3 first:mt-10" 
+            <div class="h-full bg-slate-700 transition-[width] duration-1000 ease-in-out rounded-[50px] text-right relative mb-3 first:mt-10"
               :style="{ width: `${e.progressBefore}%` }">
               <p class="absolute -top-6 md:-top-7 left-1 text-sm md:text-lg">{{ e.skillList }}</p>
               <span class="text-sm pr-2 relative -top-0.5">{{ e.progressBefore }}%</span>
@@ -23,7 +24,7 @@
 
 <script>
   import Title from '@/components/Title.vue'
-  
+
   export default {
     name: "SkillPage",
     components: {
@@ -70,7 +71,7 @@
       // 로딩시 또는 페이지 새로고침하면 퍼센트가 차기 위해서
       this.ProgressList.forEach((e)=>{
         setTimeout(() => {
-          e.progressBefore = e.progressAfter    
+          e.progressBefore = e.progressAfter
         }, 400);
       })
     },

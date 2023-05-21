@@ -11,16 +11,16 @@
           </div>
         </router-link>
       </div>
-      
+
 
       <!-- 태블릿 이상 상단 네비영역 -->
       <div class="basis-3/4 hidden md:block">
         <ul class="flex justify-around">
-          <li 
+          <li
             @click="$emit('updateLoc'); menuClick(index)"
-            v-for="(nav, index) in NavList[0]" :key="nav" 
+            v-for="(nav, index) in NavList[0]" :key="nav"
             class="relative hover:text-[#42b983]">
-            <router-link :class="(focusOn && num===index) && 'fcsOnCls'" class="fcsOffCls" :to="NavList[1][index]">{{ nav }}</router-link>
+            <router-link :class="(focusOn && num===index) && 'fcsOnCls'" class="fcsOffCls h-full block" :to="NavList[1][index]">{{ nav }}</router-link>
           </li>
         </ul>
       </div>
@@ -79,11 +79,11 @@
 export default {
   name: "NavPage",
   components: {
-    
+
   },
   data() {
     return {
-      // 오른쪽 메뉴바 
+      // 오른쪽 메뉴바
       isOpen: false,
       NavList: [["프로필", "스킬", "작업", "연락"], ["/profile", "/skill", "/work", "/contact"], ["user", "code", "folder-open", "message"]],
       focusOn: false,
@@ -155,7 +155,7 @@ label {
   background: #ebebeb;
   border-radius: 200px;
   box-shadow: inset 0px 5px 15px rgba(0,0,0, 0.4),  inset 0px -5px 15px rgba(255,255,255, 0.4);
-  cursor: pointer; 
+  cursor: pointer;
   transition: 0.3s;
 }
 

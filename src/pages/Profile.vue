@@ -1,6 +1,6 @@
 <template>
   <div class="w-full pt-12 mt-6 px-[2%] pb-8 ">
-    <Title title="프로필" />
+    <Title>프로필</Title>
     <div class="max-w-7xl mx-auto">
       <div class="h-auto flex overflow-hidden mt-8 flex-wrap justify-between">
         <div class="basis-full md:basis-[30%] py-12 px-4 bg-white rounded-md darkMode text-center border">
