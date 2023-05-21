@@ -1,16 +1,17 @@
 <template>
   <div>
     <div ref="section-0">
-      <div 
-        class="w-full bg-cover bg-center bg-no-repeat" 
+      <div
+        class="w-full bg-cover bg-center bg-no-repeat"
         :style="visual > 1400 ? { 'background-image': 'url(' + require('@/assets/images/visual_desk.jpg') + ')' } : { 'background-image': 'url(' + require('@/assets/images/visual_mobile.jpg') + ')' }">
         <div class="max-w-7xl mx-auto">
           <div class="flex flex-wrap items-center h-[103vh]">
             <div class="basis-full md:basis-full text-center py-3">
-              <p 
-                class="text-green-600 hover:text-green-500 text-2xl lg:text-4xl font-medium lg:font-semibold mb-5 lg:leading-normal leading-snug dark:[text-#d9d9d9]">
-                 "안녕하세요.<br>프론트엔드 개발자<br>송우섭 입니다."
+              <p
+                class="text-white text-4xl lg:text-5xl font-medium lg:font-semibold mb-5 lg:leading-normal leading-snug dark:[text-#d9d9d9]">
+                안녕하세요.<br>프론트엔드 개발자<br>송우섭 입니다.
               </p>
+
             </div>
           </div>
         </div>
@@ -18,10 +19,10 @@
     </div>
     <div ref="section-1">
       <Profile />
-    </div> 
+    </div>
     <div ref="section-2">
       <Skill />
-    </div> 
+    </div>
     <div ref="section-3">
       <Work :loc="loc" />
     </div>
@@ -30,7 +31,7 @@
     </div>
 
     <div class="fixed top-40 right-3 hidden xl:block dark:text-[#d9d9d9] dark:bg-[#333]">
-     
+
       <!-- 실험 -->
       <div class="container text-xl">
         <label><input @click="SectionMove('section-0')" type="radio" name="e" checked class="watchingForJs"><div>&lt;Yapdiv /&gt;</div></label>
@@ -71,7 +72,7 @@
       }
     },
     methods: {
-      // 오른쪽 스크롤 이벤트 때문에 수정      
+      // 오른쪽 스크롤 이벤트 때문에 수정
       SectionMove(index) {
         this.MenuIndex = index;
         const rect = this.ArrayList[this.MenuIndex].getBoundingClientRect();
@@ -92,9 +93,9 @@
         const sec3_bottom = this.ArrayList['section-3'].getBoundingClientRect().bottom;
         const sec4_bottom = this.ArrayList['section-4'].getBoundingClientRect().bottom;
 
-        
+
         const watchs = document.querySelectorAll('.watchingForJs')
-  
+
 
           if(Math.floor(sec0_bottom) - 100 >= 0){
             watchs[0].checked = true;
@@ -118,7 +119,7 @@
       this.visual = visualViewport.width
       window.addEventListener('resize', this.handleResize);
       // 새로고침한 경우를 위해서 함수 사용 Event 전 추가
-      this.watching      
+      this.watching
       window.addEventListener('scroll', this.watching)
 
     },
@@ -136,7 +137,7 @@
     --s: 1em;     /* control the size */
     --g: 16px;    /* the gap */
     --c: #009688; /* the active color */
-    
+
     display: grid;
     grid-auto-rows: 1fr;
     gap: var(--g);
