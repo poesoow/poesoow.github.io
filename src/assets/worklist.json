@@ -8,22 +8,16 @@
       "#깔끔한",
       "#taliwind"
     ],
-    "color": [
-      "blue",
-      "green"
-    ],
-    "font": "Noto sans KR",
     "tools": [
       "PS",
       "AI"
     ],
     "date": "10일(기획1일/구상1일/제작8일)",
+    "date2": "2023.00.00 ~ 2023.00.00",
     "contribution": "100%",
     "type": "Webapp",
-    "progress": "https://via.placeholder.com/1200x5000",
-    "original": "https://www.naver.com",
-    "redesign": "https://www.kakao.com",
-    "best": "false"
+    "best": false,
+    "responsive": false
   },
   {
     "img": "https://via.placeholder.com/500",
@@ -34,23 +28,16 @@
       "#깔끔한",
       "#taliwind"
     ],
-    "color": [
-      "blue",
-      "pink"
-    ],
-    "font": "Noto sans KR",
     "tools": [
       "PS",
-      "",
       "VSCODE"
     ],
     "date": "10일(기획1일/구상1일/제작8일)",
+    "date2": "2023.00.00 ~ 2023.00.00",
     "contribution": "100%",
     "type": "Publishing",
-    "progress": "https://via.placeholder.com/1200x5000",
-    "original": "",
-    "redesign": "",
-    "best": "true"
+    "best": true,
+    "responsive": true
   },
   {
     "img": "https://via.placeholder.com/500",
@@ -61,24 +48,17 @@
       "#깔끔한",
       "#taliwind"
     ],
-    "color": [
-      "",
-      "green",
-      "pink"
-    ],
-    "font": "Noto sans KR",
     "tools": [
       "",
       "AI",
       "VSCODE"
     ],
     "date": "10일(기획1일/구상1일/제작8일)",
+    "date2": "2023.00.00 ~ 2023.00.00",
     "contribution": "100%",
     "type": "Webapp",
-    "progress": "https://via.placeholder.com/1200x5000",
-    "original": "",
-    "redesign": "https://www.kakao.com",
-    "best": "true"
+    "best": true,
+    "responsive": false
   },
   {
     "img": "https://via.placeholder.com/500",
@@ -89,24 +69,17 @@
       "#깔끔한",
       "#taliwind"
     ],
-    "color": [
-      "blue",
-      "green",
-      "pink"
-    ],
-    "font": "Noto sans KR",
     "tools": [
       "PS",
       "AI",
       "VSCODE"
     ],
     "date": "10일(기획1일/구상1일/제작8일)",
+    "date2": "2023.00.00 ~ 2023.00.00",
     "contribution": "100%",
     "type": "Publishing",
-    "progress": "https://via.placeholder.com/1200x5000",
-    "original": "https://www.naver.com",
-    "redesign": "",
-    "best": ""
+    "best": "",
+    "responsive": false
   },
   {
     "img": "https://via.placeholder.com/500",
@@ -117,24 +90,17 @@
       "#깔끔한",
       "#taliwind"
     ],
-    "color": [
-      "blue",
-      "green",
-      "pink"
-    ],
-    "font": "Noto sans KR",
     "tools": [
       "PS",
       "",
       ""
     ],
     "date": "10일(기획1일/구상1일/제작8일)",
+    "date2": "2023.00.00 ~ 2023.00.00",
     "contribution": "100%",
     "type": "Webapp",
-    "progress": "",
-    "original": "https://www.naver.com",
-    "redesign": "https://www.kakao.com",
-    "best": ""
+    "best": "",
+    "responsive": false
   },
   {
     "img": "https://via.placeholder.com/500",
@@ -145,24 +111,17 @@
       "#깔끔한",
       "#taliwind"
     ],
-    "color": [
-      "blue",
-      "",
-      "pink"
-    ],
-    "font": "Noto sans KR",
     "tools": [
       "",
       "AI",
       "VSCODE"
     ],
     "date": "10일(기획1일/구상1일/제작8일)",
+    "date2": "2023.00.00 ~ 2023.00.00",
     "contribution": "100%",
     "type": "Publishing",
-    "progress": "https://via.placeholder.com/1200x5000",
-    "original": "https://www.naver.com",
-    "redesign": "https://www.kakao.com",
-    "best": ""
+    "best": "",
+    "responsive": false
   },
   {
     "img": "https://via.placeholder.com/500",
@@ -173,23 +132,16 @@
       "#깔끔한",
       "#taliwind"
     ],
-    "color": [
-      "blue",
-      "green",
-      ""
-    ],
-    "font": "Noto sans KR",
     "tools": [
       "PS",
       "AI",
       "VSCODE"
     ],
     "date": "10일(기획1일/구상1일/제작8일)",
+    "date2": "2023.00.00 ~ 2023.00.00",
     "contribution": "100%",
     "type": "Webapp",
-    "progress": "https://via.placeholder.com/1200x5000",
-    "original": "https://www.naver.com",
-    "redesign": "",
-    "best": "false"
+    "best": false,
+    "responsive": false
   }
 ]

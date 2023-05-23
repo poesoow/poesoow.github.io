@@ -21,9 +21,16 @@
         <h3>best</h3>
         <div v-for="e in BestItem" :key="e" class="bg-white mb-8 pt-12 px-8 pb-16 rounded-md flex border flex-wrap darkMode group">
           <div class="basis-[48%] relative group-even:order-1 xl:group-even:order-2 mokup-img">
-            <div v-for="e in 3" :key="e">
-              <img class="w-full" :src="require(`@/assets/images/mokup-${e}.png`)" alt="mokup" />
-            </div>
+            <template v-if="e.responsive" >
+              <div v-for="e in 3" :key="e">
+                <img class="w-full" :src="require(`@/assets/images/mokup-${e}.png`)" alt="mokup" />
+              </div>
+            </template>
+            <template v-else>
+              <div>
+                <img :src="require(`@/assets/images/mokup-1.png`)" alt="mokup">
+              </div>
+            </template>
           </div>
           <div class="basis-full md:basis-[52%] pt-10  group-even:order-2 xl:group-even:order-1">
             <h3 class="text-2xl font-bold py-[10px] lg:pl-[50px]"> {{ e.descTitle }}</h3>
@@ -47,24 +54,30 @@
         <h3>all</h3>
         <div v-for="e in CateItem" :key="e" class="bg-white mb-8 pt-12 px-8 pb-16 rounded-md flex border flex-wrap darkMode group">
           <div class="basis-[48%] relative group-even:order-1 xl:group-even:order-2 mokup-img">
-            <div v-for="e in 3" :key="e">
-              <img class="w-full" :src="require(`@/assets/images/mokup-${e}.png`)" alt="mokup" />
-            </div>
+            <template v-if="e.responsive" >
+              <div v-for="e in 3" :key="e">
+                <img class="w-full" :src="require(`@/assets/images/mokup-${e}.png`)" alt="mokup" />
+              </div>
+            </template>
+            <template v-else>
+              <div>
+                <img :src="require(`@/assets/images/mokup-1.png`)" alt="mokup">
+              </div>
+            </template>
           </div>
           <div class="basis-full md:basis-[52%] pt-10  group-even:order-2 xl:group-even:order-1">
             <h3 class="text-2xl font-bold py-[10px] lg:pl-[50px]"> {{ e.descTitle }}</h3>
             <p class="text-base pt-[10px] lg:pl-[50px]">{{ e.desc }}</p>
             <p class="text-base pt-[10px] lg:pl-[50px]">키워드 : <span v-for="el in e.keyword" :key="el" class="mr-2">{{ el }}</span></p>
-            <p class="text-base pt-[10px] lg:pl-[50px]">컬러 : <span v-for="el in e.color" :key="el" :class="el === '' && 'hidden'" class="w-max h-5 inline-block align-middle mr-2 text-sm text-center" :style="{backgroundColor: `${el}`}">{{ el }}</span></p>
-            <p class="text-base pt-[10px] lg:pl-[50px]">폰트 : {{ e.font }}</p>
             <p class="text-base pt-[10px] lg:pl-[50px]">사용툴 : <span v-for="el in e.tools" :key="el" class="mr-2 align-middle">{{ el }}</span></p>
             <p class="text-base pt-[10px] lg:pl-[50px]">작업기간 : {{ e.date }}</p>
             <p class="text-base pt-[10px] lg:pl-[50px]">기여도 : {{ e.contribution }}</p>
-            <ul class="flex justify-center mt-6">
-              <li :class="e.progress === '' && 'hidden'"><a :href="e.progress" class="py-1 px-8 border rounded-md darkMode text-sm">progress</a></li>
-              <li v-if="e.original" class="mx-4"><a :href="e.original" target="_blank" class="py-1 px-8 border rounded-md darkMode text-sm">original</a></li>
-              <li v-if="e.original" ><a :href="e.redesign" target="_blank" class="py-1 px-8 border rounded-md darkMode text-sm">redesign</a></li>
-            </ul>
+            <p class="text-base pt-[10px] lg:pl-[50px]">
+              <ul>
+                <li>링크 : {{ e.link }}</li>
+                <li v-if="e.type == 'Publishing'">링크 : {{ e.originlink }}</li>
+              </ul> 
+            </p>
           </div>
         </div>
       </div>
@@ -113,7 +126,7 @@ export default {
     },
     BestItem() {
       return this.WorkList.filter((data) => {
-        if (data.best !== 'true') {
+        if (data.best !== true) {
           return data.best === this.WorkList.best
         } else {
           return data.best
@@ -126,7 +139,7 @@ export default {
 </script>
 
 <style>
-.mokup-img > div{position: absolute; overflow: hidden; bottom: 0;}
+.mokup-img > div{position: absolute; overflow: hidden; bottom: -35px;}
 /* 목업 pc버전 */
 .mokup-img > div:nth-child(1){width: 85%; left: 50%; transform: translateX(-50%);}
 .mokup-img > div:nth-child(1)::after{content: ''; position: absolute; width: 92%; height: 63%; background: url("../assets/images/preview.jpg") center top no-repeat; left: 19px; top: 20px; background-size: cover; transition: 5s;}
