@@ -1,5 +1,44 @@
 <template>
+  <div v-if="latestItem">
+    <h3>가장 최근 작업</h3>
+    <div class="bg-white mb-8 pt-5 px-8 pb-5 rounded-md flex border flex-wrap darkMode group">
+      <div class="basis-[50%] relative group-even:order-1 xl:group-even:order-2 mokup-img">
+        <div class="border h-full">
+          <div class="w-full h-full"></div>
+        </div>
+      </div>
+      <div class="basis-full md:basis-[50%] pt-4  group-even:order-2 xl:group-even:order-1 xl:group-even:text-right lg:px-[50px] text-base">
+        <h3 class="text-2xl font-bold"> {{ latestItem.title }} / {{ latestItem.orderDate }}</h3>
+        <p class="pt-[10px]">{{ latestItem.desc }}</p>
+        <p class="pt-[10px]">
+          주요특징
+          <ul>
+            <li v-for="feature in latestItem.features" :key="feature">{{ feature }}</li>
+          </ul>
+        </p>
+        <p class="pt-[10px]">사용툴 : <span v-for="tool in latestItem.tools" :key="tool" class="mr-2">{{ tool }}</span></p>
+        <p class="pt-[10px]">
+          <span>작업기간 : {{ latestItem.date }} </span> <span>{{ latestItem.date2 }}</span>
+        </p>
+        <template v-if="latestItem.workers.team">
+          <div class="pt-[10px]">
+            팀원 :
+            <span v-for="member in latestItem.workers.members" :key="member" class="mr-2">
+              <a :href="member.link">{{ member.name }}</a>
+            </span>
+          </div>
+        </template>
+        <p class="pt-[10px]">
+          <ul class="flex gap-2 justify-end">
+            <li><a :href="latestItem.link">보러가기</a></li>
+            <li v-if="latestItem.type == 'Publishing'" class="before:content-[111]"><a :href="latestItem.originlink">대상</a></li>
+          </ul>
+        </p>
+      </div>
+    </div>
+  </div>
   <div>
+    <div>BEST 작업</div>
     <div v-for="item in workItems" :key="item" class="bg-white mb-8 pt-5 px-8 pb-5 rounded-md flex border flex-wrap darkMode group">
       <div class="basis-[50%] relative group-even:order-1 xl:group-even:order-2 mokup-img">
         <div class="border h-full">
@@ -42,7 +81,8 @@
   export default {
     name: 'WorkItem',
     props: {
-      workItems: Object
+      workItems: Object,
+      latestItem: Object
     }
   }
 </script>

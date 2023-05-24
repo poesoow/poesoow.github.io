@@ -4,7 +4,7 @@ const routes = [
   {
     path: "/",
     name: "MainHome",
-    component: ()=> import('@/pages/Home')
+    component: () => import('@/pages/Home')
   },
   {
     path: "/profile",
@@ -58,14 +58,9 @@ const routes = [
     path: "/404",
     component: () => import('@/pages/NotPage')
   },
-  {
-    path: '/test',
-    name: 'WorkItem',
-    component: () => import('@/components/Work/WorkItem')
-  },
 ]
 
-const router = createRouter ({
+const router = createRouter({
   history: createWebHistory(),
   routes
 })

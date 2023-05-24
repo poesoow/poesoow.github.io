@@ -24,9 +24,9 @@
     </div>
     <div class="max-w-7xl mx-auto mt-8">
       <!-- /home 에서 best만 -->
-      <WorkItem v-if="loc.indexOf('work') === -1" :workItems="BestItems" />
+      <WorkItems v-if="loc.indexOf('work') === -1" :workItems="BestandLatestItems.BEST" :latestItem="BestandLatestItems.LATEST" />
       <!-- /work 주소에서 모든 worklist -->
-      <WorkItem v-else :workItems="CateItems" />
+      <WorkItems v-else :workItems="CateItems" />
     </div>
   </div>
 </template>
@@ -34,7 +34,7 @@
 <script>
 import worklist from '@/assets/worklist.json'
 import Title from '@/components/Title.vue'
-import WorkItem from '@/components/Work/WorkItem.vue'
+import WorkItems from '@/components/Work/WorkItems.vue'
 
 export default {
   name: "PortfolioPage",
@@ -45,7 +45,7 @@ export default {
     }
   },
   components: {
-    Title, WorkItem
+    Title, WorkItems
   },
   props: {
     loc: String
@@ -74,6 +74,17 @@ export default {
     },
     BestItems() {
       return this.WorkList.filter((data) => data.best)
+    },
+    BestandLatestItems() {
+
+      const latestItem = this.WorkList.filter(()=>true).sort((prev, next) => next.orderDate - prev.orderDate).shift()
+      const bestItems = this.WorkList.reduce((acc, work) => {
+        if(work.best){
+          acc = [...acc ,work]
+        }
+        return acc
+      }, [])
+      return {BEST: bestItems, LATEST: latestItem }
     }
   },
 
