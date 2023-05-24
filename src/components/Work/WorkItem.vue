@@ -1,29 +1,36 @@
 <template>
-  <div class="mt-32 basis-[50%] relative group-even:order-1 xl:group-even:order-2 mokup-img">
-    <div class="border h-full">
-      <div class="w-full h-full">ddd</div>
+  <div>
+    <div v-for="e in CateItem" :key="e" class="bg-white mb-8 pt-5 px-8 pb-5 rounded-md flex border flex-wrap darkMode group">
+      <div class="basis-[50%] relative group-even:order-1 xl:group-even:order-2 mokup-img">
+        <div class="border h-full">
+          <div class="w-full h-full"></div>
+        </div>
+      </div>
+      <div class="basis-full md:basis-[50%] pt-4  group-even:order-2 xl:group-even:order-1 xl:group-even:text-right lg:px-[50px] text-base">
+        <h3 class="text-2xl font-bold"> {{ e.descTitle }}</h3>
+        <p class="pt-[10px]">{{ e.desc }}</p>
+        <p class="pt-[10px]">키워드 : <span v-for="el in e.keyword" :key="el" class="mr-2">{{ el }}</span></p>
+        <p class="pt-[10px]">사용툴 : <span v-for="el in e.tools" :key="el" class="mr-2 align-middle">{{ el }}</span></p>
+        <p class="pt-[10px]">
+          <span>작업기간 : {{ e.date }} </span> <span>{{ e.date2 }}</span>
+        </p>
+        <p class="pt-[10px]">
+          <ul>
+            <li>사이트 : {{ e.link }}</li>
+            <li v-if="e.type == 'Publishing'">original 사이트 : {{ e.originlink }}</li>
+          </ul> 
+        </p>
+      </div>
     </div>
-  </div>
-  <div class="basis-full md:basis-[50%] pt-4  group-even:order-2 xl:group-even:order-1 xl:group-even:text-right lg:px-[50px] text-base">
-    <h3 class="text-2xl font-bold">타이틀</h3>
-    <p class="pt-[10px]">설명</p>
-    <p class="pt-[10px]">키워드 : <span v-for="el in 5" :key="el" class="mr-2">키워드{{ el }} </span></p>
-    <p class="pt-[10px]">사용툴 : <span v-for="el in 5" :key="el" class="mr-2 align-middle">사용툴{{ el }}</span></p>
-    <p class="pt-[10px]">
-      <span>작업기간 : 23.05.00 ~ 23.05.01 </span> <span>5일</span>
-    </p>
-    <p class="pt-[10px]">
-      <ul>
-        <li>사이트 : 링크</li>
-        <li v-if="true">original 사이트 : 오리지널 링크</li>
-      </ul> 
-    </p>
   </div>
 </template>
 
 <script>
   export default {
     name: 'WorkItem',
+    props: {
+      CateItem: Object
+    }
   }
 </script>
 
