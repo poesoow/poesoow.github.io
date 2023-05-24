@@ -1,11 +1,10 @@
 <template>
   <div class="basis-[50%] relative group-even:order-1 xl:group-even:order-2 mokup-img">
-    {{ item }}
     <div class="border h-full">
       <div class="w-full h-full"></div>
     </div>
   </div>
-  <!-- <div class="basis-full md:basis-[50%] pt-4  group-even:order-2 xl:group-even:order-1 xl:group-even:text-right lg:px-[50px] text-base">
+  <div class="basis-full md:basis-[50%] pt-4  group-even:order-2 xl:group-even:order-1 xl:group-even:text-right lg:px-[50px] text-base">
     <h3 class="text-2xl font-bold"> {{ item.title }} / {{ item.orderDate }}</h3>
     <p class="pt-[10px]">{{ item.desc }}</p>
     <p class="pt-[10px]">
@@ -32,7 +31,7 @@
         <li v-if="item.type == 'Publishing'" class="before:content-[111]"><a :href="item.originlink">대상</a></li>
       </ul>
     </p>
-  </div> -->
+  </div>
 </template>
 
 <script>

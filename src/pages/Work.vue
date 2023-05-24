@@ -2,6 +2,7 @@
   <div class="w-full pt-12 mt-6 px-[2%] pb-8 ">
     <Title>작업</Title>
 
+    <!-- /work 에서 -->
     <div v-if="loc.indexOf('work') !== -1" class="flex justify-between max-w-7xl mx-auto mt-8">
       <div
         class="max-w-7xl">
@@ -22,9 +23,26 @@
         </label>
       </div>
     </div>
+
+    <!-- 홈 화면에서 -->
+    <div v-else class="flex justify-between max-w-7xl mx-auto mt-8">
+      <div
+        class="max-w-7xl">
+        <ul class="flex ml-0">
+          <li class="mr-4 border darkMode bg-white rounded-md">
+            <button class="py-2 px-5" @click="CateName2 = 'BEST'" :class="CateName2 === 'BEST' && 'font-bold text-[#42b983]'">BEST</button>
+          </li>
+          <li class="mr-4 border darkMode bg-white rounded-md">
+            <button class="py-2 px-5" @click="CateName2 = 'LATEST'" :class="CateName2 === 'LATEST' && 'font-bold text-[#42b983]'">LATEST</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+
     <div class="max-w-7xl mx-auto mt-8">
       <!-- /home 에서 best만 -->
-      <WorkItems v-if="loc.indexOf('work') === -1" :workItems="BestandLatestItems.BEST" :latestItem="BestandLatestItems.LATEST" />
+      <WorkItems v-if="loc.indexOf('work') === -1" :workItems="BestandLatestItems.BEST" :latestItem="BestandLatestItems.LATEST" :CateName2="CateName2" />
       <!-- /work 주소에서 모든 worklist -->
       <WorkItems v-else :workItems="CateItems" />
     </div>
@@ -41,6 +59,7 @@ export default {
   data() {
     return {
       CateName: "전체",
+      CateName2: "BEST",
       WorkList: worklist,
     }
   },
