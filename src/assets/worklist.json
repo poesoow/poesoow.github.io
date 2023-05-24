@@ -14,10 +14,19 @@
     ],
     "date": "10일(기획1일/구상1일/제작8일)",
     "date2": "2023.00.00 ~ 2023.00.00",
-    "contribution": "100%",
     "type": "Webapp",
     "best": false,
-    "responsive": false
+    "responsive": false,
+    "workers": {
+      "team": false,
+      "members": [
+        "송우섭"
+      ],
+      "contribution": "100%",
+      "memberlink": [
+        "/"
+      ]
+    }
   },
   {
     "img": "https://via.placeholder.com/500",
@@ -34,10 +43,19 @@
     ],
     "date": "10일(기획1일/구상1일/제작8일)",
     "date2": "2023.00.00 ~ 2023.00.00",
-    "contribution": "100%",
     "type": "Publishing",
     "best": true,
-    "responsive": true
+    "responsive": true,
+    "workers": {
+      "team": true,
+      "members": [
+        "송우섭", "팀원1", "팀원2"
+      ],
+      "contribution": "30%",
+      "memberlink": [
+        "/", "/", "/"
+      ]
+    }
   },
   {
     "img": "https://via.placeholder.com/500",
@@ -55,10 +73,19 @@
     ],
     "date": "10일(기획1일/구상1일/제작8일)",
     "date2": "2023.00.00 ~ 2023.00.00",
-    "contribution": "100%",
     "type": "Webapp",
     "best": true,
-    "responsive": false
+    "responsive": false,
+    "workers": {
+      "team": false,
+      "members": [
+        "송우섭"
+      ],
+      "contribution": "100%",
+      "memberlink": [
+        "/"
+      ]
+    }
   },
   {
     "img": "https://via.placeholder.com/500",
@@ -76,10 +103,19 @@
     ],
     "date": "10일(기획1일/구상1일/제작8일)",
     "date2": "2023.00.00 ~ 2023.00.00",
-    "contribution": "100%",
     "type": "Publishing",
     "best": "",
-    "responsive": false
+    "responsive": false,
+    "workers": {
+      "team": false,
+      "members": [
+        "송우섭"
+      ],
+      "contribution": "100%",
+      "memberlink": [
+        "/"
+      ]
+    }
   },
   {
     "img": "https://via.placeholder.com/500",
@@ -97,10 +133,19 @@
     ],
     "date": "10일(기획1일/구상1일/제작8일)",
     "date2": "2023.00.00 ~ 2023.00.00",
-    "contribution": "100%",
     "type": "Webapp",
     "best": "",
-    "responsive": false
+    "responsive": false,
+    "workers": {
+      "team": false,
+      "members": [
+        "송우섭"
+      ],
+      "contribution": "100%",
+      "memberlink": [
+        "/"
+      ]
+    }
   },
   {
     "img": "https://via.placeholder.com/500",
@@ -118,10 +163,19 @@
     ],
     "date": "10일(기획1일/구상1일/제작8일)",
     "date2": "2023.00.00 ~ 2023.00.00",
-    "contribution": "100%",
     "type": "Publishing",
     "best": "",
-    "responsive": false
+    "responsive": false,
+    "workers": {
+      "team": false,
+      "members": [
+        "송우섭"
+      ],
+      "contribution": "100%",
+      "memberlink": [
+        "/"
+      ]
+    }
   },
   {
     "img": "https://via.placeholder.com/500",
@@ -139,9 +193,18 @@
     ],
     "date": "10일(기획1일/구상1일/제작8일)",
     "date2": "2023.00.00 ~ 2023.00.00",
-    "contribution": "100%",
     "type": "Webapp",
     "best": false,
-    "responsive": false
+    "responsive": false,
+    "workers": {
+      "team": false,
+      "members": [
+        "송우섭"
+      ],
+      "contribution": "100%",
+      "memberlink": [
+        "/"
+      ]
+    }
   }
 ]

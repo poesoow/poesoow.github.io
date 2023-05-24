@@ -57,7 +57,12 @@ const routes = [
   {
     path: "/404",
     component: () => import('@/pages/NotPage')
-  }
+  },
+  {
+    path: '/test',
+    name: 'WorkItem',
+    component: () => import('@/components/Work/WorkItem')
+  },
 ]
 
 const router = createRouter ({

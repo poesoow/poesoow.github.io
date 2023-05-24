@@ -1,57 +1,59 @@
 <template>
   <div class="w-full pt-12 mt-6 px-[2%] pb-8 ">
     <Title>작업</Title>
-    <div
-       v-if="loc.indexOf('work') !== -1"
-      class="max-w-7xl mx-auto mt-8">
-      <ul class="flex m-4 ml-0">
-        <li class="mr-4 border darkMode bg-white rounded-md">
-          <button class="py-2 px-5" @click="CateName = '전체'" :class="CateName === '전체' && 'font-bold text-[#42b983]'">전체</button>
-        </li>
-        <li v-for="e in CateList" :key="e" class="mr-4 border darkMode bg-white rounded-md">
-          <button class="py-2 px-5" @click="CateName = e.type" :class="CateName === e.type && 'font-bold text-[#42b983] underline'">{{ e.type }}</button>
-        </li>
-      </ul>
+
+    <div class="flex justify-between max-w-7xl mx-auto mt-8">
+      <div
+         v-if="loc.indexOf('work') !== -1"
+        class="max-w-7xl">
+        <ul class="flex ml-0">
+          <li class="mr-4 border darkMode bg-white rounded-md">
+            <button class="py-2 px-5" @click="CateName = '전체'" :class="CateName === '전체' && 'font-bold text-[#42b983]'">전체</button>
+          </li>
+          <li v-for="e in CateList" :key="e" class="mr-4 border darkMode bg-white rounded-md">
+            <button class="py-2 px-5" @click="CateName = e.type" :class="CateName === e.type && 'font-bold text-[#42b983] underline'">{{ e.type }}</button>
+          </li>
+        </ul>
+      </div>
+      <div class="mr-0 border rounded-md bg-white">
+        <label class="relative rounded-md bo h-full">
+          <input type="text" class="h-full px-4 rounded-md">
+            <font-awesome-icon icon="magnifying-glass" class="cursor-pointer absolute top-0 right-4" />
+          </label>
+      </div>
     </div>
+
+
     <div class="max-w-7xl mx-auto mt-8">
 
       <!-- /home 에서 best만
         핵심은 app.vue 뿐 아니라 home.vue 에도 loc를 바인딩해주어야 함 + 클릭했을때 loc 값 최신화해주기 -->
       <div v-if="loc.indexOf('work') === -1">
-        <h3>best</h3>
-        <div v-for="e in BestItem" :key="e" class="bg-white mb-8 pt-12 px-8 pb-16 rounded-md flex border flex-wrap darkMode group">
-          <div class="basis-[48%] relative group-even:order-1 xl:group-even:order-2 mokup-img">
-            <template v-if="e.responsive" >
-              <div v-for="e in 3" :key="e">
-                <img class="w-full" :src="require(`@/assets/images/mokup-${e}.png`)" alt="mokup" />
+        <div v-for="e in BestItem" :key="e" class="bg-white mb-8 pt-5 px-8 pb-5 rounded-md flex border flex-wrap darkMode group">
+            <div class="basis-[50%] relative group-even:order-1 xl:group-even:order-2 mokup-img">
+              <div class="border h-full">
+                <div class="w-full h-full"></div>
               </div>
-            </template>
-            <template v-else>
-              <div>
-                <img :src="require(`@/assets/images/mokup-1.png`)" alt="mokup">
-              </div>
-            </template>
+            </div>
+            <div class="basis-full md:basis-[50%] pt-4  group-even:order-2 xl:group-even:order-1 xl:group-even:text-right lg:px-[50px] text-base">
+              <h3 class="text-2xl font-bold"> {{ e.descTitle }}</h3>
+              <p class="pt-[10px]">{{ e.desc }}</p>
+              <p class="pt-[10px]">키워드 : <span v-for="el in e.keyword" :key="el" class="mr-2">{{ el }}</span></p>
+              <p class="pt-[10px]">사용툴 : <span v-for="el in e.tools" :key="el" class="mr-2 align-middle">{{ el }}</span></p>
+              <p class="pt-[10px]">
+                <span>작업기간 : {{ e.date }} </span> <span>{{ e.date2 }}</span>
+              </p>
+              <p class="pt-[10px]">
+                <ul>
+                  <li>사이트 : {{ e.link }}</li>
+                  <li v-if="e.type == 'Publishing'">original 사이트 : {{ e.originlink }}</li>
+                </ul> 
+              </p>
+            </div>
           </div>
-          <div class="basis-full md:basis-[52%] pt-10  group-even:order-2 xl:group-even:order-1">
-            <h3 class="text-2xl font-bold py-[10px] lg:pl-[50px]"> {{ e.descTitle }}</h3>
-            <p class="text-base pt-[10px] lg:pl-[50px]">{{ e.desc }}</p>
-            <p class="text-base pt-[10px] lg:pl-[50px]">키워드 : <span v-for="el in e.keyword" :key="el" class="mr-2">{{ el }}</span></p>
-            <p class="text-base pt-[10px] lg:pl-[50px]">컬러 : <span v-for="el in e.color" :key="el" :class="el === '' && 'hidden'" class="w-max h-5 inline-block align-middle mr-2 text-sm text-center" :style="{ backgroundColor: `${el}` }">{{ el }}</span></p>
-            <p class="text-base pt-[10px] lg:pl-[50px]">폰트 : {{ e.font }}</p>
-            <p class="text-base pt-[10px] lg:pl-[50px]">사용툴 : <span v-for="el in e.tools" :key="el" class="mr-2 align-middle">{{ el }}</span></p>
-            <p class="text-base pt-[10px] lg:pl-[50px]">작업기간 : {{ e.date }}</p>
-            <p class="text-base pt-[10px] lg:pl-[50px]">기여도 : {{ e.contribution }}</p>
-            <ul class="flex justify-center mt-6">
-              <li :class="e.progress === '' && 'hidden'"><a :href="e.progress" class="py-1 px-8 border rounded-md darkMode text-sm">progress</a></li>
-              <li v-if="e.original" class="mx-4"><a :href="e.original" target="_blank" class="py-1 px-8 border rounded-md darkMode text-sm">original</a></li>
-              <li v-if="e.original" ><a :href="e.redesign" target="_blank" class="py-1 px-8 border rounded-md darkMode text-sm">redesign</a></li>
-            </ul>
-          </div>
-        </div>
       </div>
       <!-- /portfolio 주소에서 모든 worklist -->
       <div v-else>
-        <h3>all</h3>
         <div v-for="e in CateItem" :key="e" class="bg-white mb-8 pt-5 px-8 pb-5 rounded-md flex border flex-wrap darkMode group">
           <div class="basis-[50%] relative group-even:order-1 xl:group-even:order-2 mokup-img">
             <div class="border h-full">
