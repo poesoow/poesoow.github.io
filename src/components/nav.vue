@@ -7,7 +7,7 @@
       <div @click="$emit('updateLoc'); focusOn = false; num = null">
         <router-link to="/">
           <div @mousemove="shine" class="text-2xl h-12 leading-[48px] logo highlight">
-            &lt;Yapdiv /&gt;
+            WooSeop
           </div>
         </router-link>
       </div>
@@ -50,23 +50,17 @@
         <div class="text-center mt-6">
            <router-link to="/">
             <div @mousemove="shine" class="text-xl leading-[48px] logo">
-              &lt;Yapdiv /&gt;
+              WooSeop
             </div>
           </router-link>
         </div>
         <ul class="">
-          <li v-for="(nav, index) in NavList[0]" :key="nav" class="py-4 border-b">
-            <font-awesome-icon :icon="NavList[2][index]" class="mr-1" />
-            <router-link :to="NavList[1][index]">{{ nav }}</router-link>
+          <li @click="isOpen = false" v-for="(nav, index) in NavList[0]" :key="nav" class="border-b">
+            <router-link :to="NavList[1][index]" class="py-4 block">
+              <font-awesome-icon :icon="NavList[2][index]" class="mr-1" />{{ nav }}
+            </router-link>
           </li>
         </ul>
-        <!-- 데스크탑과 모바일버전 동기화가 안되서 주석 처리
-        <ul class="mt-2 flex gap-2">
-          <li class="text-center cursor-pointer">
-            <input type="checkbox" id="darkmode-toggle2">
-            <label for="darkmode-toggle2"  @click="$emit('dark')"></label>
-          </li>
-        </ul> -->
       </div>
 
 

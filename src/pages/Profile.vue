@@ -6,8 +6,7 @@
         <div class="basis-full md:basis-[30%] py-12 px-4 bg-white rounded-md darkMode text-center border">
           <img :src="require(`@/assets/images/profile.svg`)" alt="사진" class="rounded-full block mx-auto">
           <ul>
-            <li class="pl-5 box-border pt-6">송우섭</li>
-            <li class="pl-5 box-border pt-7"><a href="https://github.com/poesoow">GitHub</a></li>
+            <li class="pl-5 box-border pt-3"><a href="https://github.com/poesoow">GitHub</a></li>
             <li class="pl-5 box-border pt-3"><a href="https://velog.io/@ws71144612">velog</a></li>
             <li class="pl-5 box-border pt-3"><a href="mailto:ws71144612@daum.net">ws71144612@daum.net</a></li>
           </ul>
@@ -26,7 +25,7 @@
             <div class="mb-2 last:mb-0 text-sm md:text-base font-light">
               <p v-for="experience in content.experience" :key="experience" class="mb-2">{{ experience.date }} : {{ experience.dateDesc }}</p>
             </div>
-            <p class="flex flex-wrap mb-2 last:mb-0 text-sm md:text-base">
+            <p class="flex flex-wrap gap-2 mb-2 last:mb-0 text-sm md:text-base">
               <span v-for="like in content.like" :key="like"
                 class="h-8 mt-2 mr-1 text-sm border bg-white rounded-2xl align-top leading-[19px] box-border tracking-tighter pt-1.5 px-3 pb-2 shadow-md darkMode">
                 {{ like.item }}
