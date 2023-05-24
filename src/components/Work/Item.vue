@@ -5,7 +5,13 @@
     </div>
   </div>
   <div class="basis-full md:basis-[50%] pt-4  group-even:order-2 xl:group-even:order-1 xl:group-even:text-right lg:px-[50px] text-base">
-    <h3 class="text-2xl font-bold"> {{ item.title }} / {{ item.orderDate }}</h3>
+    <h3 class="text-2xl font-bold">
+      <div>{{ item.title }} </div>
+      <div class="text-base">
+        <div>작업기간</div>
+        <div><span>{{ item.date2 }} </span> <span>[{{ item.date }}]</span></div>
+      </div>
+    </h3>
     <p class="pt-[10px]">{{ item.desc }}</p>
     <p class="pt-[10px]">
       주요특징
@@ -14,21 +20,21 @@
       </ul>
     </p>
     <p class="pt-[10px]">사용툴 : <span v-for="tool in item.tools" :key="tool" class="mr-2">{{ tool }}</span></p>
-    <p class="pt-[10px]">
-      <span>작업기간 : {{ item.date }} </span> <span>{{ item.date2 }}</span>
-    </p>
     <template v-if="item.workers.team">
-      <div class="pt-[10px]">
+      <div class="pt-[10px]">팀프로젝트</div>
+      <div class="pt-[5px]">
         팀원 :
         <span v-for="member in item.workers.members" :key="member" class="mr-2">
           <a :href="member.link">{{ member.name }}</a>
         </span>
       </div>
     </template>
+    <p v-else>개인프로젝트</p>
     <p class="pt-[10px]">
       <ul class="flex gap-2 justify-end">
-        <li><a :href="item.link">보러가기</a></li>
-        <li v-if="item.type == 'Publishing'" class="before:content-[111]"><a :href="item.originlink">대상</a></li>
+        <li><a :href="item.links[0].link">보러가기</a></li>
+        <li><a :href="item.links[0].github">깃허브</a></li>
+        <li v-if="item.type == 'Publishing'" class="before:content-[111]"><a :href="item.links[0].original">대상</a></li>
       </ul>
     </p>
   </div>
