@@ -7,7 +7,7 @@
         </div>
       </div>
       <div class="basis-full md:basis-[50%] pt-4  group-even:order-2 xl:group-even:order-1 xl:group-even:text-right lg:px-[50px] text-base">
-        <h3 class="text-2xl font-bold"> {{ item.title }}</h3>
+        <h3 class="text-2xl font-bold"> {{ item.title }} / {{ item.orderDate }}</h3>
         <p class="pt-[10px]">{{ item.desc }}</p>
         <p class="pt-[10px]">
           주요특징

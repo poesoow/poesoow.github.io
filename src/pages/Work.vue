@@ -14,17 +14,18 @@
           </li>
         </ul>
       </div>
+      <!-- 검색 -->
       <div class="mr-0 border rounded-md bg-white">
         <label class="relative rounded-md bo h-full">
           <input type="text" class="h-full px-4 rounded-md">
-            <font-awesome-icon icon="magnifying-glass" class="cursor-pointer absolute top-0 right-4" />
-          </label>
+          <font-awesome-icon icon="magnifying-glass" class="cursor-pointer absolute top-0 right-4" />
+        </label>
       </div>
     </div>
     <div class="max-w-7xl mx-auto mt-8">
       <!-- /home 에서 best만 -->
       <WorkItem v-if="loc.indexOf('work') === -1" :workItems="BestItems" />
-      <!-- /portfolio 주소에서 모든 worklist -->
+      <!-- /work 주소에서 모든 worklist -->
       <WorkItem v-else :workItems="CateItems" />
     </div>
   </div>
@@ -69,40 +70,12 @@ export default {
         } else {
           return data.type
         }
-      })
+      }).sort((prev, next) => next.orderDate - prev.orderDate)
     },
     BestItems() {
-      return this.WorkList.filter((data) => {
-        if (data.best !== true) {
-          return data.best === this.WorkList.best
-        } else {
-          return data.best
-        }
-      })
+      return this.WorkList.filter((data) => data.best)
     }
   },
 
 }
 </script>
-
-<style>
-.mokup-img > div{position: absolute; overflow: hidden; bottom: 0px;}
-/* 목업 pc버전 */
-.mokup-img > div:nth-child(1){width: 85%; left: 50%; transform: translateX(-50%);}
-.mokup-img > div:nth-child(1)::after{content: ''; position: absolute; width: 92%; height: 100%; background: url("../assets/images/preview.jpg") center top no-repeat; left: 19px; top: 0px; background-size: cover; transition: 5s;}
-/* 호버시 이미지 슬라이딩 */
-.mokup-img > div:hover::after{background-position: center bottom;}
-
-/* 태블릿버전 */
-@media screen and (max-width: 1280px) {
-  .mokup-img{flex-basis: 100%; height: 380px;}
-  .mokup-img > div:nth-child(1){width: 100%;}
-  .mokup-img > div:nth-child(1)::after{top: 23px; height: 100%; left: 21px; width: 93%;}
-}
-/* 모바일버전 */
-@media screen and (max-width: 640px) {
-  .mokup-img{height: 70.3125vw;}
-  .mokup-img > div:nth-child(1){width: 100%;}
-  .mokup-img > div:nth-child(1)::after{width: 92.5%; left: 3.8%; top: 4.7%;}
-}
-</style>

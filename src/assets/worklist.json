@@ -15,7 +15,7 @@
     "date2": "2023.00.00 ~ 2023.00.00",
     "type": "Webapp",
     "best": false,
-    "orderDate": "20230512",
+    "orderDate": "20230523",
     "responsive": false,
     "workers": {
       "team": false
@@ -37,7 +37,7 @@
     "date2": "2023.00.00 ~ 2023.00.00",
     "type": "Publishing",
     "best": true,
-    "orderDate": "20230512",
+    "orderDate": "20230502",
     "responsive": true,
     "workers": {
       "team": true,
@@ -75,7 +75,7 @@
     "date2": "2023.00.00 ~ 2023.00.00",
     "type": "Webapp",
     "best": true,
-    "orderDate": "20230512",
+    "orderDate": "20230514",
     "responsive": false,
     "workers": {
       "team": true,
@@ -113,7 +113,7 @@
     "date2": "2023.00.00 ~ 2023.00.00",
     "type": "Publishing",
     "best": false,
-    "orderDate": "20230512",
+    "orderDate": "20230412",
     "responsive": false,
     "workers": {
       "team": false
@@ -136,7 +136,7 @@
     "date2": "2023.00.00 ~ 2023.00.00",
     "type": "Webapp",
     "best": false,
-    "orderDate": "20230512",
+    "orderDate": "20230322",
     "responsive": false,
     "workers": {
       "team": false
@@ -159,7 +159,7 @@
     "date2": "2023.00.00 ~ 2023.00.00",
     "type": "Publishing",
     "best": false,
-    "orderDate": "20230512",
+    "orderDate": "20230422",
     "responsive": false,
     "workers": {
       "team": false
@@ -182,7 +182,7 @@
     "date2": "2023.00.00 ~ 2023.00.00",
     "type": "Webapp",
     "best": false,
-    "orderDate": "20230512",
+    "orderDate": "20230302",
     "responsive": false,
     "workers": {
       "team": false
