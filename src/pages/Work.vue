@@ -23,9 +23,9 @@
     </div>
     <div class="max-w-7xl mx-auto mt-8">
       <!-- /home 에서 best만 -->
-      <WorkItem v-if="loc.indexOf('work') === -1" :CateItem="BestItem" />
+      <WorkItem v-if="loc.indexOf('work') === -1" :workItems="BestItems" />
       <!-- /portfolio 주소에서 모든 worklist -->
-      <WorkItem v-else :CateItem="CateItem" />
+      <WorkItem v-else :workItems="CateItems" />
     </div>
   </div>
 </template>
@@ -62,7 +62,7 @@ export default {
         )
       })
     },
-    CateItem() {
+    CateItems() {
       return this.WorkList.filter((data) => {
         if (this.CateName !== '전체') {
           return data.type === this.CateName
@@ -71,7 +71,7 @@ export default {
         }
       })
     },
-    BestItem() {
+    BestItems() {
       return this.WorkList.filter((data) => {
         if (data.best !== true) {
           return data.best === this.WorkList.best

@@ -1,12 +1,11 @@
 [
   {
     "img": "https://via.placeholder.com/500",
-    "descTitle": "xxxx 웹앱1",
-    "desc": "API를 활용한 웹앱 개발...Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, ipsam facilis at adipisci quam, illum velit explicabo vitae ex sunt vel debitis laborum eaque itaque deserunt iste esse magnam ab.",
-    "keyword": [
-      "#심플함",
-      "#깔끔한",
-      "#taliwind"
+    "title": "xxxx 웹앱1",
+    "desc": "API를 활용한 웹앱 개발...Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae",
+    "features": [
+      "특징1 블라블라",
+      "특징2 블라블라"
     ],
     "tools": [
       "PS",
@@ -16,26 +15,19 @@
     "date2": "2023.00.00 ~ 2023.00.00",
     "type": "Webapp",
     "best": false,
+    "orderDate": "20230512",
     "responsive": false,
     "workers": {
-      "team": false,
-      "members": [
-        "송우섭"
-      ],
-      "contribution": "100%",
-      "memberlink": [
-        "/"
-      ]
+      "team": false
     }
   },
   {
     "img": "https://via.placeholder.com/500",
-    "descTitle": "XXX 클론코딩1",
-    "desc": "API를 활용한 웹앱 개발...Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, ipsam facilis at adipisci quam, illum velit explicabo vitae ex sunt vel debitis laborum eaque itaque deserunt iste esse magnam ab.",
-    "keyword": [
-      "#심플함",
-      "#깔끔한",
-      "#taliwind"
+    "title": "XXX 클론코딩1",
+    "desc": "API를 활용한 웹앱 개발...Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae",
+    "features": [
+      "특징1 블라블라",
+      "특징2 블라블라"
     ],
     "tools": [
       "PS",
@@ -45,26 +37,34 @@
     "date2": "2023.00.00 ~ 2023.00.00",
     "type": "Publishing",
     "best": true,
+    "orderDate": "20230512",
     "responsive": true,
     "workers": {
       "team": true,
       "members": [
-        "송우섭", "팀원1", "팀원2"
+        {
+          "name": "송우섭",
+          "link": "/member1link"
+        },
+        {
+          "name": "팀원1",
+          "link": "/member1link"
+        },
+        {
+          "name": "팀원2",
+          "link": "/member1link"
+        }
       ],
-      "contribution": "30%",
-      "memberlink": [
-        "/", "/", "/"
-      ]
+      "contribution": "30%"
     }
   },
   {
     "img": "https://via.placeholder.com/500",
-    "descTitle": "xxxx 웹앱2",
-    "desc": "API를 활용한 웹앱 개발...Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, ipsam facilis at adipisci quam, illum velit explicabo vitae ex sunt vel debitis laborum eaque itaque deserunt iste esse magnam ab.",
-    "keyword": [
-      "#심플함",
-      "#깔끔한",
-      "#taliwind"
+    "title": "xxxx 웹앱2",
+    "desc": "API를 활용한 웹앱 개발...Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae",
+    "features": [
+      "특징1 블라블라",
+      "특징2 블라블라"
     ],
     "tools": [
       "",
@@ -75,26 +75,34 @@
     "date2": "2023.00.00 ~ 2023.00.00",
     "type": "Webapp",
     "best": true,
+    "orderDate": "20230512",
     "responsive": false,
     "workers": {
-      "team": false,
+      "team": true,
       "members": [
-        "송우섭"
+        {
+          "name": "송우섭",
+          "link": "/member1link"
+        },
+        {
+          "name": "팀원1",
+          "link": "/member1link"
+        },
+        {
+          "name": "팀원2",
+          "link": "/member1link"
+        }
       ],
-      "contribution": "100%",
-      "memberlink": [
-        "/"
-      ]
+      "contribution": "30%"
     }
   },
   {
     "img": "https://via.placeholder.com/500",
-    "descTitle": "xxxx 클론코딩2",
-    "desc": "API를 활용한 웹앱 개발...Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, ipsam facilis at adipisci quam, illum velit explicabo vitae ex sunt vel debitis laborum eaque itaque deserunt iste esse magnam ab.",
-    "keyword": [
-      "#심플함",
-      "#깔끔한",
-      "#taliwind"
+    "title": "xxxx 클론코딩2",
+    "desc": "API를 활용한 웹앱 개발...Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae",
+    "features": [
+      "특징1 블라블라",
+      "특징2 블라블라"
     ],
     "tools": [
       "PS",
@@ -104,27 +112,20 @@
     "date": "10일(기획1일/구상1일/제작8일)",
     "date2": "2023.00.00 ~ 2023.00.00",
     "type": "Publishing",
-    "best": "",
+    "best": false,
+    "orderDate": "20230512",
     "responsive": false,
     "workers": {
-      "team": false,
-      "members": [
-        "송우섭"
-      ],
-      "contribution": "100%",
-      "memberlink": [
-        "/"
-      ]
+      "team": false
     }
   },
   {
     "img": "https://via.placeholder.com/500",
-    "descTitle": "xxxx 웹앱3",
-    "desc": "API를 활용한 웹앱 개발...Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, ipsam facilis at adipisci quam, illum velit explicabo vitae ex sunt vel debitis laborum eaque itaque deserunt iste esse magnam ab.",
-    "keyword": [
-      "#심플함",
-      "#깔끔한",
-      "#taliwind"
+    "title": "xxxx 웹앱3",
+    "desc": "API를 활용한 웹앱 개발...Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae",
+    "features": [
+      "특징1 블라블라",
+      "특징2 블라블라"
     ],
     "tools": [
       "PS",
@@ -134,27 +135,20 @@
     "date": "10일(기획1일/구상1일/제작8일)",
     "date2": "2023.00.00 ~ 2023.00.00",
     "type": "Webapp",
-    "best": "",
+    "best": false,
+    "orderDate": "20230512",
     "responsive": false,
     "workers": {
-      "team": false,
-      "members": [
-        "송우섭"
-      ],
-      "contribution": "100%",
-      "memberlink": [
-        "/"
-      ]
+      "team": false
     }
   },
   {
     "img": "https://via.placeholder.com/500",
-    "descTitle": "xxxx 클론코딩3",
-    "desc": "API를 활용한 웹앱 개발...Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, ipsam facilis at adipisci quam, illum velit explicabo vitae ex sunt vel debitis laborum eaque itaque deserunt iste esse magnam ab.",
-    "keyword": [
-      "#심플함",
-      "#깔끔한",
-      "#taliwind"
+    "title": "xxxx 클론코딩3",
+    "desc": "API를 활용한 웹앱 개발...Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae",
+    "features": [
+      "특징1 블라블라",
+      "특징2 블라블라"
     ],
     "tools": [
       "",
@@ -164,27 +158,20 @@
     "date": "10일(기획1일/구상1일/제작8일)",
     "date2": "2023.00.00 ~ 2023.00.00",
     "type": "Publishing",
-    "best": "",
+    "best": false,
+    "orderDate": "20230512",
     "responsive": false,
     "workers": {
-      "team": false,
-      "members": [
-        "송우섭"
-      ],
-      "contribution": "100%",
-      "memberlink": [
-        "/"
-      ]
+      "team": false
     }
   },
   {
     "img": "https://via.placeholder.com/500",
-    "descTitle": "xxxx 웹앱4",
-    "desc": "API를 활용한 웹앱 개발...Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, ipsam facilis at adipisci quam, illum velit explicabo vitae ex sunt vel debitis laborum eaque itaque deserunt iste esse magnam ab.",
-    "keyword": [
-      "#심플함",
-      "#깔끔한",
-      "#taliwind"
+    "title": "xxxx 웹앱4",
+    "desc": "API를 활용한 웹앱 개발...Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae",
+    "features": [
+      "특징1 블라블라",
+      "특징2 블라블라"
     ],
     "tools": [
       "PS",
@@ -195,16 +182,10 @@
     "date2": "2023.00.00 ~ 2023.00.00",
     "type": "Webapp",
     "best": false,
+    "orderDate": "20230512",
     "responsive": false,
     "workers": {
-      "team": false,
-      "members": [
-        "송우섭"
-      ],
-      "contribution": "100%",
-      "memberlink": [
-        "/"
-      ]
+      "team": false
     }
   }
 ]

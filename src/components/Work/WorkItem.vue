@@ -1,24 +1,37 @@
 <template>
   <div>
-    <div v-for="e in CateItem" :key="e" class="bg-white mb-8 pt-5 px-8 pb-5 rounded-md flex border flex-wrap darkMode group">
+    <div v-for="item in workItems" :key="item" class="bg-white mb-8 pt-5 px-8 pb-5 rounded-md flex border flex-wrap darkMode group">
       <div class="basis-[50%] relative group-even:order-1 xl:group-even:order-2 mokup-img">
         <div class="border h-full">
           <div class="w-full h-full"></div>
         </div>
       </div>
       <div class="basis-full md:basis-[50%] pt-4  group-even:order-2 xl:group-even:order-1 xl:group-even:text-right lg:px-[50px] text-base">
-        <h3 class="text-2xl font-bold"> {{ e.descTitle }}</h3>
-        <p class="pt-[10px]">{{ e.desc }}</p>
-        <p class="pt-[10px]">키워드 : <span v-for="el in e.keyword" :key="el" class="mr-2">{{ el }}</span></p>
-        <p class="pt-[10px]">사용툴 : <span v-for="el in e.tools" :key="el" class="mr-2 align-middle">{{ el }}</span></p>
+        <h3 class="text-2xl font-bold"> {{ item.title }}</h3>
+        <p class="pt-[10px]">{{ item.desc }}</p>
         <p class="pt-[10px]">
-          <span>작업기간 : {{ e.date }} </span> <span>{{ e.date2 }}</span>
-        </p>
-        <p class="pt-[10px]">
+          주요특징
           <ul>
-            <li>사이트 : {{ e.link }}</li>
-            <li v-if="e.type == 'Publishing'">original 사이트 : {{ e.originlink }}</li>
-          </ul> 
+            <li v-for="feature in item.features" :key="feature">{{ feature }}</li>
+          </ul>
+        </p>
+        <p class="pt-[10px]">사용툴 : <span v-for="tool in item.tools" :key="tool" class="mr-2">{{ tool }}</span></p>
+        <p class="pt-[10px]">
+          <span>작업기간 : {{ item.date }} </span> <span>{{ item.date2 }}</span>
+        </p>
+        <template v-if="item.workers.team">
+          <div class="pt-[10px]">
+            팀원 :
+            <span v-for="member in item.workers.members" :key="member" class="mr-2">
+              <a :href="member.link">{{ member.name }}</a>
+            </span>
+          </div>
+        </template>
+        <p class="pt-[10px]">
+          <ul class="flex gap-2 justify-end">
+            <li><a :href="item.link">보러가기</a></li>
+            <li v-if="item.type == 'Publishing'" class="before:content-[111]"><a :href="item.originlink">대상</a></li>
+          </ul>
         </p>
       </div>
     </div>
@@ -29,7 +42,7 @@
   export default {
     name: 'WorkItem',
     props: {
-      CateItem: Object
+      workItems: Object
     }
   }
 </script>
