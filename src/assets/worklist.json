@@ -39,7 +39,7 @@
     ],
     "date2": "2023.04.10 ~ 2023.04.24",
     "type": "Publishing",
-    "best": true,
+    "best": false,
     "orderDate": "20230424",
     "responsive": true,
     "workers": {
@@ -133,23 +133,22 @@
     ]
   },
   {
-    "img": "https://via.placeholder.com/500",
-    "title": "xxxx 웹앱3",
-    "desc": "API를 활용한 웹앱 개발...Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae",
+    "img": "./images/quiz.png",
+    "title": "퀴즈",
+    "desc": "타입스크립트를 활용한 퀴즈웹앱 개발",
     "features": [
-      "특징1 블라블라",
-      "특징2 블라블라"
+      "난이도, 문제유형, 개수 선택 가능",
+      "틀린문제 확인 가능",
+      "타입스크립트 활용 타입지정"
     ],
     "tools": [
-      "PS",
-      "",
-      ""
+      "Vue",
+      "TypeScript"
     ],
-    "date": "10일(기획1일/구상1일/제작8일)",
-    "date2": "2023.00.00 ~ 2023.00.00",
+    "date2": "2023.04.18 ~ 2023.05.07",
     "type": "Webapp",
-    "best": false,
-    "orderDate": "20230322",
+    "best": true,
+    "orderDate": "20230507",
     "responsive": false,
     "workers": {
       "team": false

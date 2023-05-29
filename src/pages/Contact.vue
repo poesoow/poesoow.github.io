@@ -4,7 +4,7 @@
 
     <div class="max-w-7xl mx-auto mt-8">
       <div class="bg-white rounded-md border darkMode p-5 mb-8 last:mb-0">
-        <img :src="`./images/kakao.png`" alt="오픈카카오" class="w-56">
+        <img :src="`/images/kakao.png`" alt="오픈카카오" class="w-56">
       </div>
       <div class="bg-white rounded-md border darkMode p-5 mb-8 last:mb-0">
         <!-- contact 페이지 에서는 이렇게 추가로 게시판 기능 -->
