@@ -1,22 +1,19 @@
 [
   {
-    "img": "https://via.placeholder.com/500",
-    "title": "xxxx 웹앱1",
-    "desc": "API를 활용한 웹앱 개발...Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae",
+    "img": "./images/parcel.png",
+    "title": "택배조회",
+    "desc": "스마트택배 API를 활용한 현재 배송 위치 확인",
     "features": [
-      "특징1 블라블라",
-      "특징2 블라블라"
+      "테마 적용하여 사용자가 원하는 테마를 선택 가능",
+      "택배사와 운송장 번호를 입력하여 조회"
     ],
-    "tools": [
-      "PS",
-      "AI"
-    ],
-    "date": "10일(기획1일/구상1일/제작8일)",
-    "date2": "2023.00.00 ~ 2023.00.00",
+    "tools": null,
+    "date": null,
+    "date2": "2023.03.13 ~ 2023.03.23",
     "type": "Webapp",
     "best": false,
-    "orderDate": "20230523",
-    "responsive": false,
+    "orderDate": "20230323",
+    "responsive": true,
     "workers": {
       "team": false
     },
@@ -29,40 +26,24 @@
     ]
   },
   {
-    "img": "https://via.placeholder.com/500",
-    "title": "XXX 클론코딩1",
-    "desc": "API를 활용한 웹앱 개발...Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae",
-    "features": [
-      "특징1 블라블라",
-      "특징2 블라블라"
-    ],
+    "img": "./images/pizzahut.png",
+    "title": "피자헛 클론코딩",
+    "desc": "Vue를 활용한 피자헛 클론코딩",
     "tools": [
-      "PS",
-      "VSCODE"
+      "Vus.js",
+      "SCSS"
     ],
-    "date": "10일(기획1일/구상1일/제작8일)",
-    "date2": "2023.00.00 ~ 2023.00.00",
+    "features": [
+      "SCSS를 활용하여 작업",
+      "swiper를 vue에서 사용"
+    ],
+    "date2": "2023.04.10 ~ 2023.04.24",
     "type": "Publishing",
     "best": true,
-    "orderDate": "20230502",
+    "orderDate": "20230424",
     "responsive": true,
     "workers": {
-      "team": true,
-      "members": [
-        {
-          "name": "송우섭",
-          "link": "/member1link"
-        },
-        {
-          "name": "팀원1",
-          "link": "/member1link"
-        },
-        {
-          "name": "팀원2",
-          "link": "/member1link"
-        }
-      ],
-      "contribution": "30%"
+      "team": false
     },
     "links": [
       {
@@ -119,16 +100,15 @@
   },
   {
     "img": "https://via.placeholder.com/500",
-    "title": "xxxx 클론코딩2",
-    "desc": "API를 활용한 웹앱 개발...Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae",
+    "title": "기프티쇼 비즈",
+    "desc": "vue를 배우기 이전에 HTML, CSS, Javascript만으로 제작해보았습니다.",
     "features": [
-      "특징1 블라블라",
-      "특징2 블라블라"
+      "웹표준을 준수하며 html과 css를 작업하였습니다."
     ],
     "tools": [
-      "PS",
-      "AI",
-      "VSCODE"
+      "HTML",
+      "CSS",
+      "JavaScript"
     ],
     "date": "10일(기획1일/구상1일/제작8일)",
     "date2": "2023.00.00 ~ 2023.00.00",
@@ -165,36 +145,6 @@
     "type": "Webapp",
     "best": false,
     "orderDate": "20230322",
-    "responsive": false,
-    "workers": {
-      "team": false
-    },
-    "links": [
-      {
-        "link": "/",
-        "github": "/",
-        "original": "/"
-      }
-    ]
-  },
-  {
-    "img": "https://via.placeholder.com/500",
-    "title": "xxxx 클론코딩3",
-    "desc": "API를 활용한 웹앱 개발...Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae",
-    "features": [
-      "특징1 블라블라",
-      "특징2 블라블라"
-    ],
-    "tools": [
-      "",
-      "AI",
-      "VSCODE"
-    ],
-    "date": "10일(기획1일/구상1일/제작8일)",
-    "date2": "2023.00.00 ~ 2023.00.00",
-    "type": "Publishing",
-    "best": false,
-    "orderDate": "20230422",
     "responsive": false,
     "workers": {
       "team": false
