@@ -54,24 +54,25 @@
     ]
   },
   {
-    "img": "https://via.placeholder.com/500",
-    "title": "xxxx 웹앱2",
-    "desc": "API를 활용한 웹앱 개발...Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae",
+    "img": "./images/baramgil.png",
+    "title": "바람길",
+    "desc": "한국관광공사 API를 활용한 중장년대상 여행정보 제공 및 공유 사이트 개발",
     "features": [
-      "특징1 블라블라",
-      "특징2 블라블라"
+      "한국관광공사 api를 활용",
+      "카카오맵활용 지도에 표시"
     ],
     "tools": [
-      "",
-      "AI",
-      "VSCODE"
+      "Vue",
+      "피그마",
+      "VSCODE",
+      "깃", "깃허브"
     ],
-    "date": "10일(기획1일/구상1일/제작8일)",
-    "date2": "2023.00.00 ~ 2023.00.00",
+    "date": "12일(기획2일/구상2일/제작8일)",
+    "date2": "2023.05.12 ~ 2023.05.26",
     "type": "Webapp",
     "best": true,
-    "orderDate": "20230514",
-    "responsive": false,
+    "orderDate": "20230526",
+    "responsive": true,
     "workers": {
       "team": true,
       "members": [
@@ -80,11 +81,15 @@
           "link": "/member1link"
         },
         {
-          "name": "팀원1",
+          "name": "김근휘",
           "link": "/member1link"
         },
         {
-          "name": "팀원2",
+          "name": "김민정",
+          "link": "/member1link"
+        },
+        {
+          "name": "박성부",
           "link": "/member1link"
         }
       ],
@@ -99,22 +104,22 @@
     ]
   },
   {
-    "img": "https://via.placeholder.com/500",
-    "title": "기프티쇼 비즈",
-    "desc": "vue를 배우기 이전에 HTML, CSS, Javascript만으로 제작해보았습니다.",
+    "img": "./images/giftshowbiz.png",
+    "title": "기프티쇼 비즈 클론코딩",
+    "desc": "vue를 배우기 이전에 HTML, CSS, Javascript로 제작해보았습니다.",
     "features": [
-      "웹표준을 준수하며 html과 css를 작업하였습니다."
+      "웹표준을 준수하며 html과 css를 작업하였습니다.",
+      "Vue를 배우기 전 첫 개인작업으로 "
     ],
     "tools": [
       "HTML",
       "CSS",
       "JavaScript"
     ],
-    "date": "10일(기획1일/구상1일/제작8일)",
-    "date2": "2023.00.00 ~ 2023.00.00",
+    "date2": "2023.02.06 ~ 2023.02.17",
     "type": "Publishing",
     "best": false,
-    "orderDate": "20230412",
+    "orderDate": "20230217",
     "responsive": false,
     "workers": {
       "team": false
