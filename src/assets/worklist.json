@@ -160,35 +160,6 @@
         "original": "/"
       }
     ]
-  },
-  {
-    "img": "https://via.placeholder.com/500",
-    "title": "xxxx 웹앱4",
-    "desc": "API를 활용한 웹앱 개발...Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae",
-    "features": [
-      "특징1 블라블라",
-      "특징2 블라블라"
-    ],
-    "tools": [
-      "PS",
-      "AI",
-      "VSCODE"
-    ],
-    "date": "10일(기획1일/구상1일/제작8일)",
-    "date2": "2023.00.00 ~ 2023.00.00",
-    "type": "Webapp",
-    "best": false,
-    "orderDate": "20230302",
-    "responsive": false,
-    "workers": {
-      "team": false
-    },
-    "links": [
-      {
-        "link": "/",
-        "github": "/",
-        "original": "/"
-      }
-    ]
   }
+
 ]
