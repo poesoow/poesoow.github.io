@@ -160,6 +160,29 @@
         "original": "/"
       }
     ]
+  },
+  {
+    "img": "./images/calculator.png",
+    "title": "계산기",
+    "desc": "실습으로 진행해본 비율계산을 활용하여 클릭하거나 숫자를 입력한 후 계산이 되도록 작업",
+    "features": [
+      "비율계산 또는 계산기 탭",
+      "클릭 외에도 키보드로 입력하여도 가능하도록 작업"
+    ],
+    "date2": "2023.03.18 ~ 2023.03.27",
+    "type": "Webapp",
+    "best": false,
+    "orderDate": "20230327",
+    "responsive": true,
+    "workers": {
+      "team": false
+    },
+    "links": [
+      {
+        "link": "https://poesoow.github.io/calculator/",
+        "github": "https://github.com/poesoow/calculatorCODE",
+        "original": "/"
+      }
+    ]
   }
-
 ]
