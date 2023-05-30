@@ -3,8 +3,10 @@
     <Title>Contact Me</Title>
 
     <div class="max-w-7xl mx-auto mt-8">
-      <div class="bg-white rounded-md border darkMode p-5 mb-8 last:mb-0">
-        <img :src="`/images/kakao.png`" alt="오픈카카오" class="w-56">
+      <div class="bg-white rounded-md border darkMode p-5 mb-8 last:mb-0 flex gap-12 justify-center py-12">
+        <img :src="`/images/notion.png`" alt="노션" class="w-40">
+        <img :src="`/images/kakao.png`" alt="오픈카카오" class="w-40">
+        <a href="https://github.com/poesoow"><img :src="`/images/github.png`" alt="깃허브" class="w-40"></a>
       </div>
       <div class="bg-white rounded-md border darkMode p-5 mb-8 last:mb-0">
         <!-- contact 페이지 에서는 이렇게 추가로 게시판 기능 -->
