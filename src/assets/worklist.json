@@ -47,9 +47,9 @@
     },
     "links": [
       {
-        "link": "/",
-        "github": "/",
-        "original": "/"
+        "link": "https://poesoow.github.io/pizzhutclone/",
+        "github": "https://github.com/poesoow/pizzahutCODE",
+        "original": "https://www.pizzahut.co.kr/"
       }
     ]
   },
@@ -97,8 +97,8 @@
     },
     "links": [
       {
-        "link": "/",
-        "github": "/",
+        "link": "https://poesoow.github.io/baramgil-test/",
+        "github": "https://github.com/poesoow/baramgil",
         "original": "/"
       }
     ]
@@ -155,8 +155,8 @@
     },
     "links": [
       {
-        "link": "/",
-        "github": "/",
+        "link": "https://quiz-code-flame.vercel.app/",
+        "github": "https://github.com/poesoow/quizCODE",
         "original": "/"
       }
     ]
