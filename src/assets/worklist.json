@@ -109,7 +109,7 @@
     "desc": "vue를 배우기 이전에 HTML, CSS, Javascript로 제작해보았습니다.",
     "features": [
       "웹표준을 준수하며 html과 css를 작업하였습니다.",
-      "Vue를 배우기 전 첫 개인작업으로 "
+      "Vue를 배우기 전 첫 개인작업으로 페이지가 어떻게 구성되어있는지 스스로 만들어볼 수 있었습니다."
     ],
     "tools": [
       "HTML",
@@ -126,9 +126,9 @@
     },
     "links": [
       {
-        "link": "/",
-        "github": "/",
-        "original": "/"
+        "link": "https://poesoow.github.io/giftshowbizCODE/",
+        "github": "https://github.com/poesoow/giftshowbizCODE",
+        "original": "https://biz.giftishow.com/"
       }
     ]
   },
