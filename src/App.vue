@@ -3,11 +3,8 @@
     <NavMenu
     :isDark="isDark"
     @dark="toggleDark()"
-    @updateLoc="updateLoc()"
     />
-    <router-view
-    :loc="loc"
-    />
+    <router-view />
     <Footer />
     <TotopButton />
   </div>
@@ -20,15 +17,12 @@
 
   import { useDark, useToggle } from '@vueuse/core';
 
-  const Loc = window.location.href;
-
   export default {
     name: 'App',
     data() {
       return {
         toggleDark: useToggle(useDark()),
         isDark: useDark(),
-        loc: Loc,
       }
     },
     components: {
@@ -39,9 +33,6 @@
     methods:{
       DarkMode(){
         document.querySelector("html").classList.toggle("dark")
-      },
-      updateLoc(){
-        this.loc = window.location.href
       },
     },
     mounted() {
