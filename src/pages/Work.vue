@@ -1,9 +1,11 @@
 <template>
   <div class="w-full pt-12 mt-6 px-[2%] pb-8 ">
-    <Title>작업</Title>
+    <Title>
+      작업
+    </Title>
 
     <!-- /work 에서 -->
-    <div v-if="loc.indexOf('work') !== -1" class="flex justify-between max-w-7xl mx-auto mt-8">
+    <div v-if="$route.path == '/work'" class="flex justify-between max-w-7xl mx-auto mt-8">
       <div
         class="max-w-7xl">
         <ul class="flex ml-0">
@@ -37,12 +39,19 @@
           </li>
         </ul>
       </div>
+      <!-- 링크 -->
+      <div class="mr-0 rounded-md py-2">
+        <router-link to="/work">
+          더 많은 작품 보러가기
+          <font-awesome-icon icon="arrow-up-right-from-square"></font-awesome-icon>
+        </router-link>
+      </div>
     </div>
 
 
     <div class="max-w-7xl mx-auto mt-8">
       <!-- /home 에서 best만 -->
-      <WorkItems v-if="loc.indexOf('work') === -1" :workItems="BestandLatestItems.BEST" :latestItem="BestandLatestItems.LATEST" :CateName2="CateName2" />
+      <WorkItems v-if="$route.path == '/'" :workItems="BestandLatestItems.BEST" :latestItem="BestandLatestItems.LATEST" :CateName2="CateName2" />
       <!-- /work 주소에서 모든 worklist -->
       <WorkItems v-else :workItems="CateItems" />
     </div>

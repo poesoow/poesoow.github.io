@@ -33,8 +33,9 @@
     </template>
     <p class="pt-[10px]">
       <ul class="flex gap-2 justify-end">
-        <li><a :href="item.links[0].link">보러가기</a></li>
-        <li><a :href="item.links[0].github">깃허브</a></li>
+        <li><a :href="item.links[0].link">보러가기<font-awesome-icon icon="arrow-up-right-from-square"></font-awesome-icon></a></li>
+        <!-- faGithub -->
+        <li><a :href="item.links[0].github">깃허브<font-awesome-icon icon="fa-brands fa-github"></font-awesome-icon></a></li>
         <li v-if="item.type == 'Publishing'" class="before:content-[111]"><a :href="item.links[0].original">대상</a></li>
       </ul>
     </p>
