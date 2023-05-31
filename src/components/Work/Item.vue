@@ -57,7 +57,8 @@
 <style>
 .mokup-img > div{position: absolute; overflow: hidden; bottom: 0px;}
 /* 목업 pc버전 */
-.mokup-img > div:nth-child(1){width: 85%; left: 50%; transform: translateX(-50%);}
+.mokup-img > div:nth-child(1){width: 100%;}
+/* .mokup-img > div:nth-child(1){width: 85%; left: 50%; transform: translateX(-50%);} */
 /* .mokup-img > div:nth-child(1)::after{content: ''; position: absolute; width: 92%; height: 100%; background: url("../../assets/images/preview.jpg") center top no-repeat; left: 19px; top: 0px; background-size: cover; transition: 5s;} */
 /* 호버시 이미지 슬라이딩 */
 .mokup-img > div:hover::after{background-position: center bottom;}
