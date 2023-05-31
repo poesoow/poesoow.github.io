@@ -9,35 +9,40 @@
         </router-link>
       </div>
 
-        <ul class="flex justify-between border-green-500 border-t-2 border-b-[1px] p-4 py-2 bg-green-50 text-center font-bold">
-          <li class="basis-3/12">번호</li>
-          <li class="basis-6/12">제목</li>
-          <li class="basis-2/12">글쓴이</li>
-          <li class="basis-2/12">날짜</li>
-        </ul>
-        
+      <ul class="flex justify-between border-green-500 border-t-2 border-b-[1px] p-4 py-2 bg-green-50 text-center font-bold">
+        <li class="basis-3/12">번호</li>
+        <li class="basis-6/12">제목</li>
+        <li class="basis-2/12">글쓴이</li>
+        <li class="basis-2/12">날짜</li>
+      </ul>
+      
 
-        <ul v-for="(data, index) in dataList" :key="index" 
-          class="flex justify-between border-b text-center px-4 py-2 even:bg-gray-50 text-xs sm:text-sm hover:font-bold">
-          <li class="basis-3/12">{{ dataList.length - index }}</li>
-          <li class="basis-6/12 text-left">
-            <router-link 
-              @click="$store.commit('ContactRead', dataIds[index])" 
-              to="/contact/read">{{ data.secret === false ? data.title : '비밀글 입니다.'  }}
-            </router-link>
-          </li>
-          <li class="basis-2/12">{{ data.secret === false ? data.name : '비밀글 입니다.' }}</li>
-          <li class="basis-2/12">{{ BoardDate(index) }}</li>
-        </ul>
-      </div>
+      <ul v-for="(data, index) in dataList" :key="index" 
+        class="flex justify-between border-b text-center px-4 py-2 even:bg-gray-50 text-xs sm:text-sm hover:font-bold">
+        <li class="basis-3/12">{{ dataList.length - index }}</li>
+        <li class="basis-6/12 text-left">
+          <router-link 
+            @click="$store.commit('ContactRead', dataIds[index])" 
+            to="/contact/read">{{ data.secret === false ? data.title : '비밀글 입니다.'  }}
+          </router-link>
+        </li>
+        <li class="basis-2/12">{{ data.secret === false ? data.name : '비밀글 입니다.' }}</li>
+        <li class="basis-2/12">{{ BoardDate(index) }}</li>
+      </ul>
+    </div>  
+    <ContactComp />
   </div>
 </template>
 
 <script>
   import { db } from '@/firebase'
+  import ContactComp from '@/components/Contact/ContactComp.vue'
 
   export default {
     name: 'ContactList',
+    components: {
+      ContactComp
+    },
     data() {
       return {
         dataList: [],

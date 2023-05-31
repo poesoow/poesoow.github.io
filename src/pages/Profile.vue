@@ -7,7 +7,7 @@
           <img :src="require(`@/assets/images/profile.svg`)" alt="사진" class="rounded-full block mx-auto">
           <ul class="flex">
             <li class="box-border pt-3 basis-2/4 text-3xl"><a href="https://github.com/poesoow"><font-awesome-icon icon="fa-brands fa-github"></font-awesome-icon></a></li>
-            <li class="box-border pt-3 basis-2/4 text-3xl"><a href="https://velog.io/@ws71144612">velog</a></li>
+            <li class="box-border pt-3 basis-2/4 text-3xl"><a href="https://velog.io/@ws71144612">velog <font-awesome-icon icon="arrow-up-right-from-square" class="text-base"></font-awesome-icon></a></li>
           </ul>
         </div>
         <div class="basis-full md:basis-[67.5%] mt-8 md:mt-0">
