@@ -1,6 +1,5 @@
 <template>
   <div class="bg-white">
-    <!-- flex-col md:flex md:justify-between -->
     <div class="max-w-7xl mx-auto bg-white darkMode py-7 px-[2%] text-center md:flex md:flex-row md:justify-between ">
       <p>Copyright 2023. SongWooSeop. All Right Reserved.</p>
       <div class="">
@@ -21,6 +20,8 @@
     name: "FooterComponent",
     data() {
       return {
+        // 지금은 직접 json 파일에 작업한 내용을 적지만 나중에는 깃허브 커밋내역을 불러오기
+        // https://v3-docs.vuejs-korea.org/examples/#fetching-data
         modiList: modiList
       }
     },
