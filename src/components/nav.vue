@@ -1,7 +1,8 @@
 <!-- eslint-disable vue/no-mutating-props -->
 <template>
   <div
-    class="w-full px-[2%] fixed top-0 bg-white py-2.5 z-50 dark:bg-[#333] dark:border-b dark:border-b-[#3a3b3d] dark:text-[#d9d9d9]">
+    class="w-full px-[2%] fixed top-0 bg-white py-2.5 z-50 dark:bg-[#333] dark:border-b dark:border-b-[#3a3b3d] dark:text-[#d9d9d9]"
+    :class="show ? 'visible opacity-100' : 'invisible opacity-0'">
     <div class="max-w-7xl mx-auto flex justify-between items-center">
 
       <div @click="focusOn = false; num = null">
@@ -38,7 +39,7 @@
 
 
       <!-- 모바일 메뉴 바 -->
-      <div>
+      <div class="mr-4">
         <font-awesome-icon @click="isOpen = true" icon="bars" class="text-3xl cursor-pointer md:hidden" />
       </div>
 
@@ -82,6 +83,7 @@ export default {
       NavList: [["프로필", "스킬", "작업", "연락/묻고답하기"], ["/profile", "/skill", "/work", "/contact"], ["user", "code", "folder-open", "message"]],
       focusOn: false,
       num: null,
+      show: false
     }
   },
   props: {
@@ -105,10 +107,19 @@ export default {
       highlight.style.setProperty('--x', x + 'px');
       highlight.style.setProperty('--y', y + 'px');
     },
+    updateScrollNav() {
+      if (window.scrollY == 0) {
+        this.show = false
+      } else {
+        this.show = true
+      }
+    }
   },
   mounted() {
     const darkInput = document.querySelector('#darkmode-toggle')
     darkInput.checked = this.isDark
+
+    window.addEventListener('scroll', this.updateScrollNav)
   },
 
 }

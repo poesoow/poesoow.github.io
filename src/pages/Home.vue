@@ -24,10 +24,10 @@
       <Skill />
     </div>
     <div ref="section-3">
-      <Work :loc="loc" />
+      <Work />
     </div>
     <div ref="section-4">
-      <Contact :loc="loc" />
+      <Contact />
     </div>
 
     <div class="fixed top-40 right-12 hidden xl:block dark:text-[#d9d9d9] dark:bg-[#333]">
@@ -58,7 +58,6 @@
       return {
         MenuIndex: '',
         ArrayList: '',
-        loc: window.location.href,
         visual: 0,
         Nav: [
           "프로필",
