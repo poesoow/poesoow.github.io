@@ -30,10 +30,9 @@
       <Contact :loc="loc" />
     </div>
 
-    <div class="fixed top-40 right-3 hidden xl:block dark:text-[#d9d9d9] dark:bg-[#333]">
-
+    <div class="fixed top-40 right-12 hidden xl:block dark:text-[#d9d9d9] dark:bg-[#333]">
      <ul class="flex flex-col gap-4">
-        <li v-for="(nav, index) in Nav" :key="nav" class="relative" :class="watchSection == index && 'text-[#009688]'">
+        <li v-for="(nav, index) in Nav" :key="nav" class="relative" :class="watchSection == index && 'text-[#009688] border-b-2 border-[#009688] w-fit'">
           <button @click="SectionMove(`section-${(index + 1)}`)">{{ nav }}</button>
         </li>
       </ul>
