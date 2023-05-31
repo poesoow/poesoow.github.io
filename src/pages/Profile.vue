@@ -17,8 +17,8 @@
             <h3 class="text-base md:text-xl mb-4">◆ <span class="text-[#42b983]">{{ content.title }}</span></h3>
             <div class="mb-2 last:mb-0 text-sm md:text-base font-light">
               <div class="mb-2" v-for="mind in content.mind" :key="mind">
-                <span class="font-bold">{{ mind.desc }}</span>
-                <div>{{ mind.desc2 }}</div>
+                <span class="">{{ mind.desc }}</span>  
+                <div class="TheJamsilRegular">{{ mind.desc2 }}</div>
               </div>
             </div>
             <div class="mb-2 last:mb-0 text-sm md:text-base font-light">
@@ -61,7 +61,10 @@
               {
                 desc: '"Simple is best."',
                 desc2: "최대한 단순화 시키는 것을 좋아합니다."
-              }
+              },
+              {
+                desc: "코드를 작성하기 이전에 충분한 생각을 먼저 한 다음 코드를 작성하려고 노력합니다.",
+              },
             ]
           },
           {

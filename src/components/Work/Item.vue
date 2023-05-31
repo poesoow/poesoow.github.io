@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/no-parsing-error -->
 <template>
   <div class="basis-[50%] relative group-even:order-1 xl:group-even:order-2 mokup-img">
     <div class="border h-full">
@@ -6,35 +7,38 @@
       </div>
     </div>
   </div>
-  <div class="basis-full md:basis-[50%] pt-4  group-even:order-2 xl:group-even:order-1 xl:group-even:text-right lg:px-[50px] text-base">
-    <h3 class="text-2xl font-bold">
+  <div class="basis-full md:basis-[50%] pt-4  group-even:order-2 xl:group-even:order-1 xl:group-even:text-right lg:px-[50px]">
+    <h3 class="text-3xl">
       <div>{{ item.title }} </div>
       <p class="text-base">{{ item.desc }}</p>
     </h3>
     <div v-if="item.date2" class="pt-[10px]">
-      <div>작업기간</div>
-      <div><span>{{ item.date2 }} </span> <span v-if="item.date">[{{ item.date }}]</span></div>
+      <h4 class="text-xl">작업기간</h4>
+      <div class="TheJamsilRegular"><span>{{ item.date2 }} </span> <span v-if="item.date">[{{ item.date }}]</span></div>
     </div>
     <p v-if="item.features" class="pt-[10px]">
-      주요특징
-      <ul>
+      <h4 class="text-xl">주요특징</h4>
+      <ul class="TheJamsilRegular">
         <li v-for="(feature, index) in item.features" :key="feature"><span>{{ index + 1 }}.</span> {{ feature }}</li>
       </ul>
     </p>
-    <p v-if="item.tools" class="pt-[10px]">사용툴 : <span v-for="tool in item.tools" :key="tool" class="mr-2">{{ tool }}</span></p>
+    <p v-if="item.tools" class="pt-[10px]">
+      <h4 class="text-xl">사용툴</h4>
+      <span v-for="tool in item.tools" :key="tool" class="mr-2 TheJamsilRegular">{{ tool }}</span></p>
     <template v-if="item.workers.team">
-      <div class="pt-[10px]">팀프로젝트</div>
-      <div class="pt-[5px]">
-        팀원 :
-        <span v-for="member in item.workers.members" :key="member" class="mr-2">
-          <a :href="member.link">{{ member.name }}</a>
-        </span>
+      <div class="pt-[10px]">
+        <h4 class="text-xl">팀프로젝트</h4>
+        <div class="pt-[5px]">
+          팀원 :
+          <span v-for="member in item.workers.members" :key="member" class="mr-2">
+            <a :href="member.link">{{ member.name }}</a>
+          </span>
+        </div>
       </div>
     </template>
     <p class="pt-[10px]">
       <ul class="flex gap-2 justify-end">
         <li><a :href="item.links[0].link">보러가기<font-awesome-icon icon="arrow-up-right-from-square"></font-awesome-icon></a></li>
-        <!-- faGithub -->
         <li><a :href="item.links[0].github">깃허브<font-awesome-icon icon="fa-brands fa-github"></font-awesome-icon></a></li>
         <li v-if="item.type == 'Publishing'" class="before:content-[111]"><a :href="item.links[0].original">대상</a></li>
       </ul>
