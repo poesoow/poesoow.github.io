@@ -22,8 +22,9 @@
         <li class="basis-3/12">{{ dataList.length - index }}</li>
         <li class="basis-6/12 text-left">
           <router-link 
+            :to="{ name: 'ContactRead', query:{ docId: dataIds[index] } }"
             @click="$store.commit('ContactRead', dataIds[index])" 
-            to="/contact/read">{{ data.secret === false ? data.title : '비밀글 입니다.'  }}
+            >{{ data.secret === false ? data.title : '비밀글 입니다.'  }}
           </router-link>
         </li>
         <li class="basis-2/12">{{ data.secret === false ? data.name : '비밀글 입니다.' }}</li>
