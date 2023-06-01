@@ -1,6 +1,6 @@
 <template>
-  <div class="bg-white">
-    <div class="max-w-7xl mx-auto bg-white darkMode py-7 px-[2%] text-center md:flex md:flex-row md:justify-between ">
+  <div class="w-full px-[2%] bg-white dark:bg-[#333] darkMode dark:border-t dark:border-t-[#3a3b3d] dark:text-[#d9d9d9]">
+    <div class="max-w-7xl mx-auto py-7 px-[2%] text-center md:flex md:flex-row md:justify-between">
       <p>Copyright 2023. SongWooSeop. All Right Reserved.</p>
       <div class="">
         <div class="mx-auto w-fit text-left">
