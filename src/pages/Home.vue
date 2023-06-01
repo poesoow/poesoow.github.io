@@ -7,9 +7,9 @@
         <div class="max-w-7xl mx-auto">
           <div class="flex flex-wrap items-center h-[103vh]">
             <div class="basis-full md:basis-full text-center py-3">
-              <p
+              <p  id="animationTxt1"
                 class="text-white text-4xl lg:text-5xl font-medium lg:font-semibold mb-5 lg:leading-normal leading-snug dark:[text-#d9d9d9]">
-                안녕하세요.<br>프론트엔드 개발자<br>송우섭 입니다.
+                <span>안녕하세요.</span><br><span>프론트엔드 개발자<br>송우섭 입니다.</span>
               </p>
 
             </div>
@@ -116,3 +116,36 @@
     },
   }
 </script>
+
+<style>
+#animationTxt1{
+  transform: scale(0.90);
+  animation: scale 2s forwards cubic-bezier(0.5, 1, 0.89, 1);
+}
+
+#animationTxt1 span {
+  display: inline-block;
+  opacity: 0;
+  filter: blur(4px);
+}
+
+#animationTxt1 span:nth-child(1) {
+  animation: fade-in 0.8s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+#animationTxt1 span:nth-child(3) {
+  animation: fade-in 0.8s 0.4s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+
+@keyframes scale {
+  100% {transform: scale(1);}
+}
+
+@keyframes fade-in {
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+</style>
