@@ -5,9 +5,9 @@
       <div class="h-auto flex overflow-hidden mt-8 flex-wrap justify-between">
         <div class="basis-full md:basis-[30%] py-12 px-4 bg-white rounded-md darkMode text-center border">
           <img :src="require(`@/assets/images/profile.svg`)" alt="사진" class="rounded-full block mx-auto">
-          <ul class="flex">
-            <li class="box-border pt-3 basis-2/4 text-3xl"><a href="https://github.com/poesoow"><font-awesome-icon icon="fa-brands fa-github"></font-awesome-icon></a></li>
-            <li class="box-border pt-3 basis-2/4 text-3xl"><a href="https://velog.io/@ws71144612">velog <font-awesome-icon icon="arrow-up-right-from-square" class="text-base"></font-awesome-icon></a></li>
+          <ul class="flex gap-12 justify-center">
+            <li class="box-border pt-3 text-5xl"><a href="https://github.com/poesoow"><font-awesome-icon icon="fa-brands fa-github"></font-awesome-icon></a></li>
+            <li class="box-border pt-3 text-5xl"><a href="https://velog.io/@ws71144612"><img class="w-[48px]" :src="`/images/velog.svg`" alt="벨로그"></a></li>
           </ul>
         </div>
         <div class="basis-full md:basis-[67.5%] mt-8 md:mt-0">

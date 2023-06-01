@@ -40,7 +40,7 @@
         skills: [
           {type: 'Language', list: [{ name: 'Javascript', desc: '', img: '/images/javascript.svg' }, { name: 'Typescript', desc: '', img: '/images/typescript.svg' }]},
           {type: 'Framework / Library', list: [{ name: 'Vue', desc: '', img: '/images/vue.svg' }, { name: 'Vue Router', desc: '', img: '/images/vue-router.png' }, { name: 'Vuex', desc: '', img: '/images/vuex.png' }, { name: 'tailwindcss', desc: '', img: '/images/tailwindcss.svg' }, { name: 'Nuxt', desc: '', img: '/images/nuxtdotjs.svg' }]},
-          {type: 'MarkUp', list: [{ name: 'HTML', desc: '', img: '/images/html5.svg' }, { name: 'CSS', desc: '', img: '/images/css3.svg' }]},
+          {type: 'MarkUp', list: [{ name: 'HTML5', desc: '', img: '/images/html5.svg' }, { name: 'CSS3', desc: '', img: '/images/css3.svg' }]},
           {type: 'Tools', list: [{ name: 'Git', desc: '', img: '/images/git.svg' }, { name: 'Github', desc: '', img: '/images/github.png' }]},
           {type: 'Etc', list: [{ name: 'Firebase', desc: '', img: '/images/firebase.svg' }, { name: 'vscode', desc: '', img: '/images/visualstudiocode.svg' }, { name: 'npm', desc: '', img: '/images/npm.svg' }, { name: 'yarn', desc: '', img: '/images/yarn.svg' }, { name: 'figma', desc: '', img: '/images/figma.svg' }, { name: 'axios', desc: '', img: '/images/axios.svg' }]},
         ]
