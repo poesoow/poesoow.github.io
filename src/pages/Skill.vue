@@ -10,8 +10,8 @@
               <h3 class="text-2xl text-[#42b983] border-b-2">{{ skill.type }}</h3>
               <ul class="flex gap-10">
                 <li v-for="list in skill.list" :key="list"
-                  class="flex gap-1 p-2">
-                  <img v-if="list.img" :src="list.img" :alt="list.name" class="w-36">
+                  class="flex gap-1 p-2 flex-col text-center">
+                  <img v-if="list.img" :src="list.img" :alt="list.name" class="w-12 inline-block mx-auto">
                   <div>
                     <h4>{{ list.name }}</h4>
                     <div>{{ list.desc }}</div>
@@ -38,10 +38,11 @@
     data() {
       return {
         skills: [
-          {type: 'Language', list: [{ name: 'Javascript', desc: '', img: '' }, { name: 'Typescript', desc: '', img: '' }]},
-          {type: 'Framework / Library', list: [{ name: 'Vue', desc: '', img: '' }, { name: 'Vue Router', desc: '', img: '' }, { name: 'tailwindcss', desc: '', img: '' }]},
-          {type: 'MarkUp', list: [{ name: 'HTML', desc: '', img: '' }, { name: 'CSS', desc: '', img: '' }]},
-          {type: 'Tools', list: [{ name: 'Git', desc: '', img: '' }, { name: 'Github', desc: '', img: '' }]},
+          {type: 'Language', list: [{ name: 'Javascript', desc: '', img: '/images/javascript.svg' }, { name: 'Typescript', desc: '', img: '/images/typescript.svg' }]},
+          {type: 'Framework / Library', list: [{ name: 'Vue', desc: '', img: '/images/vue.svg' }, { name: 'Vue Router', desc: '', img: '/images/vue-router.png' }, { name: 'Vuex', desc: '', img: '/images/vuex.png' }, { name: 'tailwindcss', desc: '', img: '/images/tailwindcss.svg' }, { name: 'Nuxt', desc: '', img: '/images/nuxtdotjs.svg' }]},
+          {type: 'MarkUp', list: [{ name: 'HTML', desc: '', img: '/images/html5.svg' }, { name: 'CSS', desc: '', img: '/images/css3.svg' }]},
+          {type: 'Tools', list: [{ name: 'Git', desc: '', img: '/images/git.svg' }, { name: 'Github', desc: '', img: '/images/github.png' }]},
+          {type: 'Etc', list: [{ name: 'Firebase', desc: '', img: '/images/firebase.svg' }, { name: 'vscode', desc: '', img: '/images/visualstudiocode.svg' }, { name: 'npm', desc: '', img: '/images/npm.svg' }, { name: 'yarn', desc: '', img: '/images/yarn.svg' }, { name: 'figma', desc: '', img: '/images/figma.svg' }, { name: 'axios', desc: '', img: '/images/axios.svg' }]},
         ]
       }
     },
