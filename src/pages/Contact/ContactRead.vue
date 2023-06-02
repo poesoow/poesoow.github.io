@@ -38,8 +38,8 @@
         <p class="text-2xl border-b-2 text-indigo-400">댓글 ({{ repleCount }})</p>
         <div>
           <p class="px-[3%] flex">
-            <span class="basis-1/3">이름</span>
-            <span class="basis-2/3">내용</span>
+            <span class="basis-1/4">이름</span>
+            <span class="basis-3/4 text-center">내용</span>
           </p>
         </div>
         <ul class="border-b-2">
@@ -50,14 +50,14 @@
             </p>
           </li>
         </ul>
-        <div class="mt-2 flex px-[2%] gap-8">
+        <div class="mt-2 flex flex-col md:flex-row px-[2%] gap-2 md:gap-8">
           <label class="">
             <input v-model="repleName" type="text" class="border w-full px-3" placeholder="이름" @keyup.enter="updateReple()">
           </label>
           <label class="basis-8/12 ">
             <input v-model="repleContent" type="text" class="border w-full px-3" placeholder="내용" @keyup.enter="updateReple()">
           </label>
-          <button @click="updateReple()" class="bg-indigo-400 hover:bg-indigo-600 focus:ring-indigo-400 py-2 px-4 text-white font-semibold rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-opacity-75 text-xs sm:text-sm">입력</button>
+          <button @click="updateReple()"><font-awesome-icon icon="paper-plane"></font-awesome-icon></button>
         </div>
       </div>
 

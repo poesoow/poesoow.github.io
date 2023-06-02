@@ -13,11 +13,11 @@
       <p class="text-base">{{ item.desc }}</p>
     </h3>
     <div v-if="item.date2" class="pt-[10px]">
-      <h4 class="text-xl">작업기간</h4>
+      <h4 class="text-xl"><font-awesome-icon icon="calendar"></font-awesome-icon> 작업기간</h4>
       <div class="TheJamsilRegular"><span>{{ item.date2 }} </span> <span v-if="item.date">[{{ item.date }}]</span></div>
     </div>
     <p v-if="item.features" class="pt-[10px]">
-      <h4 class="text-xl">주요특징</h4>
+      <h4 class="text-xl"><font-awesome-icon icon="thumb-tack"></font-awesome-icon> 주요특징</h4>
       <ul class="TheJamsilRegular">
         <li v-for="(feature, index) in item.features" :key="feature"><span>{{ index + 1 }}.</span> {{ feature }}</li>
       </ul>
@@ -27,7 +27,8 @@
       <span v-for="tool in item.tools" :key="tool" class="mr-2 TheJamsilRegular">{{ tool }}</span></p>
     <template v-if="item.workers.team">
       <div class="pt-[10px]">
-        <h4 class="text-xl">팀프로젝트</h4>
+        <!-- faUserGroup -->
+        <h4 class="text-xl"><font-awesome-icon icon="user-group"></font-awesome-icon> 팀프로젝트</h4>
         <div class="pt-[5px]">
           팀원 :
           <span v-for="member in item.workers.members" :key="member" class="mr-2">

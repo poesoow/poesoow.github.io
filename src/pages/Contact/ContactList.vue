@@ -23,7 +23,7 @@
           <div @click="chkAndViewData(data.secret, dataIds[index], data.password)">
             <div class="flex justify-between border-b text-center px-4 py-2 text-xs sm:text-sm hover:text-green-500">
               <span class="basis-2/12 shrink-0">{{ dataList.length - index }}</span>
-              <span class="basis-5/12 shrink-0 text-left">{{ data.secret === false ? data.title : '비밀글 입니다.' }}</span>
+              <span class="basis-5/12 shrink-0 text-left"><font-awesome-icon icon="lock" v-if="data.secret"></font-awesome-icon>{{ data.secret === false ? data.title : '비밀글 입니다.' }}</span>
               <span class="basis-1/12 shrink-0">{{ data.name }}</span>
               <span class="basis-1/12 shrink-0">{{ BoardDate(index) }}</span>
               <span class="basis-1/12 shrink-0">{{ data.complete ? '답변완료' : '답변대기' }}</span>
