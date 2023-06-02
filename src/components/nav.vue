@@ -5,7 +5,7 @@
     :class="$route.path == '/' && (show ? 'visible opacity-100' : 'invisible opacity-0')">
     <div class="max-w-7xl mx-auto flex justify-between items-center">
 
-      <div @click="focusOn = false; num = null">
+      <div @click="focusOn = false; num = null" class="">
         <router-link to="/">
           <div @mousemove="shine" class="text-2xl h-12 leading-[48px] logo highlight">
             WooSeop
@@ -14,26 +14,27 @@
       </div>
 
 
-      <!-- 태블릿 이상 상단 네비영역 -->
-      <div class="basis-3/4 hidden md:block">
-        <ul class="flex justify-around">
-          <li
-            @click="menuClick(index)"
-            v-for="(nav, index) in NavList[0]" :key="nav"
-            class="relative hover:text-[#42b983]">
-            <router-link :class="(focusOn && num===index) && 'fcsOnCls'" class="fcsOffCls h-full block" :to="NavList[1][index]">{{ nav }}</router-link>
-          </li>
-        </ul>
-      </div>
-
-      <!-- 태블릿 이상 상단 우측 유틸영역 -->
-      <div class="basis-1/6 md:basis-1/12 hidden md:block">
-        <ul class="flex justify-end">
-          <li class="basis-full flex flex-col items-center justify-center">
-            <input type="checkbox" id="darkmode-toggle">
-            <label for="darkmode-toggle"  @click="$emit('dark')"></label>
-          </li>
-        </ul>
+      <div class="basis-11/12 flex grow-1 justify-end">
+        <!-- 태블릿 이상 상단 네비영역 -->
+        <div class="basis-3/4 hidden md:block">
+          <ul class="flex justify-around">
+            <li
+              @click="menuClick(index)"
+              v-for="(nav, index) in NavList[0]" :key="nav"
+              class="relative hover:text-[#42b983]">
+              <router-link :class="(focusOn && num===index) && 'fcsOnCls'" class="fcsOffCls h-full block" :to="NavList[1][index]">{{ nav }}</router-link>
+            </li>
+          </ul>
+        </div>
+        <!-- 태블릿 이상 상단 우측 유틸영역 -->
+        <div class="basis-1/4 md:basis-1/12 hidden md:block">
+          <ul class="flex justify-end">
+            <li class="basis-full flex flex-col items-center justify-center">
+              <input type="checkbox" id="darkmode-toggle">
+              <label for="darkmode-toggle"  @click="$emit('dark')"></label>
+            </li>
+          </ul>
+        </div>
       </div>
 
 
