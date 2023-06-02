@@ -20,7 +20,7 @@
      
       <ul class="">
         <li v-for="(data, index) in dataList" :key="index" class="even:bg-gray-50 ">
-          <router-link :to="{ name: 'ContactRead', query: { docId: dataIds[index] } }">
+          <!-- <router-link :to="{ name: 'ContactRead', query: { docId: dataIds[index] } }">
             <div class="flex justify-between border-b text-center px-4 py-2 text-xs sm:text-sm hover:text-green-500">
               <span class="basis-2/12 shrink-0">{{ dataList.length - index }}</span>
               <span class="basis-5/12 shrink-0 text-left">{{ data.secret === false ? data.title : '비밀글 입니다.' }}</span>
@@ -28,7 +28,16 @@
               <span class="basis-1/12 shrink-0">{{ BoardDate(index) }}</span>
               <span class="basis-1/12 shrink-0">{{ data.complete ? '답변완료' : '답변대기' }}</span>
             </div>
-          </router-link>
+          </router-link> -->
+          <div @click="chkAndViewData(data.secret, dataIds[index], data.password)">
+            <div class="flex justify-between border-b text-center px-4 py-2 text-xs sm:text-sm hover:text-green-500">
+              <span class="basis-2/12 shrink-0">{{ dataList.length - index }}</span>
+              <span class="basis-5/12 shrink-0 text-left">{{ data.secret === false ? data.title : '비밀글 입니다.' }}</span>
+              <span class="basis-1/12 shrink-0">{{ data.name }}</span>
+              <span class="basis-1/12 shrink-0">{{ BoardDate(index) }}</span>
+              <span class="basis-1/12 shrink-0">{{ data.complete ? '답변완료' : '답변대기' }}</span>
+            </div>
+          </div>
         </li>
       </ul>
 
@@ -66,6 +75,21 @@
         const date = this.dataList[index].date.seconds * 1000 + this.dataList[index].date.nanoseconds / 1000000
         const formattingDate = new Date(date).toLocaleDateString()
         return formattingDate
+      },
+      chkAndViewData(chkSecret, id, password){
+        console.log(chkSecret, id, password)
+
+        if(chkSecret) {
+          const inputPwd = prompt('비밀번호를 입력해주세요')
+          if(inputPwd != password){
+            alert('비밀번호를 다시 입력해주세요')
+          } else {
+            this.$router.replace({ name: 'ContactRead', query: { docId: id } })
+          }
+        } else {
+          this.$router.replace({ name: 'ContactRead', query: { docId: id }})
+        }
+
       }
     },
     computed:{
