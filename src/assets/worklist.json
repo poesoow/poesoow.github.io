@@ -30,8 +30,9 @@
     "title": "피자헛 클론코딩",
     "desc": "Vue를 활용한 피자헛 클론코딩",
     "tools": [
-      "Vus.js",
-      "SCSS"
+      "Vue",
+      "SCSS",
+      "Swiper"
     ],
     "features": [
       "SCSS를 활용하여 작업",
@@ -63,9 +64,12 @@
     ],
     "tools": [
       "Vue",
-      "피그마",
+      "Figma",
       "VSCODE",
-      "깃", "깃허브"
+      "git", 
+      "gitHub",
+      "Firebase",
+      "Vuex"
     ],
     "date": "12일(기획2일/구상2일/제작8일)",
     "date2": "2023.05.12 ~ 2023.05.26",
@@ -143,7 +147,8 @@
     ],
     "tools": [
       "Vue",
-      "TypeScript"
+      "TypeScript",
+      "Vuex"
     ],
     "date2": "2023.04.18 ~ 2023.05.07",
     "type": "Webapp",
