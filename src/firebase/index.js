@@ -6,12 +6,12 @@ import 'firebase/storage';
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCrq1_rWEpZdoPT3R1XH1TSI1wtHzVQjz8",
-  authDomain: "yapdiv-contact.firebaseapp.com",
+  apiKey: process.env.VUE_APP_API_KEY,
+  authDomain: process.env.VUE_APP_AUTHDOMAIN,
   projectId: "yapdiv-contact",
   storageBucket: "yapdiv-contact.appspot.com",
   messagingSenderId: "552811108923",
-  appId: "1:552811108923:web:27613493f897edc3ea9a1e",
+  appId: process.env.VUE_APP_APPID ,
   measurementId: "G-CKS71XB0WS"
 };
 
