@@ -68,7 +68,6 @@
         return formattingDate
       },
       chkAndViewData(chkSecret, id, password){
-        console.log(chkSecret, id, password)
 
         if(chkSecret) {
           const inputPwd = prompt('비밀번호를 입력해주세요')
