@@ -80,7 +80,7 @@ export default {
     return {
       // 오른쪽 메뉴바
       isOpen: false,
-      NavList: [["프로필", "스킬", "작업", "연락/묻고답하기"], ["/profile", "/skill", "/work", "/contact"], ["user", "code", "folder-open", "message"]],
+      NavList: [["PROFILE", "SKILL", "PROJECT", "CONTACT"], ["/profile", "/skill", "/work", "/contact"], ["user", "code", "folder-open", "message"]],
       focusOn: false,
       num: null,
       show: false

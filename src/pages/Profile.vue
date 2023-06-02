@@ -1,6 +1,6 @@
 <template>
   <div class="w-full pt-12 mt-6 px-[2%] pb-8 ">
-    <Title>프로필</Title>
+    <Title>PROFILE</Title>
     <div class="max-w-7xl mx-auto">
       <div class="h-auto flex overflow-hidden mt-8 flex-wrap justify-between">
         <div class="basis-full md:basis-[30%] py-12 px-4 bg-white rounded-md darkMode text-center border">
@@ -17,7 +17,7 @@
             <h3 class="text-base md:text-xl mb-4">◆ <span class="text-[#42b983]">{{ content.title }}</span></h3>
             <div class="mb-2 last:mb-0 text-sm md:text-base font-light">
               <div class="mb-2" v-for="mind in content.mind" :key="mind">
-                <span class="">{{ mind.desc }}</span>  
+                <span class="">{{ mind.desc }}</span>
                 <div class="TheJamsilRegular">{{ mind.desc2 }}</div>
               </div>
             </div>

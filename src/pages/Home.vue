@@ -30,9 +30,9 @@
       <Contact />
     </div>
 
-    <div class="fixed top-40 right-4 hidden xl:block dark:text-[#d9d9d9] dark:bg-[#333]">
+    <div class="fixed top-40 right-12 hidden xl:block dark:text-[#d9d9d9] dark:bg-[#333]">
      <ul class="flex flex-col gap-4 w-24">
-        <li v-for="(nav, index) in Nav" :key="nav" class="relative" :class="watchSection == index && 'text-[#009688] border-b-2 border-[#009688] w-fit text-2xl'">
+        <li v-for="(nav, index) in Nav" :key="nav" class="relative text-right" :class="watchSection == index && 'text-[#009688] text-2xl'">
           <button @click="SectionMove(`section-${(index + 1)}`)">{{ nav }}</button>
         </li>
       </ul>
@@ -60,10 +60,10 @@
         ArrayList: '',
         visual: 0,
         Nav: [
-          "프로필",
-          "스킬",
-          "작업",
-          "연락"
+          "PFOFILE",
+          "SKILL",
+          "PROJECT",
+          "CONTACT"
         ],
         watchSection: null,
       }

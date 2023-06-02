@@ -1,7 +1,7 @@
 <template>
   <div class="w-full pt-12 mt-6 px-[2%] pb-8 ">
     <Title>
-      작업 <span v-if="$route.path == '/work'">({{ CateItems.length }}개)</span>
+      PROJECT <span v-if="$route.path == '/work'">({{ CateItems.length }}개)</span>
     </Title>
 
     <!-- /work 에서 -->
