@@ -24,7 +24,7 @@
       <Skill />
     </div>
     <div ref="section-3">
-      <Work />
+      <Project />
     </div>
     <div ref="section-4">
       <Contact />
@@ -42,7 +42,7 @@
 
 <script>
   import Profile from '@/pages/Profile.vue'
-  import Work from '@/pages/Work.vue'
+  import Project from '@/pages/Project.vue'
   import Skill from '@/pages/Skill.vue'
   import Contact from '@/pages/Contact.vue'
 
@@ -50,7 +50,7 @@
     name: "HomePage",
     components: {
       Profile,
-      Work,
+      Project,
       Skill,
       Contact
     },

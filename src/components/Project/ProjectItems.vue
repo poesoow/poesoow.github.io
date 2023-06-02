@@ -5,26 +5,26 @@
       <Item :item="latestItem" />
     </div>
     <div v-show="CateName2 == 'BEST'">
-      <div v-for="item in workItems" :key="item" class="bg-white mb-8 pt-5 px-8 pb-5 rounded-md flex border flex-wrap darkMode group">
+      <div v-for="item in projectItems" :key="item" class="bg-white mb-8 pt-5 px-8 pb-5 rounded-md flex border flex-wrap darkMode group">
         <Item :item="item" />
       </div>
     </div>
   </div>
-  <!-- /work 에서 -->
+  <!-- /project 에서 -->
   <div v-else>
-    <div v-for="item in workItems" :key="item" class="bg-white mb-8 pt-5 px-8 pb-5 rounded-md flex border flex-wrap darkMode group">
+    <div v-for="item in projectItems" :key="item" class="bg-white mb-8 pt-5 px-8 pb-5 rounded-md flex border flex-wrap darkMode group">
       <Item :item="item" />
     </div>
   </div>
 </template>
 
 <script>
-  import Item from '@/components/Work/Item.vue'
+  import Item from '@/components/Project/Item.vue'
 
   export default {
-    name: 'WorkItem',
+    name: 'ProjectItems',
     props: {
-      workItems: Object,
+      projectItems: Object,
       latestItem: Object,
       CateName2: String
     },

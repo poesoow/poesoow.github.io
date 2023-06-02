@@ -49,7 +49,7 @@
 
 <script>
   export default {
-    name: 'WorkItem',
+    name: 'ProjectItem',
     props: {
       item: Object
     }

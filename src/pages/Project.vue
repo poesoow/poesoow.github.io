@@ -1,11 +1,11 @@
 <template>
   <div class="w-full pt-12 mt-6 px-[2%] pb-8 ">
     <Title>
-      PROJECT <span v-if="$route.path == '/work'">({{ CateItems.length }}개)</span>
+      PROJECT <span v-if="$route.path == '/project'"></span>
     </Title>
 
-    <!-- /work 에서 -->
-    <div v-if="$route.path == '/work'" class="flex justify-between max-w-7xl mx-auto mt-8">
+    <!-- /project 에서 -->
+    <div v-if="$route.path == '/project'" class="flex justify-between max-w-7xl mx-auto mt-8">
       <div
         class="max-w-7xl">
         <ul class="flex ml-0">
@@ -41,7 +41,7 @@
       </div>
       <!-- 링크 -->
       <div class="mr-0 rounded-md py-2">
-        <router-link to="/work">
+        <router-link to="/project">
           더 많은 작품 보러가기
           <font-awesome-icon icon="arrow-up-right-from-square"></font-awesome-icon>
         </router-link>
@@ -50,30 +50,28 @@
 
 
     <div class="max-w-7xl mx-auto mt-8">
-      <!-- /home 에서 best만 -->
-      <WorkItems v-if="$route.path == '/'" :workItems="BestandLatestItems.BEST" :latestItem="BestandLatestItems.LATEST" :CateName2="CateName2" />
-      <!-- /work 주소에서 모든 worklist -->
-      <WorkItems v-else :workItems="CateItems" />
+      <ProjectItems v-if="$route.path == '/'" :projectItems="BestandLatestItems.BEST" :latestItem="BestandLatestItems.LATEST" :CateName2="CateName2" />
+      <ProjectItems v-else :projectItems="CateItems" />
     </div>
   </div>
 </template>
 
 <script>
-import worklist from '@/assets/worklist.json'
+import projectlist from '@/assets/projectlist.json'
 import Title from '@/components/Title.vue'
-import WorkItems from '@/components/Work/WorkItems.vue'
+import ProjectItems from '@/components/Project/ProjectItems.vue'
 
 export default {
-  name: "PortfolioPage",
+  name: "ProjectPage",
   data() {
     return {
       CateName: "전체",
       CateName2: "BEST",
-      WorkList: worklist,
+      ProjectList: projectlist,
     }
   },
   components: {
-    Title, WorkItems
+    Title, ProjectItems
   },
   props: {
     loc: String
@@ -83,16 +81,16 @@ export default {
   },
   computed: {
     CateList() {
-      return this.WorkList.filter((item, i) => {
+      return this.ProjectList.filter((item, i) => {
         return (
-          this.WorkList.findIndex((item2) => {
+          this.ProjectList.findIndex((item2) => {
             return item.type === item2.type
           }) === i
         )
       })
     },
     CateItems() {
-      return this.WorkList.filter((data) => {
+      return this.ProjectList.filter((data) => {
         if (this.CateName !== '전체') {
           return data.type === this.CateName
         } else {
@@ -101,14 +99,14 @@ export default {
       }).sort((prev, next) => next.orderDate - prev.orderDate)
     },
     BestItems() {
-      return this.WorkList.filter((data) => data.best)
+      return this.ProjectList.filter((data) => data.best)
     },
     BestandLatestItems() {
 
-      const latestItem = this.WorkList.filter(()=>true).sort((prev, next) => next.orderDate - prev.orderDate).shift()
-      const bestItems = this.WorkList.reduce((acc, work) => {
-        if(work.best){
-          acc = [...acc ,work]
+      const latestItem = this.ProjectList.filter(()=>true).sort((prev, next) => next.orderDate - prev.orderDate).shift()
+      const bestItems = this.ProjectList.reduce((acc, project) => {
+        if(project.best){
+          acc = [...acc ,project]
         }
         return acc
       }, [])

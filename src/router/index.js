@@ -17,9 +17,9 @@ const routes = [
     component: () => import('@/pages/Skill')
   },
   {
-    path: "/work",
-    name: "Work",
-    component: () => import('@/pages/Work')
+    path: "/project",
+    name: "ProjectPage",
+    component: () => import('@/pages/Project')
   },
   {
     path: "/contact",
