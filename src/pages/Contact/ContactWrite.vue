@@ -62,7 +62,8 @@
                 'title': this.title,
                 'content': this.content,
                 'date': this.date,
-                'secret': this.secret
+                'secret': this.secret,
+                'complete': false
               })
               // 쓰고 페이지 이동
               this.$router.replace('/contact')
