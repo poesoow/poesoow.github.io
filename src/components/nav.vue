@@ -18,7 +18,7 @@
       <div class="basis-3/4 hidden md:block">
         <ul class="flex justify-around">
           <li
-            @click="$emit('updateLoc'); menuClick(index)"
+            @click="menuClick(index)"
             v-for="(nav, index) in NavList[0]" :key="nav"
             class="relative hover:text-[#42b983]">
             <router-link :class="(focusOn && num===index) && 'fcsOnCls'" class="fcsOffCls h-full block" :to="NavList[1][index]">{{ nav }}</router-link>
