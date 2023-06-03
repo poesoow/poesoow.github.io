@@ -11,14 +11,14 @@
         <div class="ml-2 my-1 flex flex-wrap gap-y-6 py-7 px-6 justify-between gap-x-0 border-t border-b border-black box-border basis-full">
           <div class="flex basis-full gap-x-12 md:gap-x-24">
             <p class="text-base md:text-3xl">제목</p>
-            <div class="text-sm md:text-base">
+            <div class="text-sm md:text-3xl">
               {{ title }}
             </div>
           </div>
           <div class="flex basis-full justify-between">
             <div class="flex basis-4/12 gap-x-10 md:gap-x-20">
               <p class="text-base md:text-3xl">작성자</p>
-              <div class="text-sm md:text-base">
+              <div class="text-sm md:text-3xl">
                 {{ name }}
               </div>
             </div>
@@ -35,22 +35,22 @@
       </div>
 
       <div>
-        <p class="text-2xl border-b-2 text-indigo-400">댓글 ({{ repleCount }})</p>
+        <p class="text-2xl border-b-2 text-[#38A1FF]">답글 ({{ repleCount }})</p>
         <div>
-          <p class="px-[3%] flex">
+          <p class="px-[3%] my-2 flex text-[#38A1FF]">
             <span class="basis-1/4">이름</span>
-            <span class="basis-3/4 text-center">내용</span>
+            <span class="basis-3/4 relative inline-block before:absolute before:top-1 before:w-[1px] before:left-[-10px] before:border-y-[8px] before:border-x-[1px] before:border-[#38A1FF]">내용</span>
           </p>
         </div>
         <ul class="border-b-2">
-          <li v-for="reple in reples" :key="reple" class="my-2 odd:bg-gray-100">
+          <li v-for="reple in reples" :key="reple" class="py-2 odd:bg-gray-100">
             <p class="px-[3%] flex">
               <span class="basis-1/4">{{ reple.name }}</span>
-              <span class="basis-3/4">{{ reple.content }}</span>
+              <span class="basis-3/4 relative inline-block before:absolute before:top-1 before:w-[1px] before:left-[-10px] before:border-y-[8px] before:border-x-[1px] before:border-[#38A1FF]">{{ reple.content }}</span>
             </p>
           </li>
         </ul>
-        <div class="mt-2 flex flex-col md:flex-row px-[2%] gap-2 md:gap-8">
+        <div class="mt-2 flex flex-col md:flex-row px-[2%] gap-1 md:gap-8 text-xl">
           <label class="">
             <input v-model="repleName" type="text" class="border w-full px-3" placeholder="이름" @keyup.enter="updateReple()">
           </label>
@@ -61,7 +61,7 @@
         </div>
       </div>
 
-      
+
     </div>
   </div>
 </template>
@@ -109,7 +109,7 @@ export default {
     updateReple(){
       if(this.repleName && this.repleContent) {
         const reple = {name: this.repleName, content: this.repleContent}
-        
+
         this.reples.push(reple)
         this.repleName = ''
         this.repleContent = ''
