@@ -4,15 +4,15 @@
         <div class="max-w-7xl mx-auto">
           <div class="flex flex-wrap justify-center items-center h-[100vh]">
 
-            <div class="basis-1/2 md:basis-1/2 text-center py-3 dark:text-[#d9d9d9]">
+            <div class="md:basis-1/2 text-center py-3 dark:text-[#d9d9d9] max-w-sm">
               <p  id="animationTxt1"
                class="text-4xl lg:text-5xl font-semibold mb-5 leading-normal dark:[text-#d9d9d9] text-left">
-                <span>안녕하세요,</span>
+                <span class=" py-3">안녕하세요,</span>
                 <br>
                 <span class="text-[#38A1FF]">
-                  <span class="bg-black -mx-4 px-4">프론트엔드 개발자</span>
+                  <span class="bg-black -mx-4 px-4 py-3">프론트엔드 개발자</span>
                   <br>
-                  송우섭 <span class="text-black dark:text-[#d9d9d9]">입니다.</span>
+                  <span class=" py-3">송우섭 <span class="text-black dark:text-[#d9d9d9]">입니다.</span></span>
                 </span>
               </p>
            </div>
