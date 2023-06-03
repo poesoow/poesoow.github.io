@@ -1,10 +1,10 @@
 <template>
   <div>
     <div class="max-w-7xl mx-auto my-10">
-      
+
       <div class="flex justify-end pb-2">
-        <router-link to="/contact/write" 
-          class="bg-indigo-400 hover:bg-indigo-600 focus:ring-indigo-400 py-2 px-4 text-white font-semibold rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-opacity-75 text-xs sm:text-sm">
+        <router-link to="/contact/write"
+          class="bg-[#38A1FF] hover:bg-indigo-600 focus:ring-indigo-400 py-2 px-4 text-white font-semibold rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-opacity-75 text-xs sm:text-sm">
           글쓰기
         </router-link>
       </div>
@@ -16,8 +16,8 @@
         <span class="basis-1/12 shrink-0">날짜</span>
         <span class="basis-1/12 shrink-0">답변여부</span>
       </div>
-      
-     
+
+
       <ul class="">
         <li v-for="(data, index) in dataList" :key="index" class="even:bg-gray-50 ">
           <div @click="chkAndViewData(data.secret, dataIds[index], data.password)">
@@ -33,20 +33,15 @@
       </ul>
 
 
-    </div>  
-    <ContactComp />
+    </div>
   </div>
 </template>
 
 <script>
   import { db } from '@/firebase'
-  import ContactComp from '@/components/Contact/ContactComp.vue'
 
   export default {
     name: 'ContactList',
-    components: {
-      ContactComp
-    },
     data() {
       return {
         dataList: [],
