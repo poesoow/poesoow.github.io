@@ -53,7 +53,7 @@
           </li>
         </ul>
 
-        <div v-if="false">
+        <div v-if="$store.state.loginChk">
           <div class="mt-2 flex flex-col md:flex-row px-[2%] gap-1 md:gap-8 text-xl">
             <label class="">
               <input v-model="repleName" type="text" class="border w-full px-3" placeholder="이름" @keyup.enter="updateReple()">
@@ -108,7 +108,6 @@ export default {
       this.date = this.BoardContent.date
       this.content = this.BoardContent.content
       this.reples = this.BoardContent.reples
-
       this.repleCount = this.reples.length
     })
   },
@@ -126,7 +125,8 @@ export default {
 
 
         db.collection('contact').doc(this.$route.query.docId).update({
-          'reples': this.reples
+          'reples': this.reples,
+          'complete': true
         })
       } else {
         alert('이름이나 내용을 입력해주세요')
@@ -134,9 +134,7 @@ export default {
 
     },
     formatRepleDate(index) {
-      console.log(index)
       const d = this.reples[index].date.seconds * 1000 + this.reples[index].date.nanoseconds / 1000000
-      console.log(d)
       const formatted = new Date(d).toLocaleDateString()
       return formatted
     }

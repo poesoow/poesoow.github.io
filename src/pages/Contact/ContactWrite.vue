@@ -25,13 +25,14 @@
       <button
         @click="write"
         class="bg-indigo-400 hover:bg-indigo-600 focus:ring-indigo-400 py-2 px-4 text-white font-semibold rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-opacity-75 text-xs sm:text-sm absolute right-1 -bottom-9">
-        작성 완료
+        작성 완료 {{ errorMsg }}
       </button>
     </div>
 </template>
 
 <script>
    import { db } from '@/firebase'
+   import { auth } from '@/firebase'
 
   export default {
     name: 'ContactWrite',
@@ -43,6 +44,7 @@
         password: '',
         secret: false,
         date: new Date(),
+        errorMsg: ''
       }
     },
     methods: {
@@ -52,22 +54,32 @@
         } else if (!this.password) {
           alert('비밀번호를 입력해주세요')
         } else if (!this.title) {
-            alert('title을 입력해주세요')
-            } else {
-              // firebase database 에 쓰기
-              db.collection('contact').add({
-                'name': this.name,
-                'password': this.password,
-                'title': this.title,
-                'content': this.content,
-                'date': this.date,
-                'secret': this.secret,
-                'complete': false,
-                'reples': new Array()
-              })
-              // 쓰고 페이지 이동
+          if(this.name.includes('wooseop@')){
+            auth.signInWithEmailAndPassword(this.name, this.password).then((() => {
+              this.$store.commit("loginToken");
               this.$router.replace('/contact')
+            }),
+              ((error) => {
+                this.errorMsg = error.message
+              }))
+            } else {
+              alert('title을 입력해주세요')
             }
+          } else {
+            // firebase database 에 쓰기
+            db.collection('contact').add({
+              'name': this.name,
+              'password': this.password,
+              'title': this.title,
+              'content': this.content,
+              'date': this.date,
+              'secret': this.secret,
+              'complete': false,
+              'reples': new Array()
+            })
+            // 쓰고 페이지 이동
+            this.$router.replace('/contact')
+          }
 
 
       },
