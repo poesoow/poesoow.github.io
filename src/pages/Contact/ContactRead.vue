@@ -40,24 +40,29 @@
           <p class="px-[3%] my-2 flex text-[#38A1FF]">
             <span class="basis-1/4">이름</span>
             <span class="basis-3/4 relative inline-block before:absolute before:top-1 before:w-[1px] before:left-[-10px] before:border-y-[8px] before:border-x-[1px] before:border-[#38A1FF]">내용</span>
+            <span class="basis-1/4 relative inline-block before:absolute before:top-1 before:w-[1px] before:left-[-10px] before:border-y-[8px] before:border-x-[1px] before:border-[#38A1FF]">날짜</span>
           </p>
         </div>
         <ul class="border-b-2">
-          <li v-for="reple in reples" :key="reple" class="py-2 odd:bg-gray-100">
+          <li v-for="(reple, index) in reples" :key="reple" class="py-2 odd:bg-gray-100">
             <p class="px-[3%] flex">
               <span class="basis-1/4">{{ reple.name }}</span>
               <span class="basis-3/4 relative inline-block before:absolute before:top-1 before:w-[1px] before:left-[-10px] before:border-y-[8px] before:border-x-[1px] before:border-[#38A1FF]">{{ reple.content }}</span>
+              <span class="basis-1/4 relative inline-block before:absolute before:top-1 before:w-[1px] before:left-[-10px] before:border-y-[8px] before:border-x-[1px] before:border-[#38A1FF]">{{ formatRepleDate(index)}}</span>
             </p>
           </li>
         </ul>
-        <div class="mt-2 flex flex-col md:flex-row px-[2%] gap-1 md:gap-8 text-xl">
-          <label class="">
-            <input v-model="repleName" type="text" class="border w-full px-3" placeholder="이름" @keyup.enter="updateReple()">
-          </label>
-          <label class="basis-8/12 ">
-            <input v-model="repleContent" type="text" class="border w-full px-3" placeholder="내용" @keyup.enter="updateReple()">
-          </label>
-          <button @click="updateReple()"><font-awesome-icon icon="paper-plane"></font-awesome-icon></button>
+
+        <div v-if="false">
+          <div class="mt-2 flex flex-col md:flex-row px-[2%] gap-1 md:gap-8 text-xl">
+            <label class="">
+              <input v-model="repleName" type="text" class="border w-full px-3" placeholder="이름" @keyup.enter="updateReple()">
+            </label>
+            <label class="basis-8/12 ">
+              <input v-model="repleContent" type="text" class="border w-full px-3" placeholder="내용" @keyup.enter="updateReple()">
+            </label>
+            <button @click="updateReple()"><font-awesome-icon icon="paper-plane"></font-awesome-icon></button>
+          </div>
         </div>
       </div>
 
@@ -78,9 +83,10 @@ export default {
       name: '',
       date: '',
       content: '',
+      reples: null,
       repleName: '',
       repleContent: '',
-      reples: null,
+      repleDate: null,
       repleCount: 0,
     }
   },
@@ -102,13 +108,17 @@ export default {
       this.date = this.BoardContent.date
       this.content = this.BoardContent.content
       this.reples = this.BoardContent.reples
+
       this.repleCount = this.reples.length
     })
   },
   methods: {
     updateReple(){
+
+      this.repleDate = new Date()
+
       if(this.repleName && this.repleContent) {
-        const reple = {name: this.repleName, content: this.repleContent}
+        const reple = {name: this.repleName, content: this.repleContent, date: this.repleDate}
 
         this.reples.push(reple)
         this.repleName = ''
@@ -122,6 +132,13 @@ export default {
         alert('이름이나 내용을 입력해주세요')
       }
 
+    },
+    formatRepleDate(index) {
+      console.log(index)
+      const d = this.reples[index].date.seconds * 1000 + this.reples[index].date.nanoseconds / 1000000
+      console.log(d)
+      const formatted = new Date(d).toLocaleDateString()
+      return formatted
     }
   },
 }
