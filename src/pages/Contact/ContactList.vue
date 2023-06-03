@@ -19,7 +19,7 @@
 
 
       <ul class="">
-        <li v-for="(data, index) in dataList" :key="index" class="even:bg-gray-50 ">
+        <li v-for="(data, index) in dataList" :key="index" class="even:bg-gray-50 cursor-pointer">
           <div @click="chkAndViewData(data.secret, dataIds[index], data.password)">
             <div class="flex justify-between border-b text-center px-4 py-2 text-xs sm:text-sm hover:text-green-500">
               <span class="basis-2/12 shrink-0">{{ dataList.length - index }}</span>
