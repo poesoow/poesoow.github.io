@@ -20,24 +20,25 @@
         <div class="basis-full md:basis-[67.5%] mt-8 md:mt-0">
 
 
-          <div v-for="content in Contents" :key="content" class="bg-white rounded-md border darkMode p-5 mb-8 last:mb-0">
-            <h3 class="text-base md:text-xl mb-4">◆ <span class="text-[#38A1FF]">{{ content.title }}</span></h3>
-            <div class="mb-2 last:mb-0 text-sm md:text-base flex gap-44">
-              <div class="mb-2 basis-72" v-for="mind in content.mind" :key="mind">
-                <div class="bg-black p-3 my-6 text-[#38A1FF] font-bold inline-block">{{ mind.desc }}</div>
-                <div v-html="mind.desc2"></div>
-              </div>
+          <div class="bg-white rounded-md border darkMode p-5 mb-8">
+            <h3 class="text-base md:text-xl mb-4">◆ <span class="text-[#38A1FF]">{{ Contents.MIND.title }}</span></h3>
+            <div class="pl-[20px]">
+              <mindComp :mind="Contents.MIND.mind"/>
             </div>
-            <div class="mb-2 last:mb-0 text-sm md:text-base font-light">
-              <p v-for="experience in content.experience" :key="experience" class="mb-2">{{ experience.date }} : {{ experience.dateDesc }}</p>
-            </div>
-            <p class="flex flex-wrap gap-2 mb-2 last:mb-0 text-sm md:text-base">
-              <span v-for="like in content.like" :key="like"
-                class="h-8 mt-2 mr-1 text-sm border bg-white rounded-2xl align-top leading-[19px] box-border tracking-tighter pt-1.5 px-3 pb-2 shadow-md darkMode">
-                {{ like.item }}
-              </span>
-            </p>
           </div>
+          <div class="bg-white rounded-md border darkMode p-5 mb-8">
+            <h3 class="text-base md:text-xl mb-4">◆ <span class="text-[#38A1FF]">{{ Contents.EXPERIENCE.title }}</span></h3>
+            <div class="pl-[20px]">
+              <ExprienceComp :experience="Contents.EXPERIENCE.experience"/>
+            </div>
+          </div>
+          <div class="bg-white rounded-md border darkMode p-5 mb-0 like-emogi">
+            <h3 class="text-base md:text-xl mb-4">◆ <span class="text-[#38A1FF]">{{ Contents.LIKE.title }}</span></h3>
+            <div class="pl-[20px]">
+              <LikeComp :like="Contents.LIKE.like"/>
+            </div>
+          </div>
+
 
 
 
@@ -49,16 +50,19 @@
 
 <script>
   import Title from '@/components/Title.vue'
+  import mindComp from '@/components/Profile/Mind.vue'
+  import ExprienceComp from '@/components/Profile/Experience.vue'
+  import LikeComp from '@/components/Profile/Like.vue'
 
   export default {
     name: "ProfilePage",
     components: {
-      Title
+      Title, mindComp, ExprienceComp, LikeComp
     },
     data() {
       return {
-        Contents: [
-          {
+        Contents: {
+          "MIND": {
             title: "MIND",
             mind: [
               {
@@ -71,7 +75,7 @@
               },
             ]
           },
-          {
+          "EXPERIENCE": {
             title: "EXPERIENCE",
             experience: [
               {
@@ -84,7 +88,7 @@
               },
             ],
           },
-          {
+          "LIKE" :{
             title: "LIKE",
             like: [
               {
@@ -110,12 +114,19 @@
               },
             ],
           }
-        ]
+        }
       }
     },
   }
 </script>
 
-<style>
+<style scoped>
+.like-emogi{
+  overflow: hidden;
+  background-image: url('/public/images/portfolio.png');
+  background-repeat: no-repeat;
+  background-position: right 10px;
+  background-size: 150px;
+}
 
 </style>
