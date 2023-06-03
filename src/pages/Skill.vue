@@ -53,4 +53,11 @@
 </script>
 
 <style scoped>
+.skill-emogi{
+  overflow: hidden;
+    background-image: url('/public/images/memo.png');
+    background-repeat: no-repeat;
+    background-position: right bottom -50px;
+    background-size: 250px;
+}
 </style>
