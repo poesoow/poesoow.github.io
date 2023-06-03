@@ -65,7 +65,7 @@
         ArrayList: '',
         visual: 0,
         Nav: [
-          "PFOFILE",
+          "PROFILE",
           "SKILL",
           "PROJECT",
           "CONTACT"

@@ -3,8 +3,15 @@
     <Title>PROFILE</Title>
     <div class="max-w-7xl mx-auto">
       <div class="h-auto flex overflow-hidden mt-8 flex-wrap justify-between">
-        <div class="basis-full md:basis-[30%] py-12 px-4 bg-white rounded-md darkMode text-center border">
+        <div class="basis-full md:basis-[30%] pt-5 pb-12 px-4 bg-white rounded-md darkMode text-center border">
           <img :src="require(`@/assets/images/profile.svg`)" alt="사진" class="rounded-full block mx-auto">
+
+          <p class="font-bold mb-5 text-[#38A1FF]">
+            <span class="text-2xl">송우섭</span>
+            <br>
+            <span>Song Woo Seop</span>
+          </p>
+
           <ul class="flex gap-12 justify-center">
             <li class="box-border pt-3 text-5xl"><a href="https://github.com/poesoow"><font-awesome-icon icon="fa-brands fa-github"></font-awesome-icon></a></li>
             <li class="box-border pt-3 text-5xl"><a href="https://velog.io/@ws71144612"><img class="w-[48px]" :src="`/images/velog.svg`" alt="벨로그"></a></li>
@@ -14,11 +21,11 @@
 
 
           <div v-for="content in Contents" :key="content" class="bg-white rounded-md border darkMode p-5 mb-8 last:mb-0">
-            <h3 class="text-base md:text-xl mb-4">◆ <span class="text-[#42b983]">{{ content.title }}</span></h3>
-            <div class="mb-2 last:mb-0 text-sm md:text-base font-light">
-              <div class="mb-2" v-for="mind in content.mind" :key="mind">
-                <span class="">{{ mind.desc }}</span>
-                <div class="TheJamsilRegular">{{ mind.desc2 }}</div>
+            <h3 class="text-base md:text-xl mb-4">◆ <span class="text-[#38A1FF]">{{ content.title }}</span></h3>
+            <div class="mb-2 last:mb-0 text-sm md:text-base flex gap-44">
+              <div class="mb-2 basis-72" v-for="mind in content.mind" :key="mind">
+                <div class="bg-black p-3 my-6 text-[#38A1FF] font-bold inline-block">{{ mind.desc }}</div>
+                <div v-html="mind.desc2"></div>
               </div>
             </div>
             <div class="mb-2 last:mb-0 text-sm md:text-base font-light">
@@ -55,15 +62,12 @@
             title: "MIND",
             mind: [
               {
-                desc: '"Done is better than perfect."',
-                desc2: "너무 완벽을 추구하기 보다는 계속 보완하며 더 나은 방향으로 발전해야 한다는 마인드를 가지고 있습니다."
+                desc: 'Done is better than perfect.',
+                desc2: "지나친 완벽을 추구하기 보다는<br>보완하며 더 나은 방향으로 발전하고자 합니다."
               },
               {
-                desc: '"Simple is best."',
-                desc2: "최대한 단순화 시키는 것을 좋아합니다."
-              },
-              {
-                desc: "코드를 작성하기 이전에 충분한 생각을 먼저 한 다음 코드를 작성하려고 노력합니다.",
+                desc: 'Simple is best.',
+                desc2: "최소한의 효과로 정확하게<br>전달하는 것이 중요하다고 생각합니다."
               },
             ]
           },
