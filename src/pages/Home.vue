@@ -1,19 +1,24 @@
 <template>
   <div>
     <div ref="section-0">
-      <div
-        class="w-full bg-cover bg-center bg-no-repeat"
-        :style="visual > 1400 ? { 'background-image': 'url(' + require('@/assets/images/visual_desk.jpg') + ')' } : { 'background-image': 'url(' + require('@/assets/images/visual_mobile.jpg') + ')' }">
         <div class="max-w-7xl mx-auto">
-          <div class="flex flex-wrap items-center h-[103vh]">
-            <div class="basis-full md:basis-full text-center py-3">
-              <p  id="animationTxt1"
-                class="text-white text-4xl lg:text-5xl font-medium lg:font-semibold mb-5 lg:leading-normal leading-snug dark:[text-#d9d9d9]">
-                <span>안녕하세요.</span><br><span>프론트엔드 개발자<br>송우섭 입니다.</span>
-              </p>
+          <div class="flex flex-wrap justify-center items-center h-[100vh]">
 
-            </div>
-          </div>
+            <div class="basis-1/2 md:basis-1/2 text-center py-3 dark:text-[#d9d9d9]">
+              <p  id="animationTxt1"
+               class="text-4xl lg:text-5xl font-medium lg:font-semibold mb-5 lg:leading-normal leading-snug dark:[text-#d9d9d9] text-left">
+                <span>안녕하세요,</span>
+                <br>
+                <span class="text-[#38A1FF]">
+                  <span class="bg-black -mx-4 px-4">프론트엔드 개발자</span>
+                  <br>
+                  송우섭 <span class="text-black dark:text-[#d9d9d9]">입니다.</span>
+                </span>
+              </p>
+           </div>
+
+           <img src="/images/office-working-1.png" alt="프론트엔드 송우섭" class="basis-1/3">
+
         </div>
       </div>
     </div>
