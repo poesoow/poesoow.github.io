@@ -3,21 +3,21 @@
     <Title>SKILL</Title>
 
     <div class="max-w-7xl mx-auto mt-8">
-      <div class="bg-white rounded-md border darkMode p-5 mb-8">
+      <div class="bg-white rounded-md border darkMode p-5 mb-8 skill-emogi">
 
         <ul class="flex flex-col gap-3">
           <li v-for="skill in skills" :key="skill" class="flex flex-col gap-5">
-              <h3 class="text-2xl text-[#42b983] border-b-2">{{ skill.type }}</h3>
-              <ul class="flex gap-10">
-                <li v-for="list in skill.list" :key="list"
-                  class="flex gap-1 p-2 flex-col text-center">
-                  <img v-if="list.img" :src="list.img" :alt="list.name" class="w-12 inline-block mx-auto">
-                  <div>
-                    <h4>{{ list.name }}</h4>
-                    <div>{{ list.desc }}</div>
-                  </div>
-                </li>
-              </ul>
+            <h3 class="text-2xl text-[#38A1FF]">{{ skill.type }}</h3>
+            <ul class="flex gap-10 flex-wrap">
+              <li v-for="list in skill.list" :key="list"
+                class="flex gap-1 p-2 flex-col text-center">
+                <img v-if="list.img" :src="list.img" :alt="list.name" class="w-12 inline-block mx-auto">
+                <div>
+                  <h4>{{ list.name }}</h4>
+                  <div>{{ list.desc }}</div>
+                </div>
+              </li>
+            </ul>
           </li>
         </ul>
 
@@ -52,6 +52,5 @@
   }
 </script>
 
-<style>
-
+<style scoped>
 </style>
