@@ -7,7 +7,7 @@
 
       <div @click="focusOn = false; num = null" class="">
         <router-link to="/">
-          <div @mousemove="shine" class="text-2xl h-12 leading-[48px] logo highlight">
+          <div @mousemove="shine" class="text-2xl h-12 leading-[48px] logo highlight thejamsilBold">
             WooSeop
           </div>
         </router-link>

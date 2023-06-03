@@ -14,36 +14,21 @@
   }
 }
 
-body{background-color: #f7f8f9; font-family: 'TheJamsil5Bold';}
+body{background-color: #f7f8f9; font-family: 'Pretendard-Regular';}
 .dark body{background-color: #333;}
 
 /* 더잠실체 */
-.TheJamsilThin{font-family: 'TheJamsil1Thin';}
-.TheJamsilRegular{font-family: 'TheJamsil3Regular';}
-.TheJamsilMedium{font-family: 'TheJamsil4Medium';}
 .thejamsilBold{font-family: 'TheJamsil5Bold';}
-/* TheJamsil4Medium */
 @font-face {
   font-family: 'TheJamsil5Bold';
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/TheJamsil5Bold.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
 }
+.Pretendard-Regular {font-family: 'Pretendard-Regular';}
 @font-face {
-  font-family: 'TheJamsil1Thin';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/TheJamsil1Thin.woff2') format('woff2');
-  font-weight: 100;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'TheJamsil3Regular';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/TheJamsil3Regular.woff2') format('woff2');
+  font-family: 'Pretendard-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
   font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'TheJamsil4Medium';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/TheJamsil4Medium.woff2') format('woff2');
-  font-weight: 500;
   font-style: normal;
 }
