@@ -6,7 +6,7 @@
 
             <div class="basis-1/2 md:basis-1/2 text-center py-3 dark:text-[#d9d9d9]">
               <p  id="animationTxt1"
-               class="text-4xl lg:text-5xl font-medium lg:font-semibold mb-5 lg:leading-normal leading-snug dark:[text-#d9d9d9] text-left">
+               class="text-4xl lg:text-5xl font-semibold mb-5 leading-normal dark:[text-#d9d9d9] text-left">
                 <span>안녕하세요,</span>
                 <br>
                 <span class="text-[#38A1FF]">
