@@ -9,39 +9,26 @@
   </div>
   <div class="basis-full md:basis-[50%] pt-4  group-even:order-2 xl:group-even:order-1 xl:group-even:text-right lg:px-[50px]">
     <h3 class="text-3xl">
-      <div>{{ item.title }} </div>
-      <p class="text-base">{{ item.desc }}</p>
+      <div class="font-bold text-[#38A1FF]">{{ item.title }} <span class="text-lg">{{ item.workers.team ? '팀프로젝트' : '' }}</span> </div>
     </h3>
-    <div v-if="item.date2" class="pt-[10px]">
-      <h4 class="text-xl"><font-awesome-icon icon="calendar"></font-awesome-icon> 작업기간</h4>
-      <div class="TheJamsilRegular"><span>{{ item.date2 }} </span> <span v-if="item.date">[{{ item.date }}]</span></div>
+    <div v-if="item.date2" class="pt-[10px] font-bold">
+      <div><span class="text-[#38A1FF]">{{ item.date2 }}</span></div>
     </div>
+    <p class="pt-[10px] text-base" v-html="item.desc"></p>
+    <p class="pt-[10px] flex gap-3">
+      <span v-for="el in item.date" :key="el" class="relative inline-block first:text-[#38A1FF] first:font-bold first:after:hidden after:block after:absolute after:left-[-7px] after:top-1 after:border-y-[8px] after:border-x-[1px] after:border-[#38A1FF]">{{ el }}</span>
+    </p>
     <p v-if="item.features" class="pt-[10px]">
-      <h4 class="text-xl"><font-awesome-icon icon="thumb-tack"></font-awesome-icon> 주요특징</h4>
-      <ul class="TheJamsilRegular">
-        <li v-for="(feature, index) in item.features" :key="feature"><span>{{ index + 1 }}.</span> {{ feature }}</li>
+      <ul>
+        <li v-for="(feature) in item.features" :key="feature"><span>-</span> {{ feature }}</li>
       </ul>
     </p>
     <p v-if="item.tools" class="pt-[10px]">
-      <h4 class="text-xl">사용툴</h4>
-      <span v-for="tool in item.tools" :key="tool" class="mr-2 TheJamsilRegular">{{ tool }}</span></p>
-    <template v-if="item.workers.team">
-      <div class="pt-[10px]">
-        <!-- faUserGroup -->
-        <h4 class="text-xl"><font-awesome-icon icon="user-group"></font-awesome-icon> 팀프로젝트</h4>
-        <div class="pt-[5px]">
-          팀원 :
-          <span v-for="member in item.workers.members" :key="member" class="mr-2">
-            <a :href="member.link">{{ member.name }}</a>
-          </span>
-        </div>
-      </div>
-    </template>
+      <span v-for="tool in item.tools" :key="tool" class="relative inline-block mr-3 font-bold text-[#38A1FF] first:after:hidden after:block after:absolute after:left-[-7px] after:top-1 after:border-y-[8px] after:border-x-[1px] after:border-[#38A1FF]">{{ tool }}</span></p>
     <p class="pt-[10px]">
       <ul class="flex gap-2 justify-end">
-        <li><a :href="item.links[0].link">보러가기<font-awesome-icon icon="arrow-up-right-from-square"></font-awesome-icon></a></li>
-        <li><a :href="item.links[0].github">깃허브<font-awesome-icon icon="fa-brands fa-github"></font-awesome-icon></a></li>
-        <li v-if="item.type == 'Publishing'" class="before:content-[111]"><a :href="item.links[0].original">대상</a></li>
+        <li><a :href="item.links[0].link" class="inline-block bg-[gainsboro] py-[2px] px-[4px]"><font-awesome-icon icon="arrow-up-right-from-square"></font-awesome-icon></a></li>
+        <li><a :href="item.links[0].github" class="inline-block bg-[gainsboro] py-[2px] px-[4px]"><font-awesome-icon icon="fa-brands fa-github"></font-awesome-icon></a></li>
       </ul>
     </p>
   </div>

@@ -1,7 +1,12 @@
 <template>
   <div class="w-full pt-12 mt-6 px-[2%] pb-8 ">
     <Title>
-      PROJECT <span v-if="$route.path == '/project'"></span>
+      PROJECT
+      <template v-if="$route.path == '/'" #subTitle>
+        <router-link to="/project">
+          상단 메뉴바 PROJECT에서 더 많은 작업물을 확인하실 수 있습니다.<font-awesome-icon icon="arrow-up-right-from-square"></font-awesome-icon>
+        </router-link>
+      </template>
     </Title>
 
     <!-- /project 에서 -->
@@ -38,13 +43,6 @@
             <button class="py-2 px-5" @click="CateName2 = 'LATEST'" :class="CateName2 === 'LATEST' && 'font-bold text-[#42b983]'">LATEST</button>
           </li>
         </ul>
-      </div>
-      <!-- 링크 -->
-      <div class="mr-0 rounded-md py-2">
-        <router-link to="/project">
-          더 많은 작품 보러가기
-          <font-awesome-icon icon="arrow-up-right-from-square"></font-awesome-icon>
-        </router-link>
       </div>
     </div>
 

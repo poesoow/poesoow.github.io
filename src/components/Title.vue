@@ -3,6 +3,9 @@
     <h3 class="relative after:absolute mx-auto w-max text-[#009688] tracking-widest text-center text-xl sm:text-2xl lg:text-3xl thejamsilBold">
       <slot></slot>
     </h3>
+    <p class="text-center">
+      <slot name="subTitle"></slot>
+    </p>
   </div>
 </template>
 
