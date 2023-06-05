@@ -19,8 +19,8 @@
     },
     "links": [
       {
-        "link": "/",
-        "github": "/",
+        "link": "https://poesoow.github.io/parcel/",
+        "github": "https://github.com/poesoow/parcelCODE",
         "original": "/"
       }
     ]
