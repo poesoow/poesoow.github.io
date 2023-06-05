@@ -4,7 +4,7 @@
     <div class="max-w-7xl mx-auto">
       <div class="h-auto flex overflow-hidden mt-8 flex-wrap justify-between">
         <div class="basis-full md:basis-[30%] pt-5 pb-12 px-4 bg-white rounded-md darkMode text-center border">
-          <img :src="require(`@/assets/images/profile.svg`)" alt="사진" class="rounded-full block mx-auto">
+          <img :src="$store.state.isDark ? require(`@/assets/images/profile_dark.svg`) : require(`@/assets/images/profile.svg`)" alt="사진" class="rounded-full block mx-auto">
 
           <p class="font-bold mb-5 text-[#38A1FF]">
             <span class="text-2xl">송우섭</span>
@@ -58,6 +58,9 @@
     name: "ProfilePage",
     components: {
       Title, mindComp, ExprienceComp, LikeComp
+    },
+    props: {
+      isDark: Boolean
     },
     data() {
       return {

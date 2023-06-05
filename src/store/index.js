@@ -6,6 +6,7 @@ export default createStore({
       number: 0,
       noticeId: '',
       loginChk: false,
+      isDark: false,
     }
   },
   mutations: {

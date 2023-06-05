@@ -2,9 +2,9 @@
   <div>
     <NavMenu
     :isDark="isDark"
-    @dark="toggleDark()"
+    @dark="toggleDark(); toggleDarkStore()"
     />
-    <router-view />
+    <router-view :isDark="isDark" />
     <Footer />
     <TotopButton />
   </div>
@@ -21,8 +21,8 @@
     name: 'App',
     data() {
       return {
-        toggleDark: useToggle(useDark()),
         isDark: useDark(),
+        toggleDark: useToggle(useDark())
       }
     },
     components: {
@@ -34,6 +34,9 @@
       DarkMode(){
         document.querySelector("html").classList.toggle("dark")
       },
+      toggleDarkStore() {
+        this.$store.state.isDark = !this.$store.state.isDark
+      }
     },
     mounted() {
     },
