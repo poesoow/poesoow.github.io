@@ -17,7 +17,7 @@
               </p>
            </div>
 
-           <img src="/images/office-working-1.png" alt="프론트엔드 송우섭" class="basis-1/3">
+           <img src="/images/intro.svg" alt="프론트엔드 송우섭" class="basis-1/3">
 
         </div>
       </div>
