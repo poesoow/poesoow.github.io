@@ -15,10 +15,10 @@
         class="max-w-7xl">
         <ul class="flex ml-0">
           <li class="mr-4 border darkMode bg-white rounded-md">
-            <button class="py-2 px-5" @click="CateName = '전체'" :class="CateName === '전체' && 'font-bold text-[#42b983]'">전체</button>
+            <button class="py-2 px-5" @click="CateName = '전체'; searchQuery = ''" :class="CateName === '전체' && 'font-bold text-[#42b983]'">전체</button>
           </li>
           <li v-for="e in CateList" :key="e" class="mr-4 border darkMode bg-white rounded-md">
-            <button class="py-2 px-5" @click="CateName = e.type" :class="CateName === e.type && 'font-bold text-[#42b983] underline'">{{ e.type }}</button>
+            <button class="py-2 px-5" @click="CateName = e.type; searchQuery = ''" :class="CateName === e.type && 'font-bold text-[#42b983] underline'">{{ e.type }}</button>
           </li>
         </ul>
       </div>
@@ -70,9 +70,6 @@ export default {
   },
   components: {
     Title, ProjectItems
-  },
-  props: {
-    loc: String
   },
   computed: {
     CateList() {
