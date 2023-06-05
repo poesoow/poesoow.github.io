@@ -25,12 +25,11 @@
       <!-- 검색 -->
       <div class="mr-0 border rounded-md bg-white">
         <label class="relative rounded-md bo h-full">
-          <input type="text" class="h-full px-4 rounded-md">
+          <input type="text" class="h-full px-4 rounded-md" v-model="searchQuery">
           <font-awesome-icon icon="magnifying-glass" class="cursor-pointer absolute top-0 right-4" />
         </label>
       </div>
     </div>
-
     <!-- 홈 화면에서 -->
     <div v-else class="flex justify-between max-w-7xl mx-auto mt-8">
       <div
@@ -49,7 +48,7 @@
 
     <div class="max-w-7xl mx-auto mt-8">
       <ProjectItems v-if="$route.path == '/'" :projectItems="BestandLatestItems.BEST" :latestItem="BestandLatestItems.LATEST" :CateName2="CateName2" />
-      <ProjectItems v-else :projectItems="CateItems" />
+      <ProjectItems v-else :projectItems="CateItems" :filterKey="searchQuery" />
     </div>
   </div>
 </template>
@@ -66,6 +65,7 @@ export default {
       CateName: "전체",
       CateName2: "BEST",
       ProjectList: projectlist,
+      searchQuery: '',
     }
   },
   components: {
@@ -73,9 +73,6 @@ export default {
   },
   props: {
     loc: String
-  },
-  methods: {
-
   },
   computed: {
     CateList() {
@@ -111,6 +108,5 @@ export default {
       return {BEST: bestItems, LATEST: latestItem }
     }
   },
-
 }
 </script>
