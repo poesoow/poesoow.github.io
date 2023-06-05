@@ -27,8 +27,8 @@
       <span v-for="tool in item.tools" :key="tool" class="relative inline-block mr-3 font-bold text-[#38A1FF] first:after:hidden after:block after:absolute after:left-[-7px] after:top-1 after:border-y-[8px] after:border-x-[1px] after:border-[#38A1FF]">{{ tool }}</span></p>
     <p class="pt-[10px]">
       <ul class="flex gap-2 justify-end">
-        <li><a :href="item.links[0].link" class="inline-block bg-[gainsboro] py-[2px] px-[4px]"><font-awesome-icon icon="arrow-up-right-from-square"></font-awesome-icon></a></li>
-        <li><a :href="item.links[0].github" class="inline-block bg-[gainsboro] py-[2px] px-[4px]"><font-awesome-icon icon="fa-brands fa-github"></font-awesome-icon></a></li>
+        <li><a :href="item.links[0].link" class="inline-block bg-[gainsboro] w-10 h-10 rounded-md py-[10px] px-[10px]"><font-awesome-icon icon="arrow-up-right-from-square" class="text-xl"></font-awesome-icon></a></li>
+        <li><a :href="item.links[0].github" class="inline-block bg-[gainsboro] w-10 h-10 rounded-md py-[10px] px-[10px]"><font-awesome-icon icon="fa-brands fa-github" class="text-xl"></font-awesome-icon></a></li>
       </ul>
     </p>
   </div>
