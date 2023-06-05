@@ -2,11 +2,11 @@
   <div>
     <div ref="section-0">
         <div class="max-w-7xl mx-auto">
-          <div class="flex flex-wrap justify-center items-center h-[100vh]">
+          <div class="flex flex-col-reverse md:flex-wrap md:flex-row lg:gap-24 justify-center items-center h-[100vh]">
 
-            <div class="md:basis-1/2 text-center py-3 dark:text-[#d9d9d9] max-w-sm">
+            <div class="md:basis-2/3 text-center py-3 dark:text-[#d9d9d9] max-w-sm">
               <p  id="animationTxt1"
-               class="text-4xl lg:text-5xl font-semibold mb-5 leading-normal dark:[text-#d9d9d9] text-left">
+               class="text-4xl lg:text-6xl lg:w-[440px] font-semibold mb-5 leading-normal dark:[text-#d9d9d9] text-left">
                 <span class=" py-3">안녕하세요,</span>
                 <br>
                 <span class="text-[#38A1FF]">
@@ -17,7 +17,7 @@
               </p>
            </div>
 
-           <img src="/images/intro.svg" alt="프론트엔드 송우섭" class="basis-1/3">
+           <img src="/images/intro.svg" alt="프론트엔드 송우섭" class="basis-1/3 w-[400px] md:w-[500px]" >
 
         </div>
       </div>
