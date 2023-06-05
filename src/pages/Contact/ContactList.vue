@@ -64,16 +64,18 @@
       },
       chkAndViewData(chkSecret, id, password){
 
-        if(chkSecret) {
-          const inputPwd = prompt('비밀번호를 입력해주세요')
-          if(inputPwd != password){
-            alert('비밀번호를 다시 입력해주세요')
-          } else {
-            this.$router.push({ name: 'ContactRead', query: { docId: id } })
-          }
-        } else {
+        if(this.$store.state.loginChk){
+          // 관리자는 비밀여부 상관없이 들어갈 수 있도록
+          this.$router.push({ name: 'ContactRead', query: { docId: id } })
+        } else if (!chkSecret) {
+          // 비밀글이 아닌 글은 누구나 바로 들어가도록 
           this.$router.push({ name: 'ContactRead', query: { docId: id }})
+        } else {
+          // 비밀번호 확인 및 비밀글 작성자만 들어가지도록
+          const inputPwd = prompt('비밀번호를 입력해주세요')
+          inputPwd != password ? alert('비밀번호를 다시 입력해주세요') : this.$router.push({ name: 'ContactRead', query: { docId: id } })
         }
+
 
       }
     },
