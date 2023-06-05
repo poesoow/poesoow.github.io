@@ -4,13 +4,13 @@
       PROJECT
       <template v-if="$route.path == '/'" #subTitle>
         <router-link to="/project">
-          상단 메뉴바 PROJECT에서 더 많은 작업물을 확인하실 수 있습니다.<font-awesome-icon icon="arrow-up-right-from-square"></font-awesome-icon>
+          상단 메뉴바 PROJECT에서 더 많은 작업물을 확인 및 검색하실 수 있습니다.<font-awesome-icon icon="arrow-up-right-from-square"></font-awesome-icon>
         </router-link>
       </template>
     </Title>
 
     <!-- /project 에서 -->
-    <div v-if="$route.path == '/project'" class="flex justify-between max-w-7xl mx-auto mt-8">
+    <div v-if="$route.path == '/project'" class="flex justify-between flex-wrap max-w-7xl mx-auto mt-8">
       <div
         class="max-w-7xl">
         <ul class="flex ml-0">
@@ -23,9 +23,9 @@
         </ul>
       </div>
       <!-- 검색 -->
-      <div class="mr-0 border rounded-md bg-white">
+      <div class="mt-4 sm:mt-0 mr-0 border rounded-md bg-white mx-auto">
         <label class="relative rounded-md bo h-full">
-          <input type="text" class="h-full px-4 rounded-md" v-model="searchQuery">
+          <input type="text" class="h-full px-4 py-2 rounded-md" v-model="searchQuery">
           <font-awesome-icon icon="magnifying-glass" class="cursor-pointer absolute top-0 right-4" />
         </label>
       </div>
